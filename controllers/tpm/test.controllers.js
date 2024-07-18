@@ -119,10 +119,10 @@ module.exports = {
         items
       };
 
-      response.success(res, "success to get activities table", activities);
+      response.success(res, "success to get table activities", activities);
     } catch (error) {
       // console.log(error);
-      response.failed(res, 'Error to activities table')
+      response.failed(res, 'Error to get data')
     }
   }
 }

@@ -149,12 +149,12 @@ module.exports = {
         });
     });
   },
-  queryCustom: async (sql) => {
+  queryCustom: async (sql, params) => {
     return new Promise(async (resolve, reject) => {
       let q = sql;
       // // console.log(q);
       await database
-        .query(q)
+        .query(q, params)
         .then((result) => {
           resolve(result);
         })
