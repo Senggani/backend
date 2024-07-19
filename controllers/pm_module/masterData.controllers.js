@@ -64,7 +64,7 @@ module.exports = {
                 FROM 
                     tb_m_stations
                 WHERE
-                    tb_m_stations.line_id = $1
+                    tb_m_stations.line_id = $1 AND deleted_by IS NULL
             `
 
             cons = (await queryCustom(q, [data.line_id])).rows
@@ -86,7 +86,7 @@ module.exports = {
                 FROM 
                     tb_m_lines
                 WHERE
-                    tb_m_lines.shop_id = $1
+                    tb_m_lines.shop_id = $1 AND deleted_by IS NULL
             `
 
             cons = (await queryCustom(q, [data.shop_id])).rows
@@ -108,7 +108,7 @@ module.exports = {
                 FROM 
                     tb_m_shops
                 WHERE
-                    tb_m_shops.plant_id = $1
+                    tb_m_shops.plant_id = $1 AND deleted_by IS NULL
             `
 
             cons = (await queryCustom(q, [data.plant_id])).rows
@@ -118,7 +118,7 @@ module.exports = {
             response.failed(res, 'Error to get shop list')
         }
     },
-    
+
     getPlantData: async (req, res) => {
         try {
             let data = req.query
@@ -130,7 +130,7 @@ module.exports = {
                 FROM 
                     tb_m_plants
                 WHERE
-                    tb_m_plants.company_id = $1
+                    tb_m_plants.company_id = $1 AND deleted_by IS NULL
             `
 
             cons = (await queryCustom(q, [data.company_id])).rows
@@ -145,21 +145,36 @@ module.exports = {
         try {
             let data = req.body
 
-            // console.log(data)
+            let q = `
+            INSERT INTO public.tb_m_machines (machine_nm, station_id, core_equipment_id, created_by)
+            VALUES ($1, $2, $3, $4)
+            `
+
+            await queryCustom(q, [data.machine_nm, data.station_id, data.core_equipment_id, data.user_nm]);
+
+            response.success(res, `success to add machine ${data.machine_nm}`);
+        } catch (error) {
+            response.failed(res, `Error to add machine`)
+        }
+    },
+
+    addStation: async (req, res) => {
+        try {
+            let data = req.body
 
             let q = `
-            INSERT INTO public.tb_m_machines (machine_nm, station_id, core_equipment_id)
+            INSERT INTO public.tb_m_stations (station_nm, line_id, created_by)
             VALUES ($1, $2, $3)
             `
 
-            cons = (await queryCustom(q, [data.machine_nm, data.station_id, data.core_equipment_id])).rows
+            cons = await queryCustom(q, [data.station_nm, data.line_id, data.user_nm]);
 
-            response.success(res, "success to add machine", cons);
+            response.success(res, `success to add station ${data.station_nm}`);
         } catch (error) {
-            response.failed(res, 'Error to add machine')
+            response.failed(res, `Error to add station`)
         }
     },
-    
+
     editMachine: async (req, res) => {
         try {
             let data = req.body
@@ -179,7 +194,7 @@ module.exports = {
             response.failed(res, 'Error to edit machine')
         }
     },
-    
+
     deleteMachine: async (req, res) => {
         try {
             let data = req.body
