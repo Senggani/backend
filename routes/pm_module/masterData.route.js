@@ -8,7 +8,9 @@ const { getMachineData,
         getPlantData, 
         editMachine, 
         deleteMachine,
-        addStation
+        addStation,
+        addLine,
+        addShop
     } = require('../../controllers/pm_module/masterData.controllers');
 var router = express.Router();
 
@@ -19,6 +21,8 @@ router.get('/shop-list', getShopData)
 router.get('/plant-list', getPlantData)
 router.post('/add-machine', addMachine)
 router.post('/add-station', addStation)
+router.post('/add-line', addLine)
+router.post('/add-shop', addShop)
 router.put('/edit-machine', editMachine)
 router.put('/delete-machine', deleteMachine)
 

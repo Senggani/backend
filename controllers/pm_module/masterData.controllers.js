@@ -175,6 +175,40 @@ module.exports = {
         }
     },
 
+    addLine: async (req, res) => {
+        try {
+            let data = req.body
+
+            let q = `
+            INSERT INTO public.tb_m_lines (line_nm, shop_id, created_by)
+            VALUES ($1, $2, $3)
+            `
+
+            cons = await queryCustom(q, [data.line_nm, data.shop_id, data.user_nm]);
+
+            response.success(res, `success to add line ${data.line_nm}`);
+        } catch (error) {
+            response.failed(res, `Error to add line`)
+        }
+    },
+
+    addShop: async (req, res) => {
+        try {
+            let data = req.body
+
+            let q = `
+            INSERT INTO public.tb_m_shops (shop_nm, plant_id, created_by)
+            VALUES ($1, $2, $3)
+            `
+
+            cons = await queryCustom(q, [data.shop_nm, data.plant_id, data.user_nm]);
+
+            response.success(res, `success to add shop ${data.shop_nm}`);
+        } catch (error) {
+            response.failed(res, `Error to add shop`)
+        }
+    },
+
     editMachine: async (req, res) => {
         try {
             let data = req.body
