@@ -167,7 +167,7 @@ module.exports = {
             VALUES ($1, $2, $3)
             `
 
-            cons = await queryCustom(q, [data.station_nm, data.line_id, data.user_nm]);
+            await queryCustom(q, [data.station_nm, data.line_id, data.user_nm])
 
             response.success(res, `success to add station ${data.station_nm}`);
         } catch (error) {
@@ -184,7 +184,7 @@ module.exports = {
             VALUES ($1, $2, $3)
             `
 
-            cons = await queryCustom(q, [data.line_nm, data.shop_id, data.user_nm]);
+            await queryCustom(q, [data.line_nm, data.shop_id, data.user_nm])
 
             response.success(res, `success to add line ${data.line_nm}`);
         } catch (error) {
@@ -201,7 +201,7 @@ module.exports = {
             VALUES ($1, $2, $3)
             `
 
-            cons = await queryCustom(q, [data.shop_nm, data.plant_id, data.user_nm]);
+            await queryCustom(q, [data.shop_nm, data.plant_id, data.user_nm])
 
             response.success(res, `success to add shop ${data.shop_nm}`);
         } catch (error) {
@@ -221,7 +221,7 @@ module.exports = {
             WHERE machine_id = $3
             `
 
-            cons = (await queryCustom(q, [data.new_name, data.updated_by, data.machine_id])).rows
+            await queryCustom(q, [data.new_name, data.updated_by, data.machine_id])
 
             response.success(res, "success to edit machine", cons);
         } catch (error) {
@@ -241,7 +241,7 @@ module.exports = {
             WHERE machine_id = $2
             `
 
-            cons = (await queryCustom(q, [data.user_id, data.machine_id])).rows
+            await queryCustom(q, [data.user_id, data.machine_id])
 
             response.success(res, "success to delete machine", cons);
         } catch (error) {
