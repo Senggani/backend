@@ -42,7 +42,7 @@ module.exports = {
                 FROM 
                     tb_m_machines
                 WHERE
-                    tb_m_machines.station_id = $1
+                    tb_m_machines.station_id = $1 AND deleted_by IS NULL
             `
 
             cons = (await queryCustom(machine_q, [data.station_id])).rows
@@ -177,6 +177,26 @@ module.exports = {
             response.success(res, "success to edit machine", cons);
         } catch (error) {
             response.failed(res, 'Error to edit machine')
+        }
+    },
+    
+    deleteMachine: async (req, res) => {
+        try {
+            let data = req.body
+
+            // console.log(data)
+
+            let q = `
+            UPDATE public.tb_m_machines 
+            SET deleted_by = $1, deleted_dt = CURRENT_TIMESTAMP::TIMESTAMP
+            WHERE machine_id = $2
+            `
+
+            cons = (await queryCustom(q, [data.user_id, data.machine_id])).rows
+
+            response.success(res, "success to delete machine", cons);
+        } catch (error) {
+            response.failed(res, 'Error to delete machine')
         }
     },
 
