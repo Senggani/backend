@@ -217,13 +217,13 @@ module.exports = {
 
             let q = `
             UPDATE public.tb_m_machines 
-                SET machine_nm = $1, updated_by = $2, updated_dt = CURRENT_TIMESTAMP::TIMESTAMP
-            WHERE machine_id = $3
+                SET machine_nm = $1, updated_by = $2, updated_dt = CURRENT_TIMESTAMP::TIMESTAMP, station_id = $3
+            WHERE machine_id = $4
             `
 
-            await queryCustom(q, [data.new_name, data.updated_by, data.machine_id])
+            await queryCustom(q, [data.new_name, data.updated_by, data.new_station_id, data.machine_id])
 
-            response.success(res, "success to edit machine", cons);
+            response.success(res, "success to edit machine");
         } catch (error) {
             response.failed(res, 'Error to edit machine')
         }
@@ -243,7 +243,7 @@ module.exports = {
 
             await queryCustom(q, [data.user_id, data.machine_id])
 
-            response.success(res, "success to delete machine", cons);
+            response.success(res, "success to delete machine");
         } catch (error) {
             response.failed(res, 'Error to delete machine')
         }
