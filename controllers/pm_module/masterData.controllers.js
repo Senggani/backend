@@ -249,6 +249,56 @@ module.exports = {
         }
     },
 
+    itemCheckTable: async (req, res) => {
+        try {
+            let q = `
+            SELECT 
+                mc.machine_nm,
+                ce.core_equipment_nm,
+                de.device_nm,
+                ic.item_check_nm, 
+                ic.duration, 
+                ic.machine_condition,
+                ic.man_power,
+                ic.standard,
+                ic.min_std,
+                ic.max_std,
+                ic.unit_std,
+                ic.check_method,
+                pd.master_period_nm
+            FROM public.tb_m_item_checks ic 
+            JOIN public.tb_m_devices de ON de.device_id = ic.device_id
+            JOIN public.tb_m_core_equipments ce ON ce.core_equipment_id = de.core_equipment_id
+            JOIN public.tb_m_machines mc ON mc.core_equipment_id = ce.core_equipment_id
+            JOIN public.tb_m_master_periods pd ON pd.master_period_id = ic.period_id
+            `
+
+            let data = req.query
+
+            let whereQuery = ''
+
+            if (data.machine_id != null) {
+                q += `WHERE machine_id = ${data.machine_id} `
+                // whereQuery += `WHERE machine_id = ${data.machine_id} `
+            }
+
+            // if (whereQuery != null) {
+            //     q += whereQuery
+            // }
+
+            const orderQuery = `ORDER BY mc.machine_id, de.device_id, pd.master_period_id`
+
+            console.log(q)
+            q += orderQuery
+
+            cons = (await queryCustom(q)).rows
+
+            response.success(res, "success to get table item check", cons);
+        } catch (error) {
+            response.failed(res, 'Error to get table item check')
+        }
+    },
+
     tableActivities: async (req, res) => {
         try {
 
