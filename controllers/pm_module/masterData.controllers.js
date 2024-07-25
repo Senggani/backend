@@ -251,6 +251,11 @@ module.exports = {
 
     itemCheckTable: async (req, res) => {
         try {
+            let data = req.query
+
+            let queryInput = [data.station_id]
+            let countQuery = 1
+
             let q = `
             SELECT 
                 mc.machine_nm,
@@ -273,25 +278,25 @@ module.exports = {
             JOIN public.tb_m_master_periods pd ON pd.master_period_id = ic.period_id
             `
 
-            let data = req.query
-
-            let whereQuery = ''
+            let whereQuery = `WHERE mc.station_id = $1`
 
             if (data.machine_id != null) {
-                q += `WHERE machine_id = ${data.machine_id} `
-                // whereQuery += `WHERE machine_id = ${data.machine_id} `
+                queryInput[countQuery]=data.machine_id
+                countQuery += 1
+                whereQuery += ` AND mc.machine_id = $${countQuery} `
             }
 
-            // if (whereQuery != null) {
-            //     q += whereQuery
-            // }
+            const orderQuery = ` ORDER BY mc.machine_id, de.device_id, pd.master_period_id`
 
-            const orderQuery = `ORDER BY mc.machine_id, de.device_id, pd.master_period_id`
-
-            console.log(q)
-            q += orderQuery
-
-            cons = (await queryCustom(q)).rows
+            q += whereQuery + orderQuery       
+            
+            if (data.page != null) {
+                queryInput[countQuery]=data.page-1
+                countQuery += 1
+                q += ` LIMIT 20 OFFSET 20*$${countQuery}`
+            }
+            
+            cons = (await queryCustom(q, queryInput)).rows
 
             response.success(res, "success to get table item check", cons);
         } catch (error) {
