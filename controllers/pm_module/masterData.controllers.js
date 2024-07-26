@@ -249,60 +249,190 @@ module.exports = {
         }
     },
 
+    getPartTable: async (req, res) => {
+        try {
+            let data = req.query
+
+            let q = `
+            SELECT
+            mc.machine_id,
+            mc.machine_nm,
+            ce.core_equipment_id,
+            ce.core_equipment_nm,
+            pt.part_id,
+            pt.part_nm
+            FROM tb_m_parts pt 
+            JOIN tb_m_machines mc ON mc.machine_id = pt.machine_id
+            JOIN tb_m_core_equipments ce ON ce.core_equipment_id = pt.core_equipment_id
+            WHERE mc.station_id = $1
+            ORDER BY mc.machine_id, pt.part_id
+            LIMIT 20 OFFSET 20*$2
+            `
+
+            cons = (await queryCustom(q, [data.station_id, (data.page - 1)])).rows
+
+            response.success(res, "success to get part table", cons);
+        } catch (error) {
+            response.failed(res, 'Error to get part table')
+        }
+    },
+
     itemCheckTable: async (req, res) => {
         try {
             let data = req.query
 
-            let queryInput = [data.station_id]
-            let countQuery = 1
-
             let q = `
             SELECT 
-                mc.machine_nm,
-                ce.core_equipment_nm,
-                de.device_nm,
-                ic.item_check_nm, 
-                ic.duration, 
-                ic.machine_condition,
-                ic.man_power,
-                ic.standard,
+                ic.item_check_nm,
+                ic.item_std,
+                ic.check_method,
                 ic.min_std,
                 ic.max_std,
                 ic.unit_std,
-                ic.check_method,
-                pd.master_period_nm
-            FROM public.tb_m_item_checks ic 
-            JOIN public.tb_m_devices de ON de.device_id = ic.device_id
-            JOIN public.tb_m_core_equipments ce ON ce.core_equipment_id = de.core_equipment_id
-            JOIN public.tb_m_machines mc ON mc.core_equipment_id = ce.core_equipment_id
-            JOIN public.tb_m_master_periods pd ON pd.master_period_id = ic.period_id
+                ic.machine_condition,
+                ic.check_duration,
+                pe.master_period_nm,
+                ic.man_power
+            FROM tb_m_item_checks ic
+            JOIN tb_m_master_periods pe ON ic.master_period_id = pe.master_period_id
+            JOIN tb_m_parts pt ON ic.part_id = pt.part_id
+            JOIN tb_m_machines mc ON mc.machine_id = ic.machine_id
+            WHERE ic.part_id = $1 -- AND mc.machine_id = $2
+            ORDER BY ic.item_check_id
+            LIMIT 20 OFFSET 20*$2
             `
+            cons = (await queryCustom(q, [data.part_id, (data.page - 1)])).rows
+            // cons = (await queryCustom(q, [data.part_id, data.machine_id, (data.page - 1)])).rows
 
-            let whereQuery = `WHERE mc.station_id = $1`
-
-            if (data.machine_id != null) {
-                queryInput[countQuery]=data.machine_id
-                countQuery += 1
-                whereQuery += ` AND mc.machine_id = $${countQuery} `
-            }
-
-            const orderQuery = ` ORDER BY mc.machine_id, de.device_id, pd.master_period_id`
-
-            q += whereQuery + orderQuery       
-            
-            if (data.page != null) {
-                queryInput[countQuery]=data.page-1
-                countQuery += 1
-                q += ` LIMIT 20 OFFSET 20*$${countQuery}`
-            }
-            
-            cons = (await queryCustom(q, queryInput)).rows
-
-            response.success(res, "success to get table item check", cons);
+            response.success(res, "success to get part table", cons);
         } catch (error) {
-            response.failed(res, 'Error to get table item check')
+            response.failed(res, 'Error to get part table')
         }
     },
+
+    addItemCheck: async (req, res) => {
+        try {
+
+            let data = req.body
+
+            console.log(data)
+
+            if (data.part_id != null) {
+                identifier = 'part_id'
+            } else if (data.machine_id != null) {
+                identifier = 'machine_id'
+            }
+
+            allPartQuery = `SELECT part_id
+            FROM public.tb_m_parts
+            WHERE core_equipment_id = 3 AND part_nm = 'ELECTRIC DEVICE';
+            `
+            let all_part_id = (await queryCustom(allPartQuery)).rows
+
+            let q = `INSERT INTO public.tb_m_item_checks (item_check_nm, check_duration, machine_condition, master_period_id, item_std, max_std, min_std, unit_std, check_method, ${identifier})
+            VALUES
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9, ${all_part_id[0].part_id});`
+
+            console.log(q)
+
+            await queryCustom(q, [data.item_check_nm, data.check_duration, data.machine_condition, data.master_period_id, data.item_std, data.max_std, data.min_std, data.unit_std, data.check_method])
+            
+            console.log('lolos first query')
+
+            for (let i = 1; i < all_part_id.length; i++) {
+                q = `INSERT INTO public.tb_m_item_checks (item_check_nm, check_duration, machine_condition, master_period_id, item_std, max_std, min_std, unit_std, check_method, ${identifier})
+                VALUES
+                ($1, $2, $3, $4, $5, $6, $7, $8, $9, ${all_part_id[i].part_id});`
+
+                await queryCustom(q, [data.item_check_nm, data.check_duration, data.machine_condition, data.master_period_id, data.item_std, data.max_std, data.min_std, data.unit_std, data.check_method])
+
+                console.log(q)
+            }
+
+
+            // console.log(q)
+
+
+
+            // console.log(all_part_id)
+
+            // let q = `INSERT INTO tb_m_item_checks 
+            // (item_check_nm, check_duration, machine_condition, master_period_id, item_std, max_std, min_std, unit_std, check_method, ${identifier})
+            // VALUES
+            // ($1, $2, $3, $4, $5, $6, $7, $8, $9, ${all_part_id[0].part_id})`
+
+            // for (let i = 1; i < all_part_id.length; i++) {
+            //     q += `, `
+            //     q += `($1, $2, $3, $4, $5, $6, $7, $8, $9, ${all_part_id[i].part_id})`
+            // }
+
+            // q += ";"
+
+            // // console.log(q)
+
+            // await queryCustom(q, [data.item_check_nm, data.check_duration, data.machine_condition, data.master_period_id, data.item_std, data.max_std, data.min_std, data.unit_std, data.check_method])
+
+            response.success(res, "success to add part table", cons);
+
+        } catch (error) {
+            response.failed(res, 'Error to add item check')
+        }
+    },
+
+    // itemCheckTable: async (req, res) => {
+    //     try {
+    //         let data = req.query
+
+    //         let queryInput = [data.station_id]
+    //         let countQuery = 1
+
+    //         let q = `
+    //         SELECT 
+    //             mc.machine_nm,
+    //             ce.core_equipment_nm,
+    //             de.device_nm,
+    //             ic.item_check_nm, 
+    //             ic.duration, 
+    //             ic.machine_condition,
+    //             ic.man_power,
+    //             ic.standard,
+    //             ic.min_std,
+    //             ic.max_std,
+    //             ic.unit_std,
+    //             ic.check_method,
+    //             pd.master_period_nm
+    //         FROM public.tb_m_item_checks_old ic 
+    //         JOIN public.tb_m_devices de ON de.device_id = ic.device_id
+    //         JOIN public.tb_m_core_equipments ce ON ce.core_equipment_id = de.core_equipment_id
+    //         JOIN public.tb_m_machines mc ON mc.core_equipment_id = ce.core_equipment_id
+    //         JOIN public.tb_m_master_periods pd ON pd.master_period_id = ic.period_id
+    //         `
+
+    //         let whereQuery = `WHERE mc.station_id = $1`
+
+    //         if (data.machine_id != null) {
+    //             queryInput[countQuery] = data.machine_id
+    //             countQuery += 1
+    //             whereQuery += ` AND mc.machine_id = $${countQuery} `
+    //         }
+
+    //         const orderQuery = ` ORDER BY mc.machine_id, de.device_id, pd.master_period_id`
+
+    //         q += whereQuery + orderQuery
+
+    //         if (data.page != null) {
+    //             queryInput[countQuery] = data.page - 1
+    //             countQuery += 1
+    //             q += ` LIMIT 20 OFFSET 20*$${countQuery}`
+    //         }
+
+    //         cons = (await queryCustom(q, queryInput)).rows
+
+    //         response.success(res, "success to get table item check", cons);
+    //     } catch (error) {
+    //         response.failed(res, 'Error to get table item check')
+    //     }
+    // },
 
     tableActivities: async (req, res) => {
         try {

@@ -12,6 +12,8 @@ const { getMachineData,
         addLine,
         addShop,
         itemCheckTable,
+        getPartTable,
+        addItemCheck
         
     } = require('../../controllers/pm_module/masterData.controllers');
 var router = express.Router();
@@ -28,6 +30,8 @@ router.post('/add-shop', addShop)
 router.put('/edit-machine', editMachine)
 router.put('/delete-machine', deleteMachine)
 router.get('/item-check-table', itemCheckTable)
+router.get('/part-table', getPartTable)
+router.post('/add-item-check', addItemCheck)
 
 router.get('/test-connection', testConnection)
 
