@@ -315,64 +315,30 @@ module.exports = {
 
             let data = req.body
 
-            console.log(data)
-
             if (data.part_id != null) {
-                identifier = 'part_id'
+
+                allPartQuery = `SELECT part_id
+                FROM public.tb_m_parts
+                WHERE core_equipment_id = 3 AND part_nm = 'ELECTRIC DEVICE';
+                `
+                let all_part_id = (await queryCustom(allPartQuery)).rows
+
+                for (let i = 0; i < all_part_id.length; i++) {
+                    let q = `INSERT INTO public.tb_m_item_checks (item_check_nm, check_duration, machine_condition, master_period_id, item_std, max_std, min_std, unit_std, check_method, part_id)
+                    VALUES
+                    ($1, $2, $3, $4, $5, $6, $7, $8, $9, ${all_part_id[i].part_id});`
+
+                    await queryCustom(q, [data.item_check_nm, data.check_duration, data.machine_condition, data.master_period_id, data.item_std, data.max_std, data.min_std, data.unit_std, data.check_method])
+                }
             } else if (data.machine_id != null) {
-                identifier = 'machine_id'
-            }
-
-            allPartQuery = `SELECT part_id
-            FROM public.tb_m_parts
-            WHERE core_equipment_id = 3 AND part_nm = 'ELECTRIC DEVICE';
-            `
-            let all_part_id = (await queryCustom(allPartQuery)).rows
-
-            let q = `INSERT INTO public.tb_m_item_checks (item_check_nm, check_duration, machine_condition, master_period_id, item_std, max_std, min_std, unit_std, check_method, ${identifier})
-            VALUES
-            ($1, $2, $3, $4, $5, $6, $7, $8, $9, ${all_part_id[0].part_id});`
-
-            console.log(q)
-
-            await queryCustom(q, [data.item_check_nm, data.check_duration, data.machine_condition, data.master_period_id, data.item_std, data.max_std, data.min_std, data.unit_std, data.check_method])
-            
-            console.log('lolos first query')
-
-            for (let i = 1; i < all_part_id.length; i++) {
-                q = `INSERT INTO public.tb_m_item_checks (item_check_nm, check_duration, machine_condition, master_period_id, item_std, max_std, min_std, unit_std, check_method, ${identifier})
+                let q = `INSERT INTO public.tb_m_item_checks (item_check_nm, check_duration, machine_condition, master_period_id, item_std, max_std, min_std, unit_std, check_method, machine_id)
                 VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8, $9, ${all_part_id[i].part_id});`
+                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10});`
 
-                await queryCustom(q, [data.item_check_nm, data.check_duration, data.machine_condition, data.master_period_id, data.item_std, data.max_std, data.min_std, data.unit_std, data.check_method])
-
-                console.log(q)
+                await queryCustom(q, [data.item_check_nm, data.check_duration, data.machine_condition, data.master_period_id, data.item_std, data.max_std, data.min_std, data.unit_std, data.check_method, data.machine_id])
             }
 
-
-            // console.log(q)
-
-
-
-            // console.log(all_part_id)
-
-            // let q = `INSERT INTO tb_m_item_checks 
-            // (item_check_nm, check_duration, machine_condition, master_period_id, item_std, max_std, min_std, unit_std, check_method, ${identifier})
-            // VALUES
-            // ($1, $2, $3, $4, $5, $6, $7, $8, $9, ${all_part_id[0].part_id})`
-
-            // for (let i = 1; i < all_part_id.length; i++) {
-            //     q += `, `
-            //     q += `($1, $2, $3, $4, $5, $6, $7, $8, $9, ${all_part_id[i].part_id})`
-            // }
-
-            // q += ";"
-
-            // // console.log(q)
-
-            // await queryCustom(q, [data.item_check_nm, data.check_duration, data.machine_condition, data.master_period_id, data.item_std, data.max_std, data.min_std, data.unit_std, data.check_method])
-
-            response.success(res, "success to add part table", cons);
+            response.success(res, "success to add item check");
 
         } catch (error) {
             response.failed(res, 'Error to add item check')
