@@ -253,6 +253,20 @@ module.exports = {
         try {
             let data = req.query
 
+            if (data.machine_id != null) {
+                queryMachine = `WHERE mc.machine_id = $1`
+                query_id = data.machine_id
+            } else {
+                queryMachine = `WHERE mc.station_id = $1`
+                query_id = data.station_id
+            }
+
+            let getTotalPage = `
+                SELECT COUNT(*)/20 FROM tb_m_parts pt
+                JOIN tb_m_machines mc ON mc.machine_id = pt.machine_id
+                ${queryMachine}
+            `            
+
             let q = `
             SELECT
             mc.machine_id,
@@ -264,15 +278,21 @@ module.exports = {
             FROM tb_m_parts pt 
             JOIN tb_m_machines mc ON mc.machine_id = pt.machine_id
             JOIN tb_m_core_equipments ce ON ce.core_equipment_id = pt.core_equipment_id
-            WHERE mc.station_id = $1
+            ${queryMachine}
             ORDER BY mc.machine_id, pt.part_id
             LIMIT 20 OFFSET 20*$2
             `
+            let meta = null
+            
+            meta = {
+                totalPage: await(queryCustom(getTotalPage, [query_id]))
+            }
 
-            cons = (await queryCustom(q, [data.station_id, (data.page - 1)])).rows
+            cons = (await queryCustom(q, [query_id, ((data?.page ? data.page : 1) - 1)])).rows
 
-            response.success(res, "success to get part table", cons);
+            response.success(res, "success to get part table", cons, meta);
         } catch (error) {
+            console.log(error)
             response.failed(res, 'Error to get part table')
         }
     },
@@ -317,23 +337,26 @@ module.exports = {
 
             if (data.part_id != null) {
 
-                allPartQuery = `SELECT part_id
-                FROM public.tb_m_parts
-                WHERE core_equipment_id = 3 AND part_nm = 'ELECTRIC DEVICE';
+                allPartQuery = `SELECT pt.part_id, mc.machine_id
+                FROM public.tb_m_parts pt
+                JOIN public.tb_m_machines mc ON mc.machine_id = pt.machine_id
+                WHERE pt.core_equipment_id = $1 AND part_nm = $2;
                 `
-                let all_part_id = (await queryCustom(allPartQuery)).rows
+                let all_part_id = (await queryCustom(allPartQuery, [data.core_equipment_id, data.part_nm])).rows
 
                 for (let i = 0; i < all_part_id.length; i++) {
-                    let q = `INSERT INTO public.tb_m_item_checks (item_check_nm, check_duration, machine_condition, master_period_id, item_std, max_std, min_std, unit_std, check_method, part_id)
+                    let q = `INSERT INTO public.tb_m_item_checks (item_check_nm, check_duration, machine_condition, master_period_id, item_std, max_std, min_std, unit_std, check_method, part_id, machine_id)
                     VALUES
-                    ($1, $2, $3, $4, $5, $6, $7, $8, $9, ${all_part_id[i].part_id});`
+                    ($1, $2, $3, $4, $5, $6, $7, $8, $9, ${all_part_id[i].part_id}, ${all_part_id[i].machine_id});`
 
                     await queryCustom(q, [data.item_check_nm, data.check_duration, data.machine_condition, data.master_period_id, data.item_std, data.max_std, data.min_std, data.unit_std, data.check_method])
                 }
+
             } else if (data.machine_id != null) {
+
                 let q = `INSERT INTO public.tb_m_item_checks (item_check_nm, check_duration, machine_condition, master_period_id, item_std, max_std, min_std, unit_std, check_method, machine_id)
                 VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10});`
+                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10);`
 
                 await queryCustom(q, [data.item_check_nm, data.check_duration, data.machine_condition, data.master_period_id, data.item_std, data.max_std, data.min_std, data.unit_std, data.check_method, data.machine_id])
             }
@@ -342,6 +365,36 @@ module.exports = {
 
         } catch (error) {
             response.failed(res, 'Error to add item check')
+        }
+    },
+
+    addPart: async (req, res) => {
+        try {
+
+            let data = req.query
+
+            let queryInput = [data.part_nm, data.machine_id]
+
+            let coreEquipmentQuery1 = ``
+            let coreEquipmentQuery2 = ``
+
+            if (data.core_equipment_id != null) {
+                coreEquipmentQuery1 = `, core_equipment`
+                coreEquipmentQuery2 = `, $3`
+                queryInput[2] = data.core_equipment_id
+            }
+
+            let q = `INSERT INTO public.tb_m_parts (part_nm, machine_id${coreEquipmentQuery1})
+                VALUES
+                ($1, $2${coreEquipmentQuery2});`
+
+            await queryCustom(q, queryInput)
+
+
+            response.success(res, "success to add part");
+
+        } catch (error) {
+            response.failed(res, 'Error to add part')
         }
     },
 

@@ -5,11 +5,12 @@ const notAllowed = (res, message) => {
     }
     res.status(401).json(response)
 }
-const success = (res, message = 'Success', data) => {
+const success = (res, message = 'Success', data, meta = null) => {
     let response = {
             status: 200,
             message: message,
-            data: data
+            data: data,
+            meta: meta
         }
         // // console.log(response);
     res.status(200).json(response)
