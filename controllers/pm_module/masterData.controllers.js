@@ -225,7 +225,67 @@ module.exports = {
 
             response.success(res, "success to edit machine");
         } catch (error) {
-            response.failed(res, 'Error to edit machine')
+            response.failed(res, "Error to edit machine")
+        }
+    },
+
+    editStation: async (req, res) => {
+        try {
+            let data = req.body
+
+            // console.log(data)
+
+            let q = `
+            UPDATE public.tb_m_stations 
+                SET station_nm = $1, updated_by = $2, updated_dt = CURRENT_TIMESTAMP::TIMESTAMP, line_id = $3
+            WHERE station_id = $4
+            `
+
+            await queryCustom(q, [data.new_name, data.updated_by, data.new_line_id, data.station_id])
+
+            response.success(res, "success to edit station");
+        } catch (error) {
+            response.failed(res, "Error to edit station")
+        }
+    },
+
+    editLine: async (req, res) => {
+        try {
+            let data = req.body
+
+            // console.log(data)
+
+            let q = `
+            UPDATE public.tb_m_lines 
+                SET line_nm = $1, updated_by = $2, updated_dt = CURRENT_TIMESTAMP::TIMESTAMP, shop_id = $3
+            WHERE line_id = $4
+            `
+
+            await queryCustom(q, [data.new_name, data.updated_by, data.new_shop_id, data.line_id])
+
+            response.success(res, "success to edit line");
+        } catch (error) {
+            response.failed(res, "Error to edit line")
+        }
+    },
+
+    editShop: async (req, res) => {
+        try {
+            let data = req.body
+
+            // console.log(data)
+
+            let q = `
+            UPDATE public.tb_m_shops 
+                SET shop_nm = $1, updated_by = $2, updated_dt = CURRENT_TIMESTAMP::TIMESTAMP, company_id = $3
+            WHERE shop_id = $4
+            `
+
+            await queryCustom(q, [data.new_name, data.updated_by, data.new_company_id, data.shop_id])
+
+            response.success(res, "success to edit line");
+        } catch (error) {
+            response.failed(res, "Error to edit line")
         }
     },
 
@@ -246,6 +306,66 @@ module.exports = {
             response.success(res, "success to delete machine");
         } catch (error) {
             response.failed(res, 'Error to delete machine')
+        }
+    },
+
+    deleteStation: async (req, res) => {
+        try {
+            let data = req.body
+
+            // console.log(data)
+
+            let q = `
+            UPDATE public.tb_m_stations 
+            SET deleted_by = $1, deleted_dt = CURRENT_TIMESTAMP::TIMESTAMP
+            WHERE station_id = $2
+            `
+
+            await queryCustom(q, [data.user_id, data.station_id])
+
+            response.success(res, "success to delete station");
+        } catch (error) {
+            response.failed(res, 'Error to delete station')
+        }
+    },
+
+    deleteLine: async (req, res) => {
+        try {
+            let data = req.body
+
+            // console.log(data)
+
+            let q = `
+            UPDATE public.tb_m_lines 
+            SET deleted_by = $1, deleted_dt = CURRENT_TIMESTAMP::TIMESTAMP
+            WHERE line_id = $2
+            `
+
+            await queryCustom(q, [data.user_id, data.line_id])
+
+            response.success(res, "success to delete line");
+        } catch (error) {
+            response.failed(res, 'Error to delete line')
+        }
+    },
+
+    deleteShop: async (req, res) => {
+        try {
+            let data = req.body
+
+            // console.log(data)
+
+            let q = `
+            UPDATE public.tb_m_shops 
+            SET deleted_by = $1, deleted_dt = CURRENT_TIMESTAMP::TIMESTAMP
+            WHERE shop_id = $2
+            `
+
+            await queryCustom(q, [data.user_id, data.shop_id])
+
+            response.success(res, "success to delete shop");
+        } catch (error) {
+            response.failed(res, 'Error to delete shop')
         }
     },
 
