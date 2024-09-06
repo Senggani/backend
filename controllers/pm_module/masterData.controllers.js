@@ -385,7 +385,7 @@ module.exports = {
                 SELECT COUNT(*)/20+1 AS total_pages FROM tb_m_parts pt
                 JOIN tb_m_machines mc ON mc.machine_id = pt.machine_id
                 ${queryMachine}
-            `            
+            `
 
             let q = `
             SELECT
@@ -404,11 +404,11 @@ module.exports = {
             `
 
             let meta = {
-                total_pages: (await(queryCustom(getTotalPage, [query_id]))).rows[0].total_pages,
+                total_pages: (await (queryCustom(getTotalPage, [query_id]))).rows[0].total_pages,
                 current_pages: data.page,
                 prev_page: (data.page == 1) ? false : true
             }
-            
+
             meta.next_page = (data.page == meta.total_pages) ? false : true
 
             cons = (await queryCustom(q, [query_id, ((data?.page ? data.page : 1) - 1)])).rows
@@ -519,6 +519,21 @@ module.exports = {
 
         } catch (error) {
             response.failed(res, 'Error to add part')
+        }
+    },
+
+    getKanbanItem: async (req, res) => {
+        try {
+
+        let q = `SELECT`
+
+        await queryCustom(q, queryInput)
+
+
+            response.success(res, "success to get table activities", activities);
+        } catch (error) {
+            // console.log(error);
+            response.failed(res, 'Error to get data')
         }
     },
 
