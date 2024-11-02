@@ -41,29 +41,29 @@ module.exports = {
     });
   },
 
-  querySoftDELETE: async (db, collection, doc) => {
-    return new Promise(async (resolve, reject) => {
+  // querySoftDELETE: async (db, collection, doc) => {
+  //   return new Promise(async (resolve, reject) => {
 
-      // await client.connect();
+  //     // await client.connect();
 
-      await client.db(db).collection(collection).updateOne(doc).then(results => {
-        resolve(results)
-        console.log(doc)
-      })
+  //     await client.db(db).collection(collection).updateOne(doc).then(results => {
+  //       resolve(results)
+  //       console.log(doc)
+  //     })
 
-    });
-  },
+  //   });
+  // },
 
-  queryDELETE: async (db, collection, doc) => {
-    return new Promise(async (resolve, reject) => {
+  // queryDELETE: async (db, collection, doc) => {
+  //   return new Promise(async (resolve, reject) => {
 
-      // await client.connect();
+  //     // await client.connect();
 
-      await client.db(db).collection(collection).updateOne(doc).then(results => {
-        resolve(results)
-        console.log(doc)
-      })
+  //     await client.db(db).collection(collection).updateOne(doc).then(results => {
+  //       resolve(results)
+  //       console.log(doc)
+  //     })
 
-    });
-  },
+  //   });
+  // },
 }
