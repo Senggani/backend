@@ -1,0 +1,29 @@
+    newMachine: async (req, res) => {
+        try {
+            const data = req.body
+
+            await client.connect();
+            const collection = client.db('location').collection('machine');
+            const last_id = await collection.find({}, {machine_id: false, _id: true}).sort({machine_id: -1}).limit(1)
+            console.log(last_id[0].machine_id+1)
+            
+            const doc = {
+                machine_id: last_id[0].machine_id+1,
+                machine_nm: data.machine_nm,
+                created_by: data.created_by,
+                created_dt: new Date(),
+                station_id: data.station_id,
+                core_equipment_id: data.core_equipment_id
+            }
+
+            const result = await collection.insertOne(doc);
+
+            response.success(res, "success adding machine data", result);
+
+        }
+        catch (error) {
+            response.failed(res, 'Error to connection')
+        } finally {
+            await client.close();
+        }
+    },
