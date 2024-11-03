@@ -27,3 +27,9 @@
             await client.close();
         }
     },
+
+when i use this code
+ let filter = { '_id': new ObjectId(data._id) };
+it gives me this warning
+The signature '(inputId: number): ObjectId' of 'ObjectId' is deprecated.ts(6387)
+bson.d.ts(1252, 8): The declaration was marked as deprecated here.

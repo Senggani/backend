@@ -34,10 +34,11 @@ const notFound = (res, message) => {
         // // console.log(response);
     res.status(404).json(response)
 }
-const failed = (res, message) => {
+const failed = (res, message, error) => {
     let response = {
             status: 400,
-            message: message
+            message: message,
+            error: error
         }
         // // console.log(response);
     res.status(400).json(response)
