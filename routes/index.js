@@ -10,8 +10,10 @@ var router = express.Router();
 
 const asset = require('./asset.routes.js')
 const ftp = require('./ftp.routes.js')
+const ts = require('./timeseries.routes.js')
 
 router.use('/asset', asset)
 router.use('/ftp', ftp)
+router.use('/ts', ts)
 
 module.exports = router

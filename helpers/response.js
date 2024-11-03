@@ -5,7 +5,7 @@ const notAllowed = (res, message) => {
     }
     res.status(401).json(response)
 }
-const success = (res, message = 'Success', data, meta = null) => {
+const success = (res, message = 'Success', data, meta) => {
     let response = {
             status: 200,
             message: message,
