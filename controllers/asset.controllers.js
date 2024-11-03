@@ -3,7 +3,7 @@
 // } = require("../helpers/query");
 
 const { machine } = require("os");
-const { ObjectId, Collection } = require('mongodb');
+const { ObjectId } = require('mongodb');
 const response = require("../helpers/response");
 const {
     queryGET,
@@ -12,18 +12,12 @@ const {
 } = require("../helpers/queryMongo");
 let timestampDay = 24 * 60 * 60 * 1000;
 
-const { MongoClient } = require('mongodb');
-const uri = "mongodb://localhost:27017/";
-const client = new MongoClient(uri);
-
 module.exports = {
     testConnection: async (req, res) => {
         try {
             response.success(res, "Successfully connected to backend")
         } catch (error) {
             response.failed(res, 'Failed to connect')
-        } finally {
-            await client.close();
         }
     },
 
@@ -51,7 +45,7 @@ module.exports = {
 
             const stationList = await queryGET('location', data.collection, filter)
 
-            response.success(res, ("Success getting " + data.collection + " data"), stationList);
+            response.success(res, (`Success getting ${data.collection} data`), stationList);
 
         }
         catch (error) {
@@ -84,7 +78,7 @@ module.exports = {
 
             const result = await queryPOST('location', data.collection, doc);
 
-            response.success(res, ("Success adding " + data.collection + " data"), result);
+            response.success(res, (`Success adding ${data.collection} data`), result);
 
         }
         catch (error) {
@@ -129,7 +123,7 @@ module.exports = {
 
             const result = await queryPUT('location', data.collection, filter, doc);
 
-            response.success(res, "success updating " + data.collection + " data", result);
+            response.success(res, `Success updating ${data.collection} data`, result);
 
         }
         catch (error) {
@@ -150,7 +144,7 @@ module.exports = {
 
             const result = await queryPUT('location', data.Collection, filter, doc);
 
-            response.success(res, "success deleting " + data.collection + " data", result);
+            response.success(res, `Success deleting ${data.collection} data`, result);
 
         }
         catch (error) {

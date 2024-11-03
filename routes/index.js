@@ -9,7 +9,9 @@ var router = express.Router();
 // router.use('/pm-module', pmModule)
 
 const asset = require('./asset.routes.js')
+const ftp = require('./ftp.routes.js')
 
 router.use('/asset', asset)
+router.use('/ftp', ftp)
 
 module.exports = router
