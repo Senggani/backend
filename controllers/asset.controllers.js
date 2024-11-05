@@ -12,6 +12,8 @@ const {
 } = require("../helpers/queryMongo");
 let timestampDay = 24 * 60 * 60 * 1000;
 
+const assetDB = 'location';
+
 module.exports = {
     testConnection: async (req, res) => {
         try {
@@ -43,7 +45,7 @@ module.exports = {
                 filter.deleted_by = { $ne: null };
             }
 
-            const stationList = await queryGET('location', data.collection, filter)
+            const stationList = await queryGET(assetDB, data.collection, filter)
 
             response.success(res, (`Success getting ${data.collection} data`), stationList);
 
@@ -76,7 +78,7 @@ module.exports = {
                 doc.plant_id = data.parent_id;
             }
 
-            const result = await queryPOST('location', data.collection, doc);
+            const result = await queryPOST(assetDB, data.collection, doc);
 
             response.success(res, (`Success adding ${data.collection} data`), result);
 
@@ -121,7 +123,7 @@ module.exports = {
                 }
             }
 
-            const result = await queryPUT('location', data.collection, filter, doc);
+            const result = await queryPUT(assetDB, data.collection, filter, doc);
 
             response.success(res, `Success updating ${data.collection} data`, result);
 
@@ -142,7 +144,7 @@ module.exports = {
                     deleted_dt: new Date()
             };
 
-            const result = await queryPUT('location', data.Collection, filter, doc);
+            const result = await queryPUT(assetDB, data.Collection, filter, doc);
 
             response.success(res, `Success deleting ${data.collection} data`, result);
 

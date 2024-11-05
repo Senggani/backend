@@ -7,62 +7,78 @@ const { ObjectId } = require('mongodb');
 module.exports = {
   queryGET: async (database, collection, filter) => {
     return new Promise(async (resolve, reject) => {
+      try {
+        await client.connect();
 
-      await client
-        .db(database)
-        .collection(collection)
-        .find(filter, {})
-        .toArray()
-        .then(results => {
-          resolve(results)
-          // console.log(results)
-        })
-        .catch((err) => {
-          reject(err);
-        });
+        await client
+          .db(database)
+          .collection(collection)
+          .find(filter, {})
+          .toArray()
+          .then(results => {
+            resolve(results)
+            // console.log(results)
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      } finally {
+        // Ensures that the client will close when you finish/error
+        await client.close();
+      }
 
     });
   },
 
   queryPOST: async (db, collection, doc) => {
     return new Promise(async (resolve, reject) => {
+      try {
+        await client.connect();
 
-      // await client.connect();
-
-      await client
-        .db(db)
-        .collection(collection)
-        .insertOne(doc)
-        .then(results => {
-          resolve(results)
-          console.log(doc)
-        })
-        .catch((err) => {
-          reject(err);
-        });
+        await client
+          .db(db)
+          .collection(collection)
+          .insertOne(doc)
+          .then(results => {
+            resolve(results)
+            console.log(doc)
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      } finally {
+        // Ensures that the client will close when you finish/error
+        await client.close();
+      }
 
     });
   },
 
   queryPUT: async (db, collection, filter, doc) => {
     return new Promise(async (resolve, reject) => {
+      try {
+        await client.connect();
 
-      // await client.connect();        
-      const updatedDocument = {
-        $set: doc
-      };
+        // await client.connect();        
+        const updatedDocument = {
+          $set: doc
+        };
 
-      await client
-        .db(db)
-        .collection(collection)
-        .updateOne(filter, updatedDocument)
-        .then(results => {
-          resolve(results)
-          console.log(filter)
-        })
-        .catch((err) => {
-          reject(err);
-        });
+        await client
+          .db(db)
+          .collection(collection)
+          .updateOne(filter, updatedDocument)
+          .then(results => {
+            resolve(results)
+            console.log(filter)
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      } finally {
+        // Ensures that the client will close when you finish/error
+        await client.close();
+      }
 
     });
   },
