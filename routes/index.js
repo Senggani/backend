@@ -13,11 +13,13 @@ const ftp = require('./ftp.routes.js')
 const ts = require('./timeseries.routes.js')
 const python = require('./pythonHandler.routes.js')
 const kanban = require('./kanban.routes.js')
+const rmq = require('./rmq.routes.js')
 
 router.use('/asset', asset)
 router.use('/ftp', ftp)
 router.use('/ts', ts)
 router.use('/py', python)
 router.use('/kanban', kanban)
+router.use('/rmq', rmq)
 
 module.exports = router

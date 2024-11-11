@@ -1,0 +1,92 @@
+// producer.js
+const amqp = require('amqplib');
+const response = require("../helpers/response");
+const {
+    queryGET,
+    queryPOST,
+    queryPUT,
+    queryJOIN,
+} = require("../helpers/queryMongo");
+let timestampDay = 24 * 60 * 60 * 1000;
+
+const { client, ObjectId } = require('../bin/database');
+
+module.exports = {
+    testConnection: async (req, res) => {
+        try {
+            response.success(res, "Successfully connected to backend")
+        } catch (error) {
+            response.failed(res, 'Failed to connect')
+        }
+    },
+
+    sendMessage: async (req, res) => {
+        try {
+            // Connect to RabbitMQ server
+            const connection = await amqp.connect('amqp://localhost:5672');  // Replace with your RabbitMQ URL if different
+            const channel = await connection.createChannel();
+
+            // Declare a queue (it will be created if it doesn't exist)
+            const queue = 'test_queue';
+            await channel.assertQueue(queue, { durable: false });
+
+            // Send a message to the queue
+            const message = {
+                itemcheck_nm: "Cek arus",
+                std: "value",
+                min: 3.3,
+                max: 3.7,
+                period: "A",
+                part_nm: "actuator",
+                part_id: "6730acfdd298ab0e6c2562a2",
+                machine_id: "673097e6d6b105194b0da276"
+            };
+
+            channel.sendToQueue(queue, Buffer.from(JSON.stringify(message)));
+
+            console.log(`Sent: ${message}`);
+
+            // Close the connection after a short delay
+            setTimeout(() => {
+                channel.close();
+                connection.close();
+            }, 500);
+
+            response.success(res, "Success produce to rmq")
+
+        } catch (error) {
+            console.error('Error in sending message:', error);
+        }
+    },
+
+    consumeMessage: async (req, res) => {
+        try {
+            // Connect to RabbitMQ server
+            const connection = await amqp.connect('amqp://localhost:5672');
+            const channel = await connection.createChannel();
+
+            let data = {};
+
+            // Declare the same queue that the producer is sending to
+            const queue = 'test_queue';
+            await channel.assertQueue(queue, { durable: false });
+
+            console.log('Waiting for messages...');
+
+            // Consume messages from the queue
+            channel.consume(queue, (msg) => {
+                if (msg) {
+                    data = JSON.parse(msg.content.toString());
+                    response.success(res, "Success consume to rmq", data);
+                    queryPOST("pm_module", "rmq_test", data);
+                    console.log(`Received: ${data.itemcheck_nm}`);
+                    channel.ack(msg);  // Acknowledge the message after processing
+                }
+            });
+
+
+        } catch (error) {
+            console.error('Error in consuming message:', error);
+        }
+    },
+}

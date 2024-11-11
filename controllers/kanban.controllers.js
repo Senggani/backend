@@ -33,8 +33,8 @@ module.exports = {
             const doc = {
                 'itemcheck_nm': 1,
                 'std': 1,
-                'min': 1, 
-                'max': 1, 
+                'min': 1,
+                'max': 1,
                 'period': 1,
                 'part_nm': `$part.part_nm`,
                 'part_id': `$part._id`,
