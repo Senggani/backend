@@ -11,13 +11,13 @@ var router = express.Router();
 const asset = require('./asset.routes.js')
 const ftp = require('./ftp.routes.js')
 const ts = require('./timeseries.routes.js')
-const upload_Image = require('./upload.routes.js')
 const python = require('./pythonHandler.routes.js')
+const kanban = require('./kanban.routes.js')
 
 router.use('/asset', asset)
 router.use('/ftp', ftp)
 router.use('/ts', ts)
-router.use('/upload', upload_Image)
 router.use('/py', python)
+router.use('/kanban', kanban)
 
 module.exports = router

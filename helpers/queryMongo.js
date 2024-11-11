@@ -41,7 +41,6 @@ module.exports = {
           .insertOne(doc)
           .then(results => {
             resolve(results)
-            console.log(doc)
           })
           .catch((err) => {
             reject(err);
@@ -70,7 +69,47 @@ module.exports = {
           .updateOne(filter, updatedDocument)
           .then(results => {
             resolve(results)
-            console.log(filter)
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      } finally {
+        // Ensures that the client will close when you finish/error
+        await client.close();
+      }
+
+    });
+  },
+
+  queryJOIN: async (db, localCollection, foreignCollection, localCol, foreignCol, doc) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+
+        // Connect the client to the server	(optional starting in v4.7)
+        await client.connect();
+        // Send a ping to confirm a successful connection
+        await client
+          .db(db)
+          .collection(localCollection)
+          .aggregate([
+            {
+              $lookup: {
+                from: foreignCollection,
+                localField: localCol,
+                foreignField: foreignCol,
+                as: foreignCollection
+              }
+            },
+            {
+              $unwind: `$${foreignCollection}`
+            },
+            {
+              $project: doc
+            }
+          ])
+          .toArray()
+          .then(results => {
+            resolve(results)
           })
           .catch((err) => {
             reject(err);
