@@ -12,7 +12,7 @@ const {
 } = require("../helpers/queryMongo");
 let timestampDay = 24 * 60 * 60 * 1000;
 
-const assetDB = 'location';
+const assetDB = 'pm_module';
 
 module.exports = {
     testConnection: async (req, res) => {
@@ -31,13 +31,15 @@ module.exports = {
 
             if (data.parent_id) {
                 if (data.collection == 'machine') {
-                    filter.station_id = data.parent_id;
+                    filter.station_id = new ObjectId(data.parent_id);
                 } else if (data.collection == 'station') {
-                    filter.line_id = data.parent_id;
+                    filter.line_id = new ObjectId(data.parent_id);
                 } else if (data.collection == 'line') {
-                    filter.shop_id = data.parent_id;
+                    filter.shop_id = new ObjectId(data.parent_id);
                 } else if (data.collection == 'shop') {
-                    filter.plant_id = data.parent_id;
+                    filter.plant_id = new ObjectId(data.parent_id);
+                } else if (data.collection == 'plant') {
+                    filter.company_id = new ObjectId(data.parent_id);
                 }
             }
 
@@ -66,16 +68,19 @@ module.exports = {
 
             if (data.collection == 'machine') {
                 doc.machine_nm = data.name;
-                doc.station_id = data.parent_id;
+                doc.station_id = new ObjectId(data.parent_id);
             } else if (data.collection == 'station') {
                 doc.station_nm = data.name;
-                doc.line_id = data.parent_id;
+                doc.line_id = new ObjectId(data.parent_id);
             } else if (data.collection == 'line') {
                 doc.line_nm = data.name;
-                doc.shop_id = data.parent_id;
+                doc.shop_id = new ObjectId(data.parent_id);
             } else if (data.collection == 'shop') {
                 doc.shop_nm = data.name;
-                doc.plant_id = data.parent_id;
+                doc.plant_id = new ObjectId(data.parent_id);
+            } else if (data.collection == 'plant') {
+                doc.plant_nm = data.name;
+                doc.company_id = new ObjectId(data.parent_id);
             }
 
             const result = await queryPOST(assetDB, data.collection, doc);
@@ -108,18 +113,22 @@ module.exports = {
                     doc.line_nm = data.name;
                 } else if (data.collection == 'shop') {
                     doc.shop_nm = data.name;
+                } else if (data.collection == 'plant') {
+                    doc.plant_nm = data.name;
                 }
             }
 
             if (data.parent_id) {
                 if (data.collection == 'machine') {
-                    doc.station_id = data.parent_id;
+                    doc.station_id = new ObjectId(data.parent_id);
                 } else if (data.collection == 'station') {
-                    doc.line_id = data.parent_id;
+                    doc.line_id = new ObjectId(data.parent_id);
                 } else if (data.collection == 'line') {
-                    doc.shop_id = data.parent_id;
+                    doc.shop_id = new ObjectId(data.parent_id);
                 } else if (data.collection == 'shop') {
-                    doc.plant_id = data.parent_id;
+                    doc.plant_id = new ObjectId(data.parent_id);
+                } else if (data.collection == 'plant') {
+                    doc.company_id = new ObjectId(data.parent_id);
                 }
             }
 
