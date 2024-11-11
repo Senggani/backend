@@ -125,60 +125,60 @@ module.exports = {
     });
   },
 
-  // queryJOIN2: async (db, localCollection, foreignCollection, localCol, foreignCol, foreignCollection2, localCol2, foreignCol2, doc, filter) => {
-  //   return new Promise(async (resolve, reject) => {
-  //     try {
+  queryJOIN2: async (db, localCollection, foreignCollection, localCol, foreignCol, foreignCollection2, localCol2, foreignCol2, doc, filter) => {
+    return new Promise(async (resolve, reject) => {
+      try {
 
-  //       // Connect the client to the server	(optional starting in v4.7)
-  //       await client.connect();
-  //       // Send a ping to confirm a successful connection
-  //       await client
-  //         .db(db)
-  //         .collection(localCollection)
-  //         .aggregate([
-  //           {
-  //             $lookup: {
-  //               from: foreignCollection,
-  //               localField: localCol,
-  //               foreignField: foreignCol,
-  //               as: foreignCollection
-  //             }
-  //           },
-  //           {
-  //             $unwind: `$${foreignCollection}`
-  //           },
-  //           {
-  //             $lookup: {
-  //               from: foreignCollection2,
-  //               localField: localCol2,
-  //               foreignField: foreignCol2,
-  //               as: foreignCollection2
-  //             }
-  //           },
-  //           {
-  //             $unwind: `$${foreignCollection2}`
-  //           },
-  //           {
-  //             $project: doc
-  //           },
-  //           {
-  //             $match: filter
-  //           }
-  //         ])
-  //         .toArray()
-  //         .then(results => {
-  //           resolve(results)
-  //         })
-  //         .catch((err) => {
-  //           reject(err);
-  //         });
-  //     } finally {
-  //       // Ensures that the client will close when you finish/error
-  //       await client.close();
-  //     }
+        // Connect the client to the server	(optional starting in v4.7)
+        await client.connect();
+        // Send a ping to confirm a successful connection
+        await client
+          .db(db)
+          .collection(localCollection)
+          .aggregate([
+            {
+              $lookup: {
+                from: foreignCollection,
+                localField: localCol,
+                foreignField: foreignCol,
+                as: foreignCollection
+              }
+            },
+            {
+              $unwind: `$${foreignCollection}`
+            },
+            {
+              $lookup: {
+                from: foreignCollection2,
+                localField: localCol2,
+                foreignField: foreignCol2,
+                as: foreignCollection2
+              }
+            },
+            {
+              $unwind: `$${foreignCollection2}`
+            },
+            {
+              $project: doc
+            },
+            {
+              $match: filter
+            }
+          ])
+          .toArray()
+          .then(results => {
+            resolve(results)
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      } finally {
+        // Ensures that the client will close when you finish/error
+        await client.close();
+      }
 
-  //   });
-  // },
+    });
+  },
 
   // querySoftDELETE: async (db, collection, doc) => {
   //   return new Promise(async (resolve, reject) => {
