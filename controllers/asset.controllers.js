@@ -12,7 +12,7 @@ const {
 } = require("../helpers/queryMongo");
 let timestampDay = 24 * 60 * 60 * 1000;
 
-const assetDB = 'location';
+const assetDB = 'pm_module';
 
 module.exports = {
     testConnection: async (req, res) => {
@@ -38,6 +38,8 @@ module.exports = {
                     filter.shop_id = data.parent_id;
                 } else if (data.collection == 'shop') {
                     filter.plant_id = data.parent_id;
+                } else if (data.collection == 'plant') {
+                    doc.company_id = data.parent_id;
                 }
             }
 
@@ -76,6 +78,9 @@ module.exports = {
             } else if (data.collection == 'shop') {
                 doc.shop_nm = data.name;
                 doc.plant_id = data.parent_id;
+            } else if (data.collection == 'plant') {
+                doc.plant_nm = data.name;
+                doc.company_id = data.parent_id;
             }
 
             const result = await queryPOST(assetDB, data.collection, doc);
@@ -108,6 +113,8 @@ module.exports = {
                     doc.line_nm = data.name;
                 } else if (data.collection == 'shop') {
                     doc.shop_nm = data.name;
+                } else if (data.collection == 'plant') {
+                    doc.plant_nm = data.name;
                 }
             }
 
@@ -120,6 +127,8 @@ module.exports = {
                     doc.shop_id = data.parent_id;
                 } else if (data.collection == 'shop') {
                     doc.plant_id = data.parent_id;
+                } else if (data.collection == 'plant') {
+                    doc.company_id = data.parent_id;
                 }
             }
 

@@ -1,2 +1,4 @@
 node_modules/
 scratchpad.txt
+script/
+.vscode/
