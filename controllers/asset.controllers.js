@@ -10,7 +10,6 @@ const {
     queryPUT,
     ObjectId,
 } = require("../helpers/queryMongo");
-let timestampDay = 24 * 60 * 60 * 1000;
 
 module.exports = {
     testConnection: async (req, res) => {

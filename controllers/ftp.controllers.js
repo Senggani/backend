@@ -4,22 +4,18 @@ const {
     queryGET,
     queryPOST,
     queryPUT,
+    ObjectId,
 } = require("../helpers/queryMongo");
-const { GridFsStorage } = require('multer-gridfs-storage');
-const uri = "mongodb://localhost:27017/";
 const multer = require("multer")
-const MongoClient = require("mongodb").MongoClient
-const GridFSBucket = require("mongodb").GridFSBucket
-const mongoClient = new MongoClient(uri)
-
-const url = "mongodb://localhost:27017/images"
+const fs = require('fs');
+const path = require('path');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './uploads');
     },
     filename: function (req, file, cb) {
-        cb(null, file.originalname);
+        cb(null, req.body.itemcheck_id + '_' + file.originalname);
     }
 });
 
@@ -36,77 +32,59 @@ module.exports = {
 
     uploadImage: async (req, res) => {
         try {
+            console.log(data)
+            if (!req.file) {
+              return res.status(400).send('No file uploaded.');
+
+            }
+            if (!req.body.itemcheck_id) {
+              return res.status(400).send('itemcheck_id is required.');
+            }
+
             const file = req.file
+
+            const doc = {   
+                created_by: data.created_by,
+                created_dt: new Date(),
+                itemcheck_id: new ObjectId(`${req.body.itemcheck_id}`),
+                filename: file.filename,
+                contentType: req.file.mimetype,
+            }
+
+            const results = await queryPOST("itemcheck_image", doc)
             
-            response.success(res, "Success uploading to backend", file)
+            response.success(res, "Success uploading to backend", results)
         } catch (error) {
             response.failed(res, 'Failed uploading to backend', error)
         }
     },
 
-    retireveImage: async (req, res) => {
+    listImage: async (req, res) => {
         try {
-            await mongoClient.connect()
 
-            const database = mongoClient.db("images")
-            const images = database.collection("photos.files")
-            const cursor = images.find({})
-            const count = await cursor.count()
-            if (count === 0) {
-                return res.status(404).send({
-                    message: "Error: No Images found",
-                })
-            }
-
-            // console.log(mongoClient.db().collection())
-
-            const allImages = []
-
-            await cursor.forEach(item => {
-                allImages.push(item)
-            })
-
-            res.send({ files: allImages })
+            const results = await queryGET("itemcheck_image")
+            
+            response.success(res, "Success getting image list", results)
         } catch (error) {
-            console.log(error)
-            res.status(500).send({
-                message: "Error Something went wrong",
-                error,
-            })
+            response.failed(res, 'Failed getting image list', error)
         }
     },
 
     downloadImage: async (req, res) => {
         try {
-            await mongoClient.connect()
+            const image_id = req.body._id;
+            const filter = {_id: new ObjectId(`${image_id}`)}
+            const data = await queryGET("itemcheck_image", filter)
 
-            const database = mongoClient.db("images")
+            const filePath = path.join(__dirname, `../uploads/${data[0].filename}`);
 
-            const imageBucket = new GridFSBucket(database, {
-                bucketName: "photos",
-            })
-
-            let downloadStream = imageBucket.openDownloadStreamByName(
-                req.body.filename
-            )
-
-            downloadStream.on("data", function (data) {
-                return res.status(200).write(data)
-            })
-
-            downloadStream.on("error", function (data) {
-                return res.status(404).send({ error: "Image not found" })
-            })
-
-            downloadStream.on("end", () => {
-                return res.end()
-            })
+            if (!fs.existsSync(filePath)) {
+              return res.status(404).send('File not found');
+            }
+          
+            res.sendFile(filePath);
         } catch (error) {
-            console.log(error)
-            res.status(500).send({
-                message: "Error Something went wrong",
-                error,
-            })
+            response.failed(res, 'Failed downloading image', error)
         }
     },
 
