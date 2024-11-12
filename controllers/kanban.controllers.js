@@ -1,5 +1,4 @@
 const { machine } = require("os");
-const { ObjectId } = require('mongodb');
 const response = require("../helpers/response");
 const {
     queryGET,
@@ -7,17 +6,16 @@ const {
     queryPUT,
     queryJOIN,
     queryJOIN2,
+    ObjectId,
 } = require("../helpers/queryMongo");
 let timestampDay = 24 * 60 * 60 * 1000;
-
-const assetDB = 'pm_module';
 
 module.exports = {
     testConnection: async (req, res) => {
         try {
             response.success(res, "Successfully connected to backend")
         } catch (error) {
-            response.failed(res, 'Failed to connect')
+            response.failed(res, 'Failed to connect', error)
         }
     },
 
@@ -44,24 +42,40 @@ module.exports = {
                 'machine_id': `$tb_r_kanban_itemcheck.machine_id`
             }
 
-            const results = await queryJOIN("pm_module", "itemcheck", "tb_r_kanban_itemcheck", "_id", "itemcheck_id", doc, filter)
+            const results = await queryJOIN("itemcheck", "tb_r_kanban_itemcheck", "_id", "itemcheck_id", doc, filter)
             response.success(res, "Success getting itemcheck", results)
 
         } catch (error) {
-            response.failed(res, 'Failed to get itemcheck')
+            response.failed(res, 'Failed to get itemcheck', error)
         }
     },
 
-    // listKanban: async (req, res) => {
-    //     try {
+    addItemCheck: async (req, res) => {
+        try {
+            const data = req.body
 
-    //         const results = await queryGET("pm_module", "kanban")
-    //         response.success(res, "Success getting itemcheck", results)
+            let doc = {
+                created_by: data.created_by,
+                created_dt: new Date(),
+                itemcheck_nm: data.itemcheck_nm,
+                std: data.std,
+                period: data.period,
+                part_id: new ObjectId(`{data.part_id}`)
+            }
 
-    //     } catch (error) {
-    //         response.failed(res, 'Failed to get itemcheck')
-    //     }
-    // },
+            if (data.min || data.max) {
+                doc.min = data.min,
+                doc.max = data.max
+            }
+
+            const results = await queryPOST("itemcheck", doc);
+
+            response.success(res, "Success getting itemcheck", results)
+
+        } catch (error) {
+            response.failed(res, 'Failed to get itemcheck', error)
+        }
+    },
 
     listKanban: async (req, res) => {
         try {
@@ -81,11 +95,11 @@ module.exports = {
                 'machine_id': `$machine._id`
             }
 
-            const results = await queryJOIN2("pm_module", "tb_r_kanban_itemcheck", "kanban", "kanban_id", "_id", "machine", "machine_id", "_id", doc, filter)
+            const results = await queryJOIN2("tb_r_kanban_itemcheck", "kanban", "kanban_id", "_id", "machine", "machine_id", "_id", doc, filter)
             response.success(res, "Success getting itemcheck", results)
 
         } catch (error) {
-            response.failed(res, 'Failed to get itemcheck')
+            response.failed(res, 'Failed to get itemcheck', error)
         }
     },
 

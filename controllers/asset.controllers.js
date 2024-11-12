@@ -3,16 +3,14 @@
 // } = require("../helpers/query");
 
 const { machine } = require("os");
-const { ObjectId } = require('mongodb');
 const response = require("../helpers/response");
 const {
     queryGET,
     queryPOST,
     queryPUT,
+    ObjectId,
 } = require("../helpers/queryMongo");
 let timestampDay = 24 * 60 * 60 * 1000;
-
-const assetDB = 'pm_module';
 
 module.exports = {
     testConnection: async (req, res) => {
@@ -47,7 +45,7 @@ module.exports = {
                 filter.deleted_by = { $ne: null };
             }
 
-            const stationList = await queryGET(assetDB, data.collection, filter)
+            const stationList = await queryGET(data.collection, filter)
 
             response.success(res, (`Success getting ${data.collection} data`), stationList);
 
@@ -83,13 +81,13 @@ module.exports = {
                 doc.company_id = new ObjectId(data.parent_id);
             }
 
-            const result = await queryPOST(assetDB, data.collection, doc);
+            const result = await queryPOST(data.collection, doc);
 
             response.success(res, (`Success adding ${data.collection} data`), result);
 
         }
         catch (error) {
-            response.failed(res, ("Failed to add data"))
+            response.failed(res, ("Failed to add data"), error)
         }
     },
 
@@ -132,7 +130,7 @@ module.exports = {
                 }
             }
 
-            const result = await queryPUT(assetDB, data.collection, filter, doc);
+            const result = await queryPUT(data.collection, filter, doc);
 
             response.success(res, `Success updating ${data.collection} data`, result);
 
@@ -153,7 +151,7 @@ module.exports = {
                     deleted_dt: new Date()
             };
 
-            const result = await queryPUT(assetDB, data.Collection, filter, doc);
+            const result = await queryPUT(data.Collection, filter, doc);
 
             response.success(res, `Success deleting ${data.collection} data`, result);
 

@@ -1,17 +1,12 @@
-// const { MongoClient } = require('mongodb');
-const { client } = require('../bin/database');
-const { ObjectId } = require('mongodb');
-// const uri = "mongodb://localhost:27017/";
-// const client = new MongoClient(uri);
+const { client , database, ObjectId } = require('../bin/database');
 
 module.exports = {
-  queryGET: async (database, collection, filter) => {
+  queryGET: async (collection, filter) => {
     return new Promise(async (resolve, reject) => {
       try {
-        await client.connect();
+        await database.connect();
 
         await client
-          .db(database)
           .collection(collection)
           .find(filter, {})
           .toArray()
@@ -24,19 +19,18 @@ module.exports = {
           });
       } finally {
         // Ensures that the client will close when you finish/error
-        await client.close();
+        await database.close();
       }
 
     });
   },
 
-  queryPOST: async (db, collection, doc) => {
+  queryPOST: async (collection, doc) => {
     return new Promise(async (resolve, reject) => {
       try {
-        await client.connect();
+        await database.connect();
 
         await client
-          .db(db)
           .collection(collection)
           .insertOne(doc)
           .then(results => {
@@ -47,16 +41,16 @@ module.exports = {
           });
       } finally {
         // Ensures that the client will close when you finish/error
-        await client.close();
+        await database.close();
       }
 
     });
   },
 
-  queryPUT: async (db, collection, filter, doc) => {
+  queryPUT: async (collection, filter, doc) => {
     return new Promise(async (resolve, reject) => {
       try {
-        await client.connect();
+        await database.connect();
 
         // await client.connect();        
         const updatedDocument = {
@@ -64,7 +58,6 @@ module.exports = {
         };
 
         await client
-          .db(db)
           .collection(collection)
           .updateOne(filter, updatedDocument)
           .then(results => {
@@ -75,21 +68,20 @@ module.exports = {
           });
       } finally {
         // Ensures that the client will close when you finish/error
-        await client.close();
+        await database.close();
       }
 
     });
   },
 
-  queryJOIN: async (db, localCollection, foreignCollection, localCol, foreignCol, doc, filter) => {
+  queryJOIN: async (localCollection, foreignCollection, localCol, foreignCol, doc, filter) => {
     return new Promise(async (resolve, reject) => {
       try {
 
         // Connect the client to the server	(optional starting in v4.7)
-        await client.connect();
+        await database.connect();
         // Send a ping to confirm a successful connection
         await client
-          .db(db)
           .collection(localCollection)
           .aggregate([
             {
@@ -119,21 +111,20 @@ module.exports = {
           });
       } finally {
         // Ensures that the client will close when you finish/error
-        await client.close();
+        await database.close();
       }
 
     });
   },
 
-  queryJOIN2: async (db, localCollection, foreignCollection, localCol, foreignCol, foreignCollection2, localCol2, foreignCol2, doc, filter) => {
+  queryJOIN2: async (localCollection, foreignCollection, localCol, foreignCol, foreignCollection2, localCol2, foreignCol2, doc, filter) => {
     return new Promise(async (resolve, reject) => {
       try {
 
         // Connect the client to the server	(optional starting in v4.7)
-        await client.connect();
+        await database.connect();
         // Send a ping to confirm a successful connection
         await client
-          .db(db)
           .collection(localCollection)
           .aggregate([
             {
@@ -174,11 +165,13 @@ module.exports = {
           });
       } finally {
         // Ensures that the client will close when you finish/error
-        await client.close();
+        await database.close();
       }
 
     });
   },
+  
+  ObjectId,
 
   // querySoftDELETE: async (db, collection, doc) => {
   //   return new Promise(async (resolve, reject) => {

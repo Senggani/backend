@@ -14,30 +14,14 @@ const mongoClient = new MongoClient(uri)
 
 const url = "mongodb://localhost:27017/images"
 
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//         cb(null, '/uploads');
-//     },
-//     filename: function (req, file, cb) {
-//         cb(null, file.originalname);
-//     }
-// });
-
-const storage = new GridFsStorage({
-    url,
-    file: (req, file) => {
-        //If it is an image, save to photos bucket
-        if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
-            return {
-                bucketName: "photos",
-                filename: `${Date.now()}_${file.originalname}`,
-            }
-        } else {
-            //Otherwise save to default bucket
-            return `${Date.now()}_${file.originalname}`
-        }
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './uploads');
     },
-})
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
 
 const upload = multer({ storage });
 
@@ -46,19 +30,18 @@ module.exports = {
         try {
             response.success(res, "Successfully connected to backend")
         } catch (error) {
-            response.failed(res, 'Failed to connect')
+            response.failed(res, 'Failed to connect', error)
         }
     },
 
     uploadImage: async (req, res) => {
-        const file = req.file
-        // Respond with the file details
-        res.send({
-            message: "Uploaded",
-            id: file.id,
-            name: file.filename,
-            contentType: file.contentType,
-        })
+        try {
+            const file = req.file
+            
+            response.success(res, "Success uploading to backend", file)
+        } catch (error) {
+            response.failed(res, 'Failed uploading to backend', error)
+        }
     },
 
     retireveImage: async (req, res) => {
