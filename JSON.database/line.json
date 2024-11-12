@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "67309789d6b105194b0da273"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:22:49.547Z"
+  },
+  "line_nm": "UBB2",
+  "shop_id": {
+    "$oid": "6730975ed6b105194b0da272"
+  }
+}]

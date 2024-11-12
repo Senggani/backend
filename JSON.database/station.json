@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "67309797d6b105194b0da274"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:23:03.642Z"
+  },
+  "station_nm": "UB2A",
+  "line_id": {
+    "$oid": "6731a2dcd298ab0e6c25634f"
+  }
+},
+{
+  "_id": {
+    "$oid": "673097d0d6b105194b0da275"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:00.234Z"
+  },
+  "station_nm": "UB2B",
+  "line_id": {
+    "$oid": "6731a2e7d298ab0e6c256350"
+  }
+}]

@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "67309743d6b105194b0da271"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:21:39.429Z"
+  },
+  "plant_nm": "KRW2",
+  "company_id": {
+    "$oid": "672728b9ec1a65843dba78b5"
+  }
+}]

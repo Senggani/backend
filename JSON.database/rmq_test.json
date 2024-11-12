@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "67320cc74fdf248f45392a39"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_nm": "actuator",
+  "part_id": "6730acfdd298ab0e6c2562a2",
+  "machine_id": "673097e6d6b105194b0da276"
+}]

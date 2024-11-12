@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "6730975ed6b105194b0da272"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:22:06.178Z"
+  },
+  "shop_nm": "WLBD",
+  "plant_id": {
+    "$oid": "67309743d6b105194b0da271"
+  }
+}]

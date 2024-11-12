@@ -1,0 +1,208 @@
+[{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562a2"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "actuator",
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562a3"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "servo",
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562a4"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "actuator",
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562a5"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "servo",
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562a6"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "actuator",
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562a7"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "servo",
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562a8"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "actuator",
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562a9"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "servo",
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562aa"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "actuator",
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562ab"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "servo",
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562ac"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "actuator",
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562ad"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "servo",
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562ae"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "actuator",
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562af"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "servo",
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562b0"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "actuator",
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730acfdd298ab0e6c2562b1"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "part_nm": "servo",
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  }
+}]

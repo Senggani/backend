@@ -1,0 +1,1504 @@
+[{
+  "_id": {
+    "$oid": "6730b6ccd298ab0e6c2562b9"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a2"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730b6ccd298ab0e6c2562ba"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a2"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bb"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a2"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bc"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a2"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bd"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a2"
+  }
+},
+{
+  "_id": {
+    "$oid": "6730b6ccd298ab0e6c2562be"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a2"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318c2bd298ab0e6c2562bf"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a3"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318c2bd298ab0e6c2562c0"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a3"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318c2bd298ab0e6c2562c1"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a3"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318c2bd298ab0e6c2562c2"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a3"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318c2bd298ab0e6c2562c3"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a3"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318c2bd298ab0e6c2562c4"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a3"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318c90d298ab0e6c2562c5"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a4"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318c90d298ab0e6c2562c6"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a4"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318c90d298ab0e6c2562c7"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a4"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318c90d298ab0e6c2562c8"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a4"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318c90d298ab0e6c2562c9"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a4"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318c90d298ab0e6c2562ca"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a4"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318cbbd298ab0e6c2562cb"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a5"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318cbbd298ab0e6c2562cc"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a5"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318cbbd298ab0e6c2562cd"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a5"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318cbbd298ab0e6c2562ce"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a5"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318cbbd298ab0e6c2562cf"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a5"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318cbbd298ab0e6c2562d0"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a5"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318cf9d298ab0e6c2562d1"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a6"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318cf9d298ab0e6c2562d2"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a6"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318cf9d298ab0e6c2562d3"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a6"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318cf9d298ab0e6c2562d4"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a6"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318cf9d298ab0e6c2562d5"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a6"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318cf9d298ab0e6c2562d6"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a6"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318d1ed298ab0e6c2562d7"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a7"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318d1ed298ab0e6c2562d8"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a7"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318d1ed298ab0e6c2562d9"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a7"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318d1ed298ab0e6c2562da"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a7"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318d1ed298ab0e6c2562db"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a7"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318d1ed298ab0e6c2562dc"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a7"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dadd298ab0e6c2562dd"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a8"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dadd298ab0e6c2562de"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a8"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dadd298ab0e6c2562df"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a8"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dadd298ab0e6c2562e0"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a8"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dadd298ab0e6c2562e1"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a8"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dadd298ab0e6c2562e2"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a8"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dd5d298ab0e6c2562e3"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a9"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dd5d298ab0e6c2562e4"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a9"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dd5d298ab0e6c2562e5"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a9"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dd5d298ab0e6c2562e6"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a9"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dd5d298ab0e6c2562e7"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a9"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dd5d298ab0e6c2562e8"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562a9"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dfbd298ab0e6c2562e9"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562aa"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dfbd298ab0e6c2562ea"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562aa"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dfbd298ab0e6c2562eb"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562aa"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dfbd298ab0e6c2562ec"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562aa"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dfbd298ab0e6c2562ed"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562aa"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318dfbd298ab0e6c2562ee"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562aa"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318e24d298ab0e6c2562ef"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ab"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318e24d298ab0e6c2562f0"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ab"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318e24d298ab0e6c2562f1"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ab"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318e24d298ab0e6c2562f2"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ab"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318e24d298ab0e6c2562f3"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ab"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318e24d298ab0e6c2562f4"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ab"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ea3d298ab0e6c2562f5"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ac"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ea3d298ab0e6c2562f6"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ac"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ea3d298ab0e6c2562f7"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ac"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ea3d298ab0e6c2562f8"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ac"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ea3d298ab0e6c2562f9"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ac"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ea3d298ab0e6c2562fa"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ac"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ebfd298ab0e6c2562fb"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ad"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ebfd298ab0e6c2562fc"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ad"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ebfd298ab0e6c2562fd"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ad"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ebfd298ab0e6c2562fe"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ad"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ebfd298ab0e6c2562ff"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ad"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ebfd298ab0e6c256300"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ad"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ee1d298ab0e6c256301"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ae"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ee1d298ab0e6c256302"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ae"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ee1d298ab0e6c256303"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ae"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ee1d298ab0e6c256304"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ae"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ee1d298ab0e6c256305"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ae"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318ee1d298ab0e6c256306"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562ae"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f07d298ab0e6c256307"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562af"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f07d298ab0e6c256308"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562af"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f07d298ab0e6c256309"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562af"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f07d298ab0e6c25630a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562af"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f08d298ab0e6c25630b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562af"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f08d298ab0e6c25630c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562af"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f2ed298ab0e6c25630d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562b0"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f2ed298ab0e6c25630e"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562b0"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f2ed298ab0e6c25630f"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562b0"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f2ed298ab0e6c256310"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562b0"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f2ed298ab0e6c256311"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562b0"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f2ed298ab0e6c256312"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562b0"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f50d298ab0e6c256313"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek arus",
+  "std": "value",
+  "min": 3.3,
+  "max": 3.7,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562b1"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f50d298ab0e6c256314"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek tegangan",
+  "std": "value",
+  "min": 25,
+  "max": 32,
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562b1"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f50d298ab0e6c256315"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Cek kebocoran",
+  "std": "ok",
+  "period": "A",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562b1"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f50d298ab0e6c256316"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "tightening",
+  "std": "ok",
+  "period": "B",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562b1"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f50d298ab0e6c256317"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Kalibrasi",
+  "std": "ok",
+  "period": "C",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562b1"
+  }
+},
+{
+  "_id": {
+    "$oid": "67318f50d298ab0e6c256318"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "itemcheck_nm": "Grease Up",
+  "std": "ok",
+  "period": "D",
+  "part_id": {
+    "$oid": "6730acfdd298ab0e6c2562b1"
+  }
+}]

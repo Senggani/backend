@@ -1,0 +1,5184 @@
+[{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25801c"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631c"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562b9"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25801d"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631c"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562b9"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25801e"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631c"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562b9"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25801f"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631c"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562b9"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258020"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631c"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562b9"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258021"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631c"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562b9"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258022"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631d"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562ba"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258023"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631d"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562ba"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258024"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631d"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562ba"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258025"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631d"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562ba"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258026"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631d"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562ba"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258027"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631d"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562ba"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258028"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631d"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562ba"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258029"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631d"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562ba"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25802a"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631e"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bb"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25802b"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631e"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bb"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25802c"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631e"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bb"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25802d"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631e"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bb"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25802e"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631e"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bb"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25802f"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631e"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bb"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258030"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631e"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bb"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258031"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631e"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bb"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258032"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631f"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bc"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258033"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631e"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bb"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258034"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631f"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bc"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258035"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631f"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bc"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258036"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631f"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bc"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258037"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631e"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bb"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258038"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631f"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bc"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258039"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631f"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bc"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25803a"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631f"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bc"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25803b"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631f"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bc"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25803c"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631f"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bc"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25803d"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631f"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bc"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25803e"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631f"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bc"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25803f"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25631f"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bc"
+  },
+  "machine_id": {
+    "$oid": "673097e6d6b105194b0da276"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258040"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256320"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bd"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258041"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256320"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bd"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258042"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256320"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bd"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258043"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256320"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bd"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258044"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256320"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bd"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258045"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256320"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562bd"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258046"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256321"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562be"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258047"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256321"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562be"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258048"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256321"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562be"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258049"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256321"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562be"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25804a"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256321"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562be"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25804b"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256321"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562be"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25804c"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256321"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562be"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25804d"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256322"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562bf"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25804e"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256321"
+  },
+  "itemcheck_id": {
+    "$oid": "6730b6ccd298ab0e6c2562be"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25804f"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256322"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562bf"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258050"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256322"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562bf"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258051"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256322"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562bf"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258052"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256322"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562bf"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258053"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256322"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562bf"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258054"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256322"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562bf"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258055"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256322"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562bf"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258056"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256323"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c0"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258057"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256322"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562bf"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258058"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256323"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c0"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258059"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256323"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c0"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25805a"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256322"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562bf"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25805b"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256323"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c0"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25805c"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256323"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c0"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25805d"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256323"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c0"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25805e"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256323"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c0"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25805f"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256323"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c0"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258060"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256323"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c0"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258061"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256323"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c0"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258062"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256323"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c0"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258063"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256323"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c0"
+  },
+  "machine_id": {
+    "$oid": "673097e8d6b105194b0da277"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258064"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256324"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c1"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258065"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256324"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c1"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258066"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256324"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c1"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258067"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256324"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c1"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258068"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256324"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c1"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258069"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256325"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c2"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25806a"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256324"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c1"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25806b"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256325"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c2"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25806c"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256325"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c2"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25806d"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256325"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c2"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25806e"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256325"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c2"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25806f"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256325"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c2"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258070"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256326"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c3"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258071"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256325"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c2"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258072"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256326"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c3"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258073"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256326"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c3"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258074"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256326"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c3"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258075"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256325"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c2"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258076"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256326"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c3"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258077"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256326"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c3"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258078"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256326"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c3"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258079"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256326"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c3"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25807a"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256326"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c3"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25807b"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256327"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c4"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25807c"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256326"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c3"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25807d"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256327"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c4"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25807e"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256327"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c4"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25807f"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256327"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c4"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258080"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256327"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c4"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258081"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256327"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c4"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258082"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256327"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c4"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258083"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256327"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c4"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258084"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256327"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c4"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258085"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256327"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c4"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258086"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256327"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c4"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258087"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256328"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c5"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258088"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256328"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c5"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258089"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256327"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c2bd298ab0e6c2562c4"
+  },
+  "machine_id": {
+    "$oid": "673097ead6b105194b0da278"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25808a"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256328"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c5"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25808b"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256328"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c5"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25808c"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256328"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c5"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25808d"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256328"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c5"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25808e"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256329"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c6"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25808f"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256329"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c6"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258090"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256329"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c6"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258091"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256329"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c6"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258092"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256329"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c6"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258093"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256329"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c6"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258094"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256329"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c6"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258095"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c7"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258096"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c7"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258097"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c7"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258098"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256329"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c6"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258099"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c7"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25809a"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c7"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25809b"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c7"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25809c"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c7"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25809d"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c7"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25809e"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c7"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25809f"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c8"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580a0"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c8"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580a1"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c7"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580a2"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c8"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580a3"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c8"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580a4"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c8"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580a5"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c8"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580a6"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c8"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580a7"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c8"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580a8"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c8"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580a9"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c8"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580aa"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c8"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580ab"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632c"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c9"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580ac"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c8"
+  },
+  "machine_id": {
+    "$oid": "673097ecd6b105194b0da279"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580ad"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632c"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c9"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580ae"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632c"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c9"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580af"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632c"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c9"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580b0"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632c"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c9"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580b1"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632d"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562ca"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580b2"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632c"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562c9"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580b3"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632d"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562ca"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580b4"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632d"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562ca"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580b5"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632d"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562ca"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580b6"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632d"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562ca"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580b7"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632d"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562ca"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580b8"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632d"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562ca"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580b9"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632d"
+  },
+  "itemcheck_id": {
+    "$oid": "67318c90d298ab0e6c2562ca"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580ba"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632e"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cb"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580bb"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632e"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cb"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580bc"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632e"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cb"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580bd"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632e"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cb"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580be"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632e"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cb"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580bf"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632e"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cb"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580c0"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632e"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cb"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580c1"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632e"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cb"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580c2"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632e"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cb"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580c3"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632f"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cc"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580c4"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632e"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cb"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580c5"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632f"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cc"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580c6"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632f"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cc"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580c7"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632f"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cc"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580c8"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632f"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cc"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580c9"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632f"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cc"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580ca"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632f"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cc"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580cb"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632f"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cc"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580cc"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632f"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cc"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580cd"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632f"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cc"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580ce"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632f"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cc"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580cf"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256330"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cd"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580d0"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256330"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cd"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580d1"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256330"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cd"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580d2"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25632f"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cc"
+  },
+  "machine_id": {
+    "$oid": "673097f7d6b105194b0da27a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580d3"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256330"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cd"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580d4"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256330"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cd"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580d5"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256331"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562ce"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580d6"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256330"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cd"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580d7"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256331"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562ce"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580d8"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256331"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562ce"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580d9"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256331"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562ce"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580da"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256331"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562ce"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580db"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256331"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562ce"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580dc"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256331"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562ce"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580dd"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256331"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562ce"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580de"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256332"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cf"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580df"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256332"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cf"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580e0"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256332"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cf"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580e1"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256332"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cf"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580e2"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256332"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cf"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580e3"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256332"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cf"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580e4"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256332"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cf"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580e5"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256332"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cf"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580e6"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256332"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cf"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580e7"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256333"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562d0"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580e8"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256332"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562cf"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580e9"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256333"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562d0"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580ea"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256333"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562d0"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580eb"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256333"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562d0"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580ec"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256333"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562d0"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580ed"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256333"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562d0"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580ee"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256333"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562d0"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580ef"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256333"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562d0"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580f0"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256333"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562d0"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580f1"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256333"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562d0"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580f2"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256333"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562d0"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580f3"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256334"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d1"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580f4"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256333"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cbbd298ab0e6c2562d0"
+  },
+  "machine_id": {
+    "$oid": "673097f9d6b105194b0da27b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580f5"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256334"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d1"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580f6"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256334"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d1"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580f7"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256334"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d1"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580f8"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256334"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d1"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580f9"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256335"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d2"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580fa"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256335"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d2"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580fb"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256334"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d1"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580fc"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256335"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d2"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580fd"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256335"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d2"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580fe"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256335"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d2"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c2580ff"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256335"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d2"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258100"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256335"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d2"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258101"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256335"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d2"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258102"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256336"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d3"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258103"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256336"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d3"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258104"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256336"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d3"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258105"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256336"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d3"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258106"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256336"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d3"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258107"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256336"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d3"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258108"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256336"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d3"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258109"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256336"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d3"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25810a"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256336"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d3"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25810b"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256336"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d3"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25810c"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256337"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d4"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25810d"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256337"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d4"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25810e"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256337"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d4"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25810f"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256337"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d4"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258110"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256337"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d4"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258111"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256337"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d4"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258112"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256337"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d4"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258113"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256337"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d4"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258114"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256337"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d4"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258115"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256337"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d4"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258116"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256337"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d4"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258117"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256338"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d5"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258118"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256337"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d4"
+  },
+  "machine_id": {
+    "$oid": "673097fbd6b105194b0da27c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258119"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256338"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d5"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25811a"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256338"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d5"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25811b"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256338"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d5"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25811c"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256338"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d5"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25811d"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256338"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d5"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25811e"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256339"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d6"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25811f"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256339"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d6"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258120"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256339"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d6"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258121"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256339"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d6"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258122"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256339"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d6"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258123"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256339"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d6"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258124"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256339"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d6"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258125"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c256339"
+  },
+  "itemcheck_id": {
+    "$oid": "67318cf9d298ab0e6c2562d6"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258126"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d7"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258127"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d7"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258128"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d7"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258129"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d7"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25812a"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d7"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25812b"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d7"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25812c"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d7"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25812d"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d7"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25812e"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d7"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25812f"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d8"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258130"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d8"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258131"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d8"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258132"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d8"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258133"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d8"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258134"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633a"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d7"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258135"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d8"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258136"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d8"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258137"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d8"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258138"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d8"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c258139"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d8"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25813a"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d8"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67323e1fd298ab0e6c25813b"
+  },
+  "kanban_id": {
+    "$oid": "6731943cd298ab0e6c25633b"
+  },
+  "itemcheck_id": {
+    "$oid": "67318d1ed298ab0e6c2562d8"
+  },
+  "machine_id": {
+    "$oid": "673097fcd6b105194b0da27d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:22.415Z"
+  }
+}]

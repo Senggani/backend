@@ -1,0 +1,544 @@
+[{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c25631c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A1A",
+  "period": "A",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c25631d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A1B",
+  "period": "B",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c25631e"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A1C",
+  "period": "C",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c25631f"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A1D",
+  "period": "D",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256320"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A2A",
+  "period": "A",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256321"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A2B",
+  "period": "B",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256322"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A2C",
+  "period": "C",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256323"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A2D",
+  "period": "D",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256324"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A3A",
+  "period": "A",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256325"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A3B",
+  "period": "B",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256326"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A3C",
+  "period": "C",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256327"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A3D",
+  "period": "D",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256328"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A4A",
+  "period": "A",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256329"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A2B",
+  "period": "B",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c25632a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A3C",
+  "period": "C",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c25632b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2A4D",
+  "period": "D",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c25632c"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B1A",
+  "period": "A",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c25632d"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B1B",
+  "period": "B",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c25632e"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B1C",
+  "period": "C",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c25632f"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B1D",
+  "period": "D",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256330"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B2A",
+  "period": "A",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256331"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B2B",
+  "period": "B",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256332"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B2C",
+  "period": "C",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256333"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B2D",
+  "period": "D",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256334"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B3A",
+  "period": "A",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256335"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B3B",
+  "period": "B",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256336"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B3C",
+  "period": "C",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256337"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B3D",
+  "period": "D",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256338"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B4A",
+  "period": "A",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c256339"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B4B",
+  "period": "B",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c25633a"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B4C",
+  "period": "C",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6731943cd298ab0e6c25633b"
+  },
+  "created_by": "SYSTEM",
+  "created_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  },
+  "kanban_nm": "U2B4D",
+  "period": "D",
+  "last_check_dt": {
+    "$date": "2024-10-10T11:24:44.681Z"
+  },
+  "next_check_dt": {
+    "$date": "2024-11-10T11:24:44.681Z"
+  }
+}]
