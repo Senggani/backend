@@ -11,6 +11,32 @@ let timestampDay = 24 * 60 * 60 * 1000;
 
 const { client, ObjectId } = require('../bin/database');
 
+
+async function produceMessageOpenCV(msg) {
+    try {
+        // Connect to RabbitMQ server
+        const connection = await amqp.connect('amqp://localhost:5672');  // Replace with your RabbitMQ URL if different
+        const channel = await connection.createChannel();
+
+        // Declare a queue (it will be created if it doesn't exist)
+        const queue = 'opencv_retrieve';
+        await channel.assertQueue(queue, { durable: false });
+
+        channel.sendToQueue(queue, Buffer.from(msg));
+
+        console.log(`Sent: ${msg}`);
+
+        // Close the connection after a short delay
+        setTimeout(() => {
+            channel.close();
+            connection.close();
+        }, 500);
+
+    } catch (error) {
+        console.error('Error in sending message:', error);
+    }
+}
+
 module.exports = {
     testConnection: async (req, res) => {
         try {
@@ -80,6 +106,38 @@ module.exports = {
                     response.success(res, "Success consume to rmq", data);
                     queryPOST("pm_module", "rmq_test", data);
                     console.log(`Received: ${data.itemcheck_nm}`);
+                    channel.ack(msg);  // Acknowledge the message after processing
+                }
+            });
+
+
+        } catch (error) {
+            console.error('Error in consuming message:', error);
+        }
+    },
+
+    consumeMessageOpenCV: async (req, res) => {
+        try {
+            // Connect to RabbitMQ server
+            const connection = await amqp.connect('amqp://localhost:5672');
+            const channel = await connection.createChannel();
+
+            let data = {};
+
+            // Declare the same queue that the producer is sending to
+            const queue = 'opencv_status';
+            await channel.assertQueue(queue, { durable: false });
+
+            console.log('Waiting for messages...');
+
+            // Consume messages from the queue
+            channel.consume(queue, (msg) => {
+                if (msg) {
+                    data = msg.content.toString();
+                    console.log(data);
+                    produceMessageOpenCV(data);
+                    // response.success(res, "Success consume to rmq", data);
+                    console.log("Success consume to rmq");
                     channel.ack(msg);  // Acknowledge the message after processing
                 }
             });

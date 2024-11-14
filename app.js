@@ -6,6 +6,7 @@ var logger = require("morgan");
 const cors = require("cors");
 
 var routerV1 = require("./routes/index");
+const { consumeMessageOpenCV } = require("./controllers/rmq.controllers");
 
 // const { database } = require("./config/database");
 
@@ -28,6 +29,8 @@ app.use("/", routerV1);
 app.get("/", (req, res) => {
     res.send("connected");
 });
+
+consumeMessageOpenCV();
 
 module.exports = app; 
 
