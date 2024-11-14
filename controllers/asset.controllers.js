@@ -37,6 +37,8 @@ module.exports = {
                     filter.plant_id = new ObjectId(data.parent_id);
                 } else if (data.collection == 'plant') {
                     filter.company_id = new ObjectId(data.parent_id);
+                } else if (data.collection == 'part') {
+                    filter.machine_id = new ObjectId(data.parent_id);
                 }
             }
 
@@ -78,6 +80,9 @@ module.exports = {
             } else if (data.collection == 'plant') {
                 doc.plant_nm = data.name;
                 doc.company_id = new ObjectId(data.parent_id);
+            } else if (data.collection == 'part') {
+                doc.part_nm = data.name;
+                doc.machine_id = new ObjectId(data.parent_id);
             }
 
             const result = await queryPOST(data.collection, doc);
@@ -112,6 +117,8 @@ module.exports = {
                     doc.shop_nm = data.name;
                 } else if (data.collection == 'plant') {
                     doc.plant_nm = data.name;
+                } else if (data.collection == 'part') {
+                    doc.part_nm = data.name;
                 }
             }
 
@@ -126,6 +133,8 @@ module.exports = {
                     doc.plant_id = new ObjectId(data.parent_id);
                 } else if (data.collection == 'plant') {
                     doc.company_id = new ObjectId(data.parent_id);
+                } else if (data.collection == 'part') {
+                    doc.machine_id = new ObjectId(data.parent_id);
                 }
             }
 
