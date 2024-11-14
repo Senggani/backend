@@ -12,14 +12,25 @@ const path = require('path');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './uploads');
+        cb(null, './uploads/' + req.body.source);
     },
     filename: function (req, file, cb) {
-        cb(null, req.body.rmq + '_' + file.originalname);
+        cb(null, req.body.name + '_' + file.originalname);
     }
 });
 
 const upload = multer({ storage });
+
+// const storage_opencv = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         cb(null, './uploads');
+//     },
+//     filename: function (req, file, cb) {
+//         cb(null, (req.body.opencv + '_' + file.originalname));
+//     }
+// });
+
+// const upload_opencv = multer({ storage_opencv });
 
 module.exports = {
     testConnection: async (req, res) => {
@@ -32,49 +43,73 @@ module.exports = {
 
     uploadImage: async (req, res) => {
         try {
-            console.log(req.body)
+            const data = req.body
 
             if (!req.file) {
                 return res.status(400).send('No file uploaded.');
-
             }
 
-            let results = {}
+            const file = req.file
 
+            let doc;
             if (req.body.itemcheck_id) {
-
-                const file = req.file
-
-                const doc = {
+                doc = {
                     created_by: data.created_by,
                     created_dt: new Date(),
                     itemcheck_id: new ObjectId(`${req.body.itemcheck_id}`),
                     filename: file.filename,
                     contentType: req.file.mimetype,
                 }
-
-                results = await queryPOST("itemcheck_image", doc)
-            } else if (req.body.rmq) {
-
-                const file = req.file
-
-                const doc = {
-                    created_by: "RabbitMQ",
+            }
+            if (req.body.source == 'opencv') {
+                doc = {
+                    created_by: data.created_by,
                     created_dt: new Date(),
-                    filename: `${Date()}_${file.filename})`,
+                    filename: file.filename,
                     contentType: req.file.mimetype,
                 }
-                console.log(doc.filename)
-
-                results = await queryPOST("opencv_image", doc)
-
             }
+
+            const results = await queryPOST("itemcheck_image", doc)
 
             response.success(res, "Success uploading to backend", results)
         } catch (error) {
             response.failed(res, 'Failed uploading to backend', error)
         }
     },
+
+    // uploadOpencv: async (req, res) => {
+    //     try {
+    //         console.log(req.body)
+
+    //         if (!req.file) {
+    //             return res.status(400).send('No file uploaded.');
+
+    //         }
+
+    //         let results = {}
+
+    //         if (!req.body.opencv) {
+    //             return res.status(400).send('Need opencv.');
+    //         }
+
+    //         const file = req.file
+
+    //         const doc = {
+    //             created_by: data.created_by,
+    //             created_dt: new Date(),
+    //             itemcheck_id: new ObjectId(`${req.body.itemcheck_id}`),
+    //             filename: file.filename,
+    //             contentType: req.file.mimetype,
+    //         }
+
+    //         results = await queryPOST("opencv_image", doc)
+
+    //         response.success(res, "Success uploading to backend", results)
+    //     } catch (error) {
+    //         response.failed(res, 'Failed uploading to backend', error)
+    //     }
+    // },
 
     listImage: async (req, res) => {
         try {
@@ -106,4 +141,5 @@ module.exports = {
     },
 
     upload,
+    // upload_opencv,
 }
