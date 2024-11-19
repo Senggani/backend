@@ -172,6 +172,7 @@ module.exports = {
   },
   
   ObjectId,
+  client,
 
   // querySoftDELETE: async (db, collection, doc) => {
   //   return new Promise(async (resolve, reject) => {

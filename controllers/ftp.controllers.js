@@ -6,9 +6,9 @@ const {
     queryPUT,
     ObjectId,
 } = require("../helpers/queryMongo");
+const path = require('path');
 const multer = require("multer")
 const fs = require('fs');
-const path = require('path');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -20,17 +20,6 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-
-// const storage_opencv = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//         cb(null, './uploads');
-//     },
-//     filename: function (req, file, cb) {
-//         cb(null, (req.body.opencv + '_' + file.originalname));
-//     }
-// });
-
-// const upload_opencv = multer({ storage_opencv });
 
 module.exports = {
     testConnection: async (req, res) => {
@@ -70,46 +59,13 @@ module.exports = {
                 }
             }
 
-            const results = await queryPOST("itemcheck_image", doc)
+            const results = await queryPOST("opencv_image", doc)
 
             response.success(res, "Success uploading to backend", results)
         } catch (error) {
             response.failed(res, 'Failed uploading to backend', error)
         }
     },
-
-    // uploadOpencv: async (req, res) => {
-    //     try {
-    //         console.log(req.body)
-
-    //         if (!req.file) {
-    //             return res.status(400).send('No file uploaded.');
-
-    //         }
-
-    //         let results = {}
-
-    //         if (!req.body.opencv) {
-    //             return res.status(400).send('Need opencv.');
-    //         }
-
-    //         const file = req.file
-
-    //         const doc = {
-    //             created_by: data.created_by,
-    //             created_dt: new Date(),
-    //             itemcheck_id: new ObjectId(`${req.body.itemcheck_id}`),
-    //             filename: file.filename,
-    //             contentType: req.file.mimetype,
-    //         }
-
-    //         results = await queryPOST("opencv_image", doc)
-
-    //         response.success(res, "Success uploading to backend", results)
-    //     } catch (error) {
-    //         response.failed(res, 'Failed uploading to backend', error)
-    //     }
-    // },
 
     listImage: async (req, res) => {
         try {
