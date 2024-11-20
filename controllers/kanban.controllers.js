@@ -8,8 +8,21 @@ const {
   queryJOIN2,
 } = require("../helpers/queryMongo");
 const { database, ObjectId, client } = require("../bin/database");
-
 const multer = require("multer")
+const Tesseract = require('tesseract.js');
+// const { console } = require("inspector");
+
+// Tesseract.recognize(
+//   imagePath,                // Path to the image you want to process
+//   'eng',                     // Language code (e.g., 'eng' for English)
+//   {
+//     logger: (m) => console.log(m)  // Optional logger to track progress
+//   }
+// ).then(({ data: { text } }) => {
+//   console.log('Recognized text:', text);  // Output the recognized text
+// }).catch((err) => {
+//   console.error('Error:', err);
+// });
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -25,8 +38,8 @@ const upload = multer({ storage });
 module.exports = {
   testConnection: async (req, res) => {
     try {
-      console.log(req)
-      response.success(res, "Successfully connected to backend", req.form)
+      console.log(1)
+      response.success(res, "Successfully connected to backend", req.body)
     } catch (error) {
       response.failed(res, 'Failed to connect', error)
     }
@@ -104,7 +117,7 @@ module.exports = {
     }
   },
 
-  addItemCheck: async (req, res) => {
+  addItemcheck: async (req, res) => {
     try {
       const data = req.body
 
@@ -187,7 +200,6 @@ module.exports = {
         filter.machine_id = new ObjectId(`${req.body.machine_id}`)
       }
 
-
       const doc = {
         'period': 1,
         'kanban_nm': 1,
@@ -209,17 +221,36 @@ module.exports = {
       const data = req.body
       const file = req.files
 
-      let itemcheck = {}
-
-      console.log(data.itemcheck_id[0])
+      let itemcheck = []
 
       for (let index = 0; index < file.length; index++) {
         itemcheck[index] = {
           itemcheck_id: new ObjectId(data.itemcheck_id[index]),
-          value: parseFloat(data.value[index]),
           filename: file[index].filename,
           contentType: file[index].mimetype,
         }
+
+        let check_value = await queryGET("itemcheck", { _id: new ObjectId(data.itemcheck_id[index]) })
+
+        if (check_value[0].std == 'value') {
+
+          imagePath = './uploads/itemcheck/' + file[index].filename;
+
+          await Tesseract.recognize(
+            imagePath,
+            'eng',
+          ).then(({ data: { text } }) => {
+            recognizedText = text;
+          }).catch((err) => {
+            console.error('Error:', err);
+          });
+
+          itemcheck[index].value = parseFloat(data.value[index]);
+          itemcheck[index].ocr_value = recognizedText;
+        } else {
+          itemcheck[index].value = data.value[index];
+        }
+
       }
 
       let doc = {
@@ -239,6 +270,47 @@ module.exports = {
 
     } catch (error) {
       response.failed(res, 'Failed to connect', error)
+    }
+  },
+
+  historyKanban: async (req, res) => {
+    try {
+      let filter = {};
+      // console.log(req.query);
+
+      if (req.query.id) {
+        filter.kanban_id = new ObjectId(req.query.id);
+      }
+
+      const results = await queryGET("kanban_history", filter)
+      response.success(res, "Success getting kanban history", results)
+    } catch (error) {
+      response.failed(res, 'Failed to get kanban history', error)
+    }
+  },
+
+  historyItemcheck: async (req, res) => {
+    try {
+      const filter = { 'itemcheck.itemcheck_id': new ObjectId(req.query.id) };
+
+      const projection = {
+        'itemcheck.$': 1
+      };
+
+      await database.connect();
+
+      let results = [];
+
+      const itemcheck = await client.collection("kanban_history").find(filter, { projection }).toArray()
+      itemcheck.forEach(doc => {
+        results.push(doc.itemcheck[0])
+      });
+
+      response.success(res, "Success getting itemcheck history", (results));
+
+      await database.close()
+    } catch (error) {
+      response.failed(res, 'Failed to get itemcheck history', error)
     }
   },
 
@@ -284,3 +356,11 @@ const cursor = coll.find(filter, { projection });
 const result = await cursor.toArray();
 await client.close();
  */
+
+/*   
+   \ \
+   ( o>
+\\_//)
+\_/_)
+_|_
+*/
