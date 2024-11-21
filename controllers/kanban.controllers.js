@@ -9,20 +9,9 @@ const {
 } = require("../helpers/queryMongo");
 const { database, ObjectId, client } = require("../bin/database");
 const multer = require("multer")
+const path = require('path');
+const fs = require('fs');
 const Tesseract = require('tesseract.js');
-// const { console } = require("inspector");
-
-// Tesseract.recognize(
-//   imagePath,                // Path to the image you want to process
-//   'eng',                     // Language code (e.g., 'eng' for English)
-//   {
-//     logger: (m) => console.log(m)  // Optional logger to track progress
-//   }
-// ).then(({ data: { text } }) => {
-//   console.log('Recognized text:', text);  // Output the recognized text
-// }).catch((err) => {
-//   console.error('Error:', err);
-// });
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -276,14 +265,36 @@ module.exports = {
   historyKanban: async (req, res) => {
     try {
       let filter = {};
-      // console.log(req.query);
+      let results = {};
+      let filePath;
 
-      if (req.query.id) {
-        filter.kanban_id = new ObjectId(req.query.id);
+      if (req.query.kanban_id) {
+
+        filter.kanban_id = new ObjectId(req.query.kanban_id);
+        const results = await queryGET("kanban_history", filter);
+        response.success(res, "Success getting kanban history", results);
+
+      } else if (req.query.id) {
+
+        filter._id = new ObjectId(req.query.id);
+        const itemcheck = await queryGET("kanban_history", filter);
+        itemcheck.forEach(doc => {
+          results = doc;
+        });
+
+        results.itemcheck.forEach(doc => {
+          filePath = path.join(__dirname, `../uploads/itemcheck/${doc.filename}`);
+          res.sendFile(filePath);
+          // Kalau saat integrasi gagal, pakai api download di ftp dengan input filename diatas OK
+        })
+
+        response.success(res, "Success getting kanban history", results);
+
+      } else {
+        const results = await queryGET("kanban_history", filter);
+        response.success(res, "Success getting kanban history", results);
       }
 
-      const results = await queryGET("kanban_history", filter)
-      response.success(res, "Success getting kanban history", results)
     } catch (error) {
       response.failed(res, 'Failed to get kanban history', error)
     }
@@ -314,53 +325,13 @@ module.exports = {
     }
   },
 
-  // submitItemcheck: async (req, res) => {
-  //   try {
-  //     const data = req.body
-
-  //     let doc = {
-  //       itemcheck_id: data.itemcheck_id,
-  //       kanban_history_id: data.kanban_history_id,
-  //       created_by: data.created_by,
-  //       created_dt: new Date(),
-  //       itemcheck_value: data.itemcheck_value,
-  //       filename: file.filename,
-  //       contentType: req.file.mimetype,
-  //     }
-
-  //     const results = await queryPOST("itemcheck_history", doc);
-
-  //     response.success(res, "Success to submit itemcheck backend", results)
-
-  //   } catch (error) {
-  //     response.failed(res, 'Failed to connect', error)
-  //   }
-  // },
-
   upload,
 }
-
-/* 
-Filter for specific index in array 
-const filter = {
-  'itemcheck.itemcheck_id': new ObjectId('6730b6ccd298ab0e6c2562b5')
-};
-const projection = {
-  'itemcheck.$': 1
-};
-const client = await MongoClient.connect(
-  'mongodb://localhost:27017/'
-);
-const coll = client.db('test').collection('history_test');
-const cursor = coll.find(filter, { projection });
-const result = await cursor.toArray();
-await client.close();
- */
 
 /*   
    \ \
    ( o>
-\\_//)
-\_/_)
-_|_
+\\_//\
+ \_/_/
+  _|_
 */
