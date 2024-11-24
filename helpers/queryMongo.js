@@ -1,4 +1,4 @@
-const { client , database, ObjectId } = require('../bin/database');
+const { client, database, ObjectId } = require('../bin/database');
 
 module.exports = {
   queryGET: async (collection, filter) => {
@@ -19,7 +19,7 @@ module.exports = {
           });
       } finally {
         // Ensures that the client will close when you finish/error
-        // await database.close();
+        await database.close();
       }
 
     });
@@ -51,8 +51,7 @@ module.exports = {
     return new Promise(async (resolve, reject) => {
       try {
         await database.connect();
-
-        // await client.connect();        
+            
         const updatedDocument = {
           $set: doc
         };
@@ -67,7 +66,6 @@ module.exports = {
             reject(err);
           });
       } finally {
-        // Ensures that the client will close when you finish/error
         await database.close();
       }
 
@@ -170,7 +168,7 @@ module.exports = {
 
     });
   },
-  
+
   ObjectId,
   client,
 

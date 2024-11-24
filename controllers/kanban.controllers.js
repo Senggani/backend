@@ -28,15 +28,113 @@ module.exports = {
   testConnection: async (req, res) => {
     try {
       console.log(1)
-      response.success(res, "Successfully connected to backend", req.body)
+      response.success(res, `Successfully connected to backend`, req.body)
     } catch (error) {
-      response.failed(res, 'Failed to connect', error)
+      response.failed(res, `Failed to connect`, error)
+    }
+  },
+
+  addItemcheck: async (req, res) => {
+    try {
+      const data = req.body
+
+      let doc = {
+        created_by: data.created_by,
+        created_dt: new Date(),
+        itemcheck_nm: data.itemcheck_nm,
+        std: data.std,
+        period: data.period,
+        part_id: new ObjectId(`${data.part_id}`)
+      }
+
+      if (data.min || data.max) {
+        doc.min = data.min;
+        doc.max = data.max
+      }
+
+      const result_item = await queryPOST("itemcheck", doc);
+
+      const part_data = await queryGET("part", { _id: new ObjectId(`${data.part_id}`) })
+
+
+      let filter = { machine_id: part_data[0].machine_id };
+
+      if (data.period == "A") {
+        filter.period = "A"
+      }
+      if (data.period == "B") {
+        filter.$or = [
+          { period: "A" },
+          { period: "B" }
+        ]
+      }
+      if (data.period == "C") {
+        filter.$or = [
+          { period: "A" },
+          { period: "B" },
+          { period: "C" }
+        ]
+      }
+      if (data.period == "D") {
+        filter.$or = [
+          { period: "A" },
+          { period: "B" },
+          { period: "C" },
+          { period: "D" }
+        ]
+      }
+
+      await database.connect();
+
+      let results = await client.collection('kanban').updateMany(filter, { $push: { 'itemcheck_id': result_item.insertedId } })
+
+      response.success(res, "Success adding itemcheck", { results, result_item })
+
+    } catch (error) {
+      response.failed(res, 'Failed to add itemcheck', error)
+    } finally {
+      await database.close();
+    }
+  },
+
+  editItemcheck: async (req, res) => {
+    try {
+      let filter = { deleted_by: null, _id: new ObjectId(req.query.id) };
+      const data = req.body
+
+      let doc = {
+        updated_by: data.created_by,
+        updated_dt: new Date(),
+      }
+      if (data.itemcheck_nm) {
+        doc.itemcheck_nm = data.itemcheck_nm
+      }
+      if (data.std) {
+        doc.std = data.std
+      }
+      if (data.part_id) {
+        doc.part_id = new ObjectId(`${data.part_id}`)
+      }
+      if (data.min) {
+        doc.min = data.min;
+      }
+      if (data.max) {
+        doc.max = data.max;
+      }
+
+      const results = await queryPUT("itemcheck", filter, doc)
+
+      response.success(res, `Success editting itemcheck`, results)
+
+    } catch (error) {
+      response.failed(res, `Failed to edit itemcheck`, error)
     }
   },
 
   listItemcheck: async (req, res) => {
     try {
-      const filter = {};
+
+      let filter = { deleted_by: null };
       let itemcheck = {};
 
       if (req.body.kanban_id) {
@@ -106,75 +204,63 @@ module.exports = {
     }
   },
 
-  addItemcheck: async (req, res) => {
+  deleteItemcheck: async (req, res) => {
     try {
+      await database.connect();
       const data = req.body
 
+      let filter_itemcheck = { deleted_by: null, _id: new ObjectId(req.query.id) };
+      const result_item = await client.collection("itemcheck").findOne(filter_itemcheck);
+
       let doc = {
-        created_by: data.created_by,
-        created_dt: new Date(),
-        itemcheck_nm: data.itemcheck_nm,
-        std: data.std,
-        period: data.period,
-        part_id: new ObjectId(`${data.part_id}`)
+        deleted_by: data.user_id,
+        deleted_dt: new Date(),
       }
 
-      if (data.min || data.max) {
-        doc.min = data.min;
-        doc.max = data.max
+      const part_data = await client.collection("part").findOne({ _id: result_item.part_id });
+      let filter = { deleted_by: null, machine_id: part_data.machine_id };
+
+      console.log(part_data)
+      const updatedDocument = {
+        $set: doc
+      };
+
+      const delete_item = await client
+        .collection("itemcheck")
+        .updateOne(filter_itemcheck, updatedDocument)
+        .catch((err) => {
+          reject(err);
+        });
+
+      if (result_item.period == "A") {
+        filter.period = "A"
+      }
+      if (result_item.period == "B") {
+        filter.$or = [
+          { period: "A" },
+          { period: "B" }
+        ]
+      }
+      if (result_item.period == "C") {
+        filter.$or = [
+          { period: "A" },
+          { period: "B" },
+          { period: "C" }
+        ]
+      }
+      if (result_item.period == "D") {
+        filter.$or = [
+          { period: "A" },
+          { period: "B" },
+          { period: "C" },
+          { period: "D" }
+        ]
       }
 
-      const result_item = await queryPOST("itemcheck", doc);
-
-      const part_data = await queryGET("part", { _id: new ObjectId(`${data.part_id}`) })
-
-      let filter = {}
-
-      if (data.period == "A") {
-        filter = {
-          machine_id: part_data[0].machine_id,
-          period: "A"
-        }
-      }
-      if (data.period == "B") {
-        filter = {
-          machine_id: part_data[0].machine_id,
-          $or: [
-            { period: "A" },
-            { period: "B" }
-          ]
-        }
-      }
-      if (data.period == "C") {
-        filter = {
-          machine_id: part_data[0].machine_id,
-          $or: [
-            { period: "A" },
-            { period: "B" },
-            { period: "C" }
-          ]
-        }
-      }
-      if (data.period == "D") {
-        filter = {
-          machine_id: part_data[0].machine_id,
-          $or: [
-            { period: "A" },
-            { period: "B" },
-            { period: "C" },
-            { period: "D" }
-          ]
-        }
-      }
-
-      await database.connect();
-
-      let results = await client.collection('kanban').updateMany(filter, { $push: { 'itemcheck_id': result_item.insertedId } })
-
-      response.success(res, "Success getting itemcheck", results)
-
+      let results = await client.collection('kanban').updateMany(filter, { $pull: { 'itemcheck_id': result_item._id } })
+      response.success(res, `Success deleting itemcheck`, { delete_item, results })
     } catch (error) {
-      response.failed(res, 'Failed to get itemcheck', error)
+      response.failed(res, `Failed to delete itemcheck`, error)
     } finally {
       await database.close();
     }
@@ -183,7 +269,7 @@ module.exports = {
   listKanban: async (req, res) => {
     try {
 
-      const filter = {};
+      let filter = { deleted_by: null };
 
       if (req.body.machine_id) {
         filter.machine_id = new ObjectId(`${req.body.machine_id}`)
@@ -202,6 +288,52 @@ module.exports = {
 
     } catch (error) {
       response.failed(res, 'Failed to get itemcheck', error)
+    }
+  },
+
+  editKanban: async (req, res) => {
+    try {
+
+      const data = req.body
+
+      let filter = { deleted_by: null, _id: new ObjectId(req.query.id) };
+
+      let doc = {
+        updated_by: data.user_id,
+        updated_dt: new Date()
+      }
+      if (data.kanban_nm){
+        doc.kanban_nm = data.kanban_nm
+      }
+      if (data.machine_id){
+        doc.machine_id = data.machine_id
+      }
+
+      const results = await queryPUT("kanban", filter, doc)
+      response.success(res, "Success editting itemcheck", results)
+
+    } catch (error) {
+      response.failed(res, 'Failed to edit itemcheck', error)
+    }
+  },
+
+  deleteKanban: async (req, res) => {
+    try {
+
+      const data = req.body
+
+      let filter = { deleted_by: null, _id: new ObjectId(req.query.id) };
+
+      let doc = {
+        deleted_by: data.user_id,
+        deleted_dt: new Date()
+      }
+
+      const results = await queryPUT("kanban", filter, doc)
+      response.success(res, "Success editting itemcheck", results)
+
+    } catch (error) {
+      response.failed(res, 'Failed to edit itemcheck', error)
     }
   },
 
@@ -322,6 +454,93 @@ module.exports = {
       await database.close()
     } catch (error) {
       response.failed(res, 'Failed to get itemcheck history', error)
+    }
+  },
+
+  listWorkOrder: async (req, res) => {
+    try {
+      let filter = { deleted_by: null };
+      if (req.query.id) {
+        filter._id = new ObjectId(req.query.id)
+      }
+      if (req.query.user_id) {
+        filter.user_id = new ObjectId(req.query.user_id)
+      }
+      if (req.query.kanban_id) {
+        filter.kanban_id = new ObjectId(req.query.kanban_id)
+      }
+      if (req.query.created_by) {
+        filter.created_by = req.query.created_by
+      }
+      const result_item = await queryGET("work_order", filter);
+      response.success(res, `Success getting work order`, result_item)
+    } catch (error) {
+      response.failed(res, `Failed to get work order`, error)
+    }
+  },
+
+  addWorkOrder: async (req, res) => {
+    try {
+
+      const data = req.body
+
+      let doc = {
+        created_by: data.created_by,
+        created_dt: new Date(),
+        kanban_id: new ObjectId(data.kanban_id),
+        user_id: new ObjectId(data.user_id),
+        work_dt: data.date
+      }
+      const result_item = await queryPOST("work_order", doc);
+      response.success(res, `Success adding work order`, result_item)
+    } catch (error) {
+      response.failed(res, `Failed to add work order`, error)
+    }
+  },
+
+  editWorkOrder: async (req, res) => {
+    try {
+      const filter = { _id: new ObjectId(req.query.id), deleted_by: null }
+
+      const data = req.body
+
+      let doc = {
+        updated_by: data.user_id,
+        updated_dt: new Date(),
+      }
+
+      if (data.kanban_id) {
+        doc.kanban_id = data.kanban_id
+      }
+      if (data.user_id) {
+        doc.user_id = data.user_id
+      }
+      if (data.date) {
+        doc.work_dt = data.date
+      }
+
+      const result_item = await queryPUT("work_order", filter, doc);
+      response.success(res, `Success editting work order`, result_item)
+    } catch (error) {
+      response.failed(res, `Failed to edit work order`, error)
+    }
+  },
+
+  deleteWorkOrder: async (req, res) => {
+    try {
+      const filter = { _id: new ObjectId(req.query.id), deleted_by: null }
+
+      const data = req.body
+
+      let doc = {
+        deleted_by: data.user_id,
+        deleted_dt: new Date(),
+      }
+
+      const result_item = await queryPUT("work_order", filter, doc);
+      response.success(res, `Success deletin work order`, result_item)
+    } catch (error) {
+      response.failed(res, `Failed to delete work order`, error)
     }
   },
 
