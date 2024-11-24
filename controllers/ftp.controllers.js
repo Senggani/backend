@@ -54,6 +54,8 @@ module.exports = {
                 doc = {
                     created_by: data.created_by,
                     created_dt: new Date(),
+                    total_face: data.total_face,
+                    total_body: data.total_body,
                     filename: file.filename,
                     contentType: req.file.mimetype,
                 }
