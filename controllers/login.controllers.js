@@ -168,7 +168,7 @@ module.exports = {
       // Set cookie that also expires in 24 hours
       const cookieOptions = {
         httpOnly: true,
-        // secure: process.env.NODE_ENV === "production",
+        secure: process.env.NODE_ENV === "production",
         secure: "development",
         sameSite: "strict",
         maxAge: 24 * 60 * 60 * 1000, // 24 hours in milliseconds
@@ -191,7 +191,7 @@ module.exports = {
       response.success(res, "Success to Login", {
         token,
         user: sanitizeUser(user),
-      });
+      }, true);
     } catch (error) {
       console.error(
         `[${new Date().toISOString()}] Login error:`,
@@ -264,7 +264,7 @@ module.exports = {
       );
       response.success(res, "Token verified successfully", {
         user: sanitizeUser(user),
-      });
+      }, true);
     } catch (error) {
       console.error(
         `[${new Date().toISOString()}] Token verification error:`,
