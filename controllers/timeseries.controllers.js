@@ -35,7 +35,6 @@ module.exports = {
             if (data.newest_dt && data.oldest_dt) {
                 filter.timestamp = { $gt: new Date(data.newest_dt), $lte: new Date(data.oldest_dt) }
             }
-            // console.log([projection, filter, data])
 
             let results = await queryTS("sensor01_acc_xyz", filter, {}, (data.limit ? parseInt(data.limit) : 100))
             response.success(res, `Success reading data`, results)

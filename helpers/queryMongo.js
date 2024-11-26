@@ -25,6 +25,29 @@ module.exports = {
     });
   },
 
+  queryGETone: async (collection, filter) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        await database.connect();
+
+        await client
+          .collection(collection)
+          .findOne(filter, {})
+          .then(results => {
+            resolve(results)
+            // console.log(results)
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      } finally {
+        // Ensures that the client will close when you finish/error
+        await database.close();
+      }
+
+    });
+  },
+
   queryPOST: async (collection, doc) => {
     return new Promise(async (resolve, reject) => {
       try {

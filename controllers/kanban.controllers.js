@@ -204,6 +204,31 @@ module.exports = {
     }
   },
 
+  historyItemcheck: async (req, res) => {
+    try {
+      const filter = { 'itemcheck.itemcheck_id': new ObjectId(req.query.id) };
+
+      const projection = {
+        'itemcheck.$': 1
+      };
+
+      await database.connect();
+
+      let results = [];
+
+      const itemcheck = await client.collection("kanban_history").find(filter, { projection }).toArray()
+      itemcheck.forEach(doc => {
+        results.push(doc.itemcheck[0])
+      });
+
+      response.success(res, "Success getting itemcheck history", (results));
+
+      await database.close()
+    } catch (error) {
+      response.failed(res, 'Failed to get itemcheck history', error)
+    }
+  },
+
   deleteItemcheck: async (req, res) => {
     try {
       await database.connect();
@@ -429,31 +454,6 @@ module.exports = {
 
     } catch (error) {
       response.failed(res, 'Failed to get kanban history', error)
-    }
-  },
-
-  historyItemcheck: async (req, res) => {
-    try {
-      const filter = { 'itemcheck.itemcheck_id': new ObjectId(req.query.id) };
-
-      const projection = {
-        'itemcheck.$': 1
-      };
-
-      await database.connect();
-
-      let results = [];
-
-      const itemcheck = await client.collection("kanban_history").find(filter, { projection }).toArray()
-      itemcheck.forEach(doc => {
-        results.push(doc.itemcheck[0])
-      });
-
-      response.success(res, "Success getting itemcheck history", (results));
-
-      await database.close()
-    } catch (error) {
-      response.failed(res, 'Failed to get itemcheck history', error)
     }
   },
 

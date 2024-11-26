@@ -1,12 +1,12 @@
-const router = require("express").Router();
+var router = require("express").Router();
 const {
   login,
   verifyToken,
   logout,
   testConnection,
 } = require("../controllers/login.controllers");
-const { protect } = require("../middleware/auth.middleware");
-const {loginLimiter} = require("../middleware/rateLimit.middleware");
+var { protect } = require("../middleware/auth.middleware");
+var {loginLimiter} = require("../middleware/rateLimit.middleware");
 
 // Public routes (no authentication needed)
 router.post("/login", loginLimiter, login);

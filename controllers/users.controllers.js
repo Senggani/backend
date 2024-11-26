@@ -20,7 +20,7 @@ module.exports = {
       //   .populate("assignments.line")
       //   .populate("assignments.station");
 
-      const users = await client.collection('users').find()
+      // const users = await client.collection('users').find()
       console.log(users)
 
       response.success(res, "Users retrieved successfully", users);

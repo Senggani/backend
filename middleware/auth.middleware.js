@@ -6,6 +6,7 @@ const {
   queryPUT,
   queryJOIN,
   queryJOIN2,
+  queryGETone,
 } = require("../helpers/queryMongo");
 const { database, ObjectId, client } = require("../bin/database");
 // const User = require("../models/Users");
@@ -25,14 +26,7 @@ module.exports = {
         return response.notAllowed(res, "Invalid token");
       }
 
-      // const user = await User.findById(decoded.userId)
-      //   .select("-password")
-      //   .populate("assignments.plant")
-      //   .populate("assignments.shop")
-      //   .populate("assignments.line")
-      //   .populate("assignments.station");
-      let user = await client.collection('users').findOne({ _id: new ObjectId(decoded.userId) })
-      console.log(decoded.userId)
+      let user = await queryGETone('users', { _id: new ObjectId(decoded.userId) })
 
       if (!user || !user.isActive) {
         return response.notAllowed(res, "User not found or inactive");
