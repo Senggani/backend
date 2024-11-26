@@ -40,6 +40,8 @@ module.exports = {
 
             const file = req.file
 
+            let results = {}
+
             let doc;
             if (req.body.itemcheck_id) {
                 doc = {
@@ -59,9 +61,20 @@ module.exports = {
                     filename: file.filename,
                     contentType: req.file.mimetype,
                 }
-            }
 
-            const results = await queryPOST("opencv_image", doc)
+                results = await queryPOST("opencv_image", doc)
+            }
+            if (req.body.source == 'profile_pic') {
+                doc = {
+                    created_by: new ObjectId(`${req.body.user_id}`),
+                    created_dt: new Date(),
+                    user_id: new ObjectId(`${req.body.user_id}`),
+                    filename: file.filename,
+                    contentType: req.file.mimetype,
+                }
+
+                results = await queryPOST("profile_pic", doc)
+            }
 
             response.success(res, "Success uploading to backend", results)
         } catch (error) {

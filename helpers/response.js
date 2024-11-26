@@ -50,5 +50,21 @@ module.exports = {
     noContent,
     notFound,
     failed,
-    notAllowed
+    notAllowed,
+
+    badRequest: (res, message = "Bad Request") => {
+      return res.status(400).json({
+        success: false,
+        status: 400,
+        message,
+      });
+    },
+  
+    unauthorized: (res, message = "Unauthorized") => {
+      return res.status(401).json({
+        success: false,
+        status: 401,
+        message,
+      });
+    },
 }
