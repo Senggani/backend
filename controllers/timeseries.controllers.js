@@ -20,7 +20,7 @@ module.exports = {
         try {
             const data = req.query
 
-            const projection = { _id: 0, timestamp: 1, x: "$acceleration.x", y: "$acceleration.y", z: "$acceleration.z" }
+            // const projection = { _id: 0, timestamp: 1, x: "$acceleration.x", y: "$acceleration.y", z: "$acceleration.z" }
 
             let filter = {}
             if (data.sensor_id) {
@@ -37,7 +37,7 @@ module.exports = {
             }
             // console.log([projection, filter, data])
 
-            let results = await queryTS("sensor01_acc_xyz", filter, projection, (data.limit ? parseInt(data.limit) : 100))
+            let results = await queryTS("sensor01_acc_xyz", filter, {}, (data.limit ? parseInt(data.limit) : 100))
             response.success(res, `Success reading data`, results)
         } catch (error) {
             response.failed(res, `Failed to connect`)
