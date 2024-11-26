@@ -24,6 +24,6 @@ router.use('/py', python)
 router.use('/kanban', kanban)
 router.use('/rmq', rmq)
 router.use('/user', user)
-router.use("/login", login);
+router.use('/login', login);
 
 module.exports = router

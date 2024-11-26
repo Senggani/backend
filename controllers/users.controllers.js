@@ -1,16 +1,27 @@
 // const Users = require("../../models/Users");
 const response = require("../helpers/response");
+const {
+  queryGET,
+  queryPOST,
+  queryPUT,
+  queryJOIN,
+  queryJOIN2,
+} = require("../helpers/queryMongo");
+const { database, ObjectId, client } = require("../bin/database");
 
 module.exports = {
   // Get all users (for admin)
   getAllUsers: async (req, res) => {
     try {
-      const users = await Users.find()
-        .select("-password")
-        .populate("assignments.plant")
-        .populate("assignments.shop")
-        .populate("assignments.line")
-        .populate("assignments.station");
+      // const users = await Users.find()
+      //   .select("-password")
+      //   .populate("assignments.plant")
+      //   .populate("assignments.shop")
+      //   .populate("assignments.line")
+      //   .populate("assignments.station");
+
+      const users = await client.collection('users').find()
+      console.log(users)
 
       response.success(res, "Users retrieved successfully", users);
     } catch (error) {
