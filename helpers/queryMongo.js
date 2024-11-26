@@ -51,7 +51,7 @@ module.exports = {
     return new Promise(async (resolve, reject) => {
       try {
         await database.connect();
-            
+
         const updatedDocument = {
           $set: doc
         };
@@ -157,6 +157,31 @@ module.exports = {
           .toArray()
           .then(results => {
             resolve(results)
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      } finally {
+        // Ensures that the client will close when you finish/error
+        await database.close();
+      }
+
+    });
+  },
+
+  queryTS: async (collection, filter, projection, limit) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        await database.connect();
+
+        await client
+          .collection(collection)
+          .find(filter, { projection })
+          .limit(limit)
+          .toArray()
+          .then(results => {
+            resolve(results)
+            // console.log(results)
           })
           .catch((err) => {
             reject(err);
