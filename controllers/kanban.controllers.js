@@ -6,6 +6,7 @@ const multer = require("multer")
 const path = require('path');
 const fs = require('fs');
 const Tesseract = require('tesseract.js');
+const archiver = require('archiver');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -428,7 +429,7 @@ module.exports = {
     try {
       let filter = {};
       let results = {};
-      let filePath;
+      let filePath = [];
 
       if (req.query.kanban_id) {
 
@@ -437,6 +438,8 @@ module.exports = {
         response.success(res, "Success getting kanban history", results);
 
       } else if (req.query.id) {
+        res.setHeader('Content-Type', 'application/zip');
+        res.setHeader('Content-Disposition', 'attachment; filename=images.zip');
 
         filter._id = new ObjectId(req.query.id);
         const itemcheck = await query.queryGET("kanban_history", filter);
@@ -444,13 +447,31 @@ module.exports = {
           results = doc;
         });
 
-        results.itemcheck.forEach(doc => {
-          filePath = path.join(__dirname, `../uploads/itemcheck/${doc.filename}`);
-          res.sendFile(filePath);
-          // Kalau saat integrasi gagal, pakai api download di ftp dengan input filename diatas OK
+        results.itemcheck.forEach((doc, index) => {
+          filePath[index] = path.join(__dirname, `../uploads/itemcheck/${doc.filename}`);
         })
 
-        response.success(res, "Success getting kanban history", results);
+        const archive = archiver('zip', {
+          zlib: { level: 3 } // Highest compression level
+        });
+        archive.pipe(res);
+
+        filePath.forEach(filePath => {
+          if (fs.existsSync(filePath)) {
+            archive.append(fs.createReadStream(filePath), { name: path.basename(filePath) });
+          }
+        });
+
+        archive.finalize();
+
+        // Handle any errors
+        archive.on('error', (err) => {
+          res.status(500).send({ error: err.message });
+        });
+
+        // console.log(filePath)
+
+        // response.success(res, "Success getting kanban history", results);
 
       } else {
         const results = await query.queryGET("kanban_history", filter);
