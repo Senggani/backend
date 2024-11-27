@@ -375,7 +375,7 @@ module.exports = {
           total_face: data.total_face,
           total_body: data.total_body,
           filename: file.filename,
-          contentType: req.file.mimetype,
+          contentType: file.mimetype,
         };
 
         await query.queryPOST("profile_pic", doc_itemcheck);
