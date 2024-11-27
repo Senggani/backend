@@ -21,10 +21,9 @@ const upload = multer({ storage });
 module.exports = {
   testConnection: async (req, res) => {
     try {
-      console.log(1)
       response.success(res, `Successfully connected to backend`, req.body)
     } catch (error) {
-      response.failed(res, `Failed to connect`, error)
+      response.failed(res, `Failed to connect`, error.message)
     }
   },
 
@@ -85,7 +84,7 @@ module.exports = {
       response.success(res, "Success adding itemcheck", { results, result_item })
 
     } catch (error) {
-      response.failed(res, 'Failed to add itemcheck', error)
+      response.failed(res, 'Failed to add itemcheck', error.message)
     } finally {
       await database.close();
     }
@@ -121,7 +120,7 @@ module.exports = {
       response.success(res, `Success editting itemcheck`, results)
 
     } catch (error) {
-      response.failed(res, `Failed to edit itemcheck`, error)
+      response.failed(res, `Failed to edit itemcheck`, error.message)
     }
   },
 
@@ -143,9 +142,7 @@ module.exports = {
 
         for (let index = 0; index < itemcheck_id.length; index++) {
           filter2._id = new ObjectId(`${itemcheck_id[index]}`);
-          console.log(filter2)
           results[index] = (await query.queryGET('itemcheck', filter2))[0];
-          console.log(results)
           response.success(res, "Success getting itemcheck", results)
         }
 
@@ -194,7 +191,7 @@ module.exports = {
       }
 
     } catch (error) {
-      response.failed(res, 'Failed to get itemcheck', error)
+      response.failed(res, 'Failed to get itemcheck', error.message)
     }
   },
 
@@ -219,7 +216,7 @@ module.exports = {
 
       await database.close()
     } catch (error) {
-      response.failed(res, 'Failed to get itemcheck history', error)
+      response.failed(res, 'Failed to get itemcheck history', error.message)
     }
   },
 
@@ -239,7 +236,6 @@ module.exports = {
       const part_data = await client.collection("part").findOne({ _id: result_item.part_id });
       let filter = { deleted_by: null, machine_id: part_data.machine_id };
 
-      console.log(part_data)
       const updatedDocument = {
         $set: doc
       };
@@ -279,7 +275,7 @@ module.exports = {
       let results = await client.collection('kanban').updateMany(filter, { $pull: { 'itemcheck_id': result_item._id } })
       response.success(res, `Success deleting itemcheck`, { delete_item, results })
     } catch (error) {
-      response.failed(res, `Failed to delete itemcheck`, error)
+      response.failed(res, `Failed to delete itemcheck`, error.message)
     } finally {
       await database.close();
     }
@@ -306,7 +302,7 @@ module.exports = {
       response.success(res, "Success getting itemcheck", results)
 
     } catch (error) {
-      response.failed(res, 'Failed to get itemcheck', error)
+      response.failed(res, 'Failed to get itemcheck', error.message)
     }
   },
 
@@ -332,7 +328,7 @@ module.exports = {
       response.success(res, "Success editting itemcheck", results)
 
     } catch (error) {
-      response.failed(res, 'Failed to edit itemcheck', error)
+      response.failed(res, 'Failed to edit itemcheck', error.message)
     }
   },
 
@@ -352,7 +348,7 @@ module.exports = {
       response.success(res, "Success editting itemcheck", results)
 
     } catch (error) {
-      response.failed(res, 'Failed to edit itemcheck', error)
+      response.failed(res, 'Failed to edit itemcheck', error.message)
     }
   },
 
@@ -360,6 +356,8 @@ module.exports = {
     try {
       const data = req.body
       const file = req.files
+
+      console.log(req)
 
       let itemcheck = []
 
@@ -371,6 +369,16 @@ module.exports = {
         }
 
         let check_value = await query.queryGET("itemcheck", { _id: new ObjectId(data.itemcheck_id[index]) })
+        let doc_itemcheck = {
+          created_by: data.created_by,
+          created_dt: new Date(),
+          total_face: data.total_face,
+          total_body: data.total_body,
+          filename: file.filename,
+          contentType: req.file.mimetype,
+        };
+
+        await query.queryPOST("profile_pic", doc_itemcheck);
 
         if (check_value[0].std == 'value') {
 
@@ -409,7 +417,7 @@ module.exports = {
       await database.close()
 
     } catch (error) {
-      response.failed(res, 'Failed to connect', error)
+      response.failed(res, 'Failed to connect', error.message)
     }
   },
 
@@ -447,7 +455,7 @@ module.exports = {
       }
 
     } catch (error) {
-      response.failed(res, 'Failed to get kanban history', error)
+      response.failed(res, 'Failed to get kanban history', error.message)
     }
   },
 
@@ -469,7 +477,7 @@ module.exports = {
       const result_item = await query.queryGET("work_order", filter);
       response.success(res, `Success getting work order`, result_item)
     } catch (error) {
-      response.failed(res, `Failed to get work order`, error)
+      response.failed(res, `Failed to get work order`, error.message)
     }
   },
 
@@ -488,7 +496,7 @@ module.exports = {
       const result_item = await query.queryPOST("work_order", doc);
       response.success(res, `Success adding work order`, result_item)
     } catch (error) {
-      response.failed(res, `Failed to add work order`, error)
+      response.failed(res, `Failed to add work order`, error.message)
     }
   },
 
@@ -516,7 +524,7 @@ module.exports = {
       const result_item = await query.queryPUT("work_order", filter, doc);
       response.success(res, `Success editting work order`, result_item)
     } catch (error) {
-      response.failed(res, `Failed to edit work order`, error)
+      response.failed(res, `Failed to edit work order`, error.message)
     }
   },
 
@@ -534,7 +542,7 @@ module.exports = {
       const result_item = await query.queryPUT("work_order", filter, doc);
       response.success(res, `Success deletin work order`, result_item)
     } catch (error) {
-      response.failed(res, `Failed to delete work order`, error)
+      response.failed(res, `Failed to delete work order`, error.message)
     }
   },
 

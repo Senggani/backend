@@ -5,7 +5,6 @@ const { database, ObjectId, client } = require("../bin/database");
 module.exports = {
     testConnection: async (req, res) => {
         try {
-            console.log(1)
             response.success(res, `Successfully connected to backend`, req.body)
         } catch (error) {
             response.failed(res, `Failed to connect`, error)
@@ -40,7 +39,6 @@ module.exports = {
 
     // editUser: async (req, res) => {
     //     try {
-    //         console.log(1)
     //         response.success(res, `Successfully connected to backend`, req.body)
     //     } catch (error) {
     //         response.failed(res, `Failed to connect`, error)

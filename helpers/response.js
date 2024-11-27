@@ -5,15 +5,13 @@ const notAllowed = (res, message) => {
     }
     res.status(401).json(response)
 }
-const success = (res, message = 'Success', data, success, meta) => {
+const success = (res, message = 'Success', data, meta) => {
     let response = {
         status: 200,
         message: message,
         data: data,
-        meta: meta,
-        success: success
+        meta: meta
     }
-    // // console.log(response);
     res.status(200).json(response)
 }
 const error = (res, message) => {
@@ -21,7 +19,6 @@ const error = (res, message) => {
         status: 500,
         message: message
     }
-    // // console.log(response);
     res.status(500).json(response)
 }
 const noContent = (res) => {
@@ -32,7 +29,6 @@ const notFound = (res, message) => {
         status: 404,
         message: message
     }
-    // // console.log(response);
     res.status(404).json(response)
 }
 const failed = (res, message, error) => {
@@ -41,7 +37,6 @@ const failed = (res, message, error) => {
         message: message,
         error: error
     }
-    // // console.log(response);
     res.status(400).json(response)
 }
 const badRequest = (res, message = "Bad Request") => {

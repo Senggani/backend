@@ -136,10 +136,7 @@ module.exports = {
       res.cookie("auth_token", token, cookieOptions);
       user.sessionId = sessionId;
 
-      response.success(res, "Success to Login", {
-        token,
-        user,
-      }, true);
+      response.success(res, "Success to Login", { token, user });
     } catch (error) {
       response.error(res, ("An error occured during login", error.message));
     }
@@ -191,7 +188,7 @@ module.exports = {
         return response.notAllowed(res, "User not found");
       }
 
-      response.success(res, "Token verified successfully", { user }, true);
+      response.success(res, "Token verified successfully", { user });
     } catch (error) {
       response.error(res, ("Token verification failed ", error.message));
     }

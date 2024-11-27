@@ -12,7 +12,6 @@ module.exports = {
           .toArray()
           .then(results => {
             resolve(results)
-            // console.log(results)
           })
           .catch((err) => {
             reject(err);
@@ -35,7 +34,6 @@ module.exports = {
           .findOne(filter, {})
           .then(results => {
             resolve(results)
-            // console.log(results)
           })
           .catch((err) => {
             reject(err);
@@ -204,7 +202,6 @@ module.exports = {
           .toArray()
           .then(results => {
             resolve(results)
-            // console.log(results)
           })
           .catch((err) => {
             reject(err);
@@ -227,7 +224,6 @@ module.exports = {
 
   //     await client.db(db).collection(collection).updateOne(doc).then(results => {
   //       resolve(results)
-  //       console.log(doc)
   //     })
 
   //   });
@@ -240,7 +236,6 @@ module.exports = {
 
   //     await client.db(db).collection(collection).updateOne(doc).then(results => {
   //       resolve(results)
-  //       console.log(doc)
   //     })
 
   //   });

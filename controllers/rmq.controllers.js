@@ -123,7 +123,7 @@ module.exports = {
             const queue = 'opencv_status';
             await channel.assertQueue(queue, { durable: false });
 
-            console.log('Waiting for messages...');
+            console.log(`Waiting for messages in ${queue} queue`);
 
             // Consume messages from the queue
             channel.consume(queue, (msg) => {
