@@ -4,12 +4,8 @@
 
 const { machine } = require("os");
 const response = require("../helpers/response");
-const {
-    queryGET,
-    queryPOST,
-    queryPUT,
-    ObjectId,
-} = require("../helpers/queryMongo");
+const query = require("../helpers/queryMongo");
+const { database, ObjectId, client } = require("../bin/database");
 
 module.exports = {
     testConnection: async (req, res) => {
@@ -46,7 +42,7 @@ module.exports = {
                 filter.deleted_by = { $ne: null };
             }
 
-            const stationList = await queryGET(data.collection, filter)
+            const stationList = await query.queryGET(data.collection, filter)
 
             response.success(res, (`Success getting ${data.collection} data`), stationList);
 
@@ -85,7 +81,7 @@ module.exports = {
                 doc.machine_id = new ObjectId(data.parent_id);
             }
 
-            const result = await queryPOST(data.collection, doc);
+            const result = await query.queryPOST(data.collection, doc);
 
             response.success(res, (`Success adding ${data.collection} data`), result);
 
@@ -138,7 +134,7 @@ module.exports = {
                 }
             }
 
-            const result = await queryPUT(data.collection, filter, doc);
+            const result = await query.queryPUT(data.collection, filter, doc);
 
             response.success(res, `Success updating ${data.collection} data`, result);
 
@@ -155,11 +151,11 @@ module.exports = {
             let filter = { '_id': new ObjectId(data._id) };
 
             const doc = {
-                    deleted_by: data.deleted_by,
-                    deleted_dt: new Date()
+                deleted_by: data.deleted_by,
+                deleted_dt: new Date()
             };
 
-            const result = await queryPUT(data.Collection, filter, doc);
+            const result = await query.queryPUT(data.Collection, filter, doc);
 
             response.success(res, `Success deleting ${data.collection} data`, result);
 

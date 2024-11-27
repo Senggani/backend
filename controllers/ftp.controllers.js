@@ -1,13 +1,9 @@
 const response = require("../helpers/response");
-const {
-  queryGET,
-  queryPOST,
-  queryPUT,
-  ObjectId,
-} = require("../helpers/queryMongo");
+const query = require("../helpers/queryMongo");
 const path = require("path");
 const multer = require("multer");
 const fs = require("fs");
+const { database, ObjectId, client } = require("../bin/database");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -61,7 +57,7 @@ module.exports = {
           contentType: req.file.mimetype,
         };
 
-        results = await queryPOST("opencv_image", doc);
+        results = await query.queryPOST("opencv_image", doc);
       }
       if (req.body.source == "profile_pic") {
         doc = {
@@ -72,7 +68,7 @@ module.exports = {
           contentType: req.file.mimetype,
         };
 
-        results = await queryPOST("profile_pic", doc);
+        results = await query.queryPOST("profile_pic", doc);
       }
 
       response.success(res, "Success uploading to backend", results);
@@ -83,7 +79,7 @@ module.exports = {
 
   listImage: async (req, res) => {
     try {
-      const results = await queryGET("itemcheck_image");
+      const results = await query.queryGET("itemcheck_image");
 
       response.success(res, "Success getting image list", results);
     } catch (error) {
@@ -95,7 +91,7 @@ module.exports = {
     try {
       const image_id = req.body._id;
       const filter = { _id: new ObjectId(`${image_id}`) };
-      const data = await queryGET("itemcheck_image", filter);
+      const data = await query.queryGET("itemcheck_image", filter);
 
       const filePath = path.join(__dirname, `../uploads/${data[0].filename}`);
 

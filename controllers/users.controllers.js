@@ -1,12 +1,6 @@
 // const Users = require("../../models/Users");
 const response = require("../helpers/response");
-const {
-  queryGET,
-  queryPOST,
-  queryPUT,
-  queryJOIN,
-  queryJOIN2,
-} = require("../helpers/queryMongo");
+const query = require("../helpers/queryMongo");
 const { database, ObjectId, client } = require("../bin/database");
 
 module.exports = {

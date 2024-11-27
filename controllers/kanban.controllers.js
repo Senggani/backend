@@ -1,12 +1,6 @@
 const { machine } = require("os");
 const response = require("../helpers/response");
-const {
-  queryGET,
-  queryPOST,
-  queryPUT,
-  queryJOIN,
-  queryJOIN2,
-} = require("../helpers/queryMongo");
+const query = require("../helpers/queryMongo");
 const { database, ObjectId, client } = require("../bin/database");
 const multer = require("multer")
 const path = require('path');
@@ -52,9 +46,9 @@ module.exports = {
         doc.max = data.max
       }
 
-      const result_item = await queryPOST("itemcheck", doc);
+      const result_item = await query.queryPOST("itemcheck", doc);
 
-      const part_data = await queryGET("part", { _id: new ObjectId(`${data.part_id}`) })
+      const part_data = await query.queryGET("part", { _id: new ObjectId(`${data.part_id}`) })
 
 
       let filter = { machine_id: part_data[0].machine_id };
@@ -122,7 +116,7 @@ module.exports = {
         doc.max = data.max;
       }
 
-      const results = await queryPUT("itemcheck", filter, doc)
+      const results = await query.queryPUT("itemcheck", filter, doc)
 
       response.success(res, `Success editting itemcheck`, results)
 
@@ -139,7 +133,7 @@ module.exports = {
 
       if (req.body.kanban_id) {
         filter._id = new ObjectId(`${req.body.kanban_id}`);
-        itemcheck = await queryGET("kanban", filter)
+        itemcheck = await query.queryGET("kanban", filter)
 
 
         const itemcheck_id = itemcheck[0].itemcheck_id;
@@ -150,7 +144,7 @@ module.exports = {
         for (let index = 0; index < itemcheck_id.length; index++) {
           filter2._id = new ObjectId(`${itemcheck_id[index]}`);
           console.log(filter2)
-          results[index] = (await queryGET('itemcheck', filter2))[0];
+          results[index] = (await query.queryGET('itemcheck', filter2))[0];
           console.log(results)
           response.success(res, "Success getting itemcheck", results)
         }
@@ -308,7 +302,7 @@ module.exports = {
         'itemcheck_id': 1
       }
 
-      const results = await queryJOIN("kanban", "machine", "machine_id", "_id", doc, filter)
+      const results = await query.queryJOIN("kanban", "machine", "machine_id", "_id", doc, filter)
       response.success(res, "Success getting itemcheck", results)
 
     } catch (error) {
@@ -327,14 +321,14 @@ module.exports = {
         updated_by: data.user_id,
         updated_dt: new Date()
       }
-      if (data.kanban_nm){
+      if (data.kanban_nm) {
         doc.kanban_nm = data.kanban_nm
       }
-      if (data.machine_id){
+      if (data.machine_id) {
         doc.machine_id = data.machine_id
       }
 
-      const results = await queryPUT("kanban", filter, doc)
+      const results = await query.queryPUT("kanban", filter, doc)
       response.success(res, "Success editting itemcheck", results)
 
     } catch (error) {
@@ -354,7 +348,7 @@ module.exports = {
         deleted_dt: new Date()
       }
 
-      const results = await queryPUT("kanban", filter, doc)
+      const results = await query.queryPUT("kanban", filter, doc)
       response.success(res, "Success editting itemcheck", results)
 
     } catch (error) {
@@ -376,7 +370,7 @@ module.exports = {
           contentType: file[index].mimetype,
         }
 
-        let check_value = await queryGET("itemcheck", { _id: new ObjectId(data.itemcheck_id[index]) })
+        let check_value = await query.queryGET("itemcheck", { _id: new ObjectId(data.itemcheck_id[index]) })
 
         if (check_value[0].std == 'value') {
 
@@ -428,13 +422,13 @@ module.exports = {
       if (req.query.kanban_id) {
 
         filter.kanban_id = new ObjectId(req.query.kanban_id);
-        const results = await queryGET("kanban_history", filter);
+        const results = await query.queryGET("kanban_history", filter);
         response.success(res, "Success getting kanban history", results);
 
       } else if (req.query.id) {
 
         filter._id = new ObjectId(req.query.id);
-        const itemcheck = await queryGET("kanban_history", filter);
+        const itemcheck = await query.queryGET("kanban_history", filter);
         itemcheck.forEach(doc => {
           results = doc;
         });
@@ -448,7 +442,7 @@ module.exports = {
         response.success(res, "Success getting kanban history", results);
 
       } else {
-        const results = await queryGET("kanban_history", filter);
+        const results = await query.queryGET("kanban_history", filter);
         response.success(res, "Success getting kanban history", results);
       }
 
@@ -472,7 +466,7 @@ module.exports = {
       if (req.query.created_by) {
         filter.created_by = req.query.created_by
       }
-      const result_item = await queryGET("work_order", filter);
+      const result_item = await query.queryGET("work_order", filter);
       response.success(res, `Success getting work order`, result_item)
     } catch (error) {
       response.failed(res, `Failed to get work order`, error)
@@ -491,7 +485,7 @@ module.exports = {
         user_id: new ObjectId(data.user_id),
         work_dt: data.date
       }
-      const result_item = await queryPOST("work_order", doc);
+      const result_item = await query.queryPOST("work_order", doc);
       response.success(res, `Success adding work order`, result_item)
     } catch (error) {
       response.failed(res, `Failed to add work order`, error)
@@ -519,7 +513,7 @@ module.exports = {
         doc.work_dt = data.date
       }
 
-      const result_item = await queryPUT("work_order", filter, doc);
+      const result_item = await query.queryPUT("work_order", filter, doc);
       response.success(res, `Success editting work order`, result_item)
     } catch (error) {
       response.failed(res, `Failed to edit work order`, error)
@@ -537,7 +531,7 @@ module.exports = {
         deleted_dt: new Date(),
       }
 
-      const result_item = await queryPUT("work_order", filter, doc);
+      const result_item = await query.queryPUT("work_order", filter, doc);
       response.success(res, `Success deletin work order`, result_item)
     } catch (error) {
       response.failed(res, `Failed to delete work order`, error)

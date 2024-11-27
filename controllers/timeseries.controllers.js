@@ -1,11 +1,6 @@
 const response = require("../helpers/response");
 const { client } = require('../bin/database');
-const {
-    queryGET,
-    queryPOST,
-    queryPUT,
-    queryTS,
-} = require("../helpers/queryMongo");
+const query = require("../helpers/queryMongo");
 const { Timestamp } = require("mongodb");
 
 module.exports = {
@@ -36,7 +31,7 @@ module.exports = {
                 filter.timestamp = { $gt: new Date(data.newest_dt), $lte: new Date(data.oldest_dt) }
             }
 
-            let results = await queryTS("sensor01_acc_xyz", filter, {}, (data.limit ? parseInt(data.limit) : 100))
+            let results = await query.queryTS("sensor01_acc_xyz", filter, {}, (data.limit ? parseInt(data.limit) : 100))
             response.success(res, `Success reading data`, results)
         } catch (error) {
             response.failed(res, `Failed to connect`)

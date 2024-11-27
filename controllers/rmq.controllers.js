@@ -1,12 +1,7 @@
 // producer.js
 const amqp = require('amqplib');
 const response = require("../helpers/response");
-const {
-    queryGET,
-    queryPOST,
-    queryPUT,
-    queryJOIN,
-} = require("../helpers/queryMongo");
+const query = require("../helpers/queryMongo");
 let timestampDay = 24 * 60 * 60 * 1000;
 
 const { client, ObjectId } = require('../bin/database');
@@ -104,7 +99,7 @@ module.exports = {
                 if (msg) {
                     data = JSON.parse(msg.content.toString());
                     response.success(res, "Success consume to rmq", data);
-                    queryPOST("pm_module", "rmq_test", data);
+                    query.queryPOST("pm_module", "rmq_test", data);
                     console.log(`Received: ${data.itemcheck_nm}`);
                     channel.ack(msg);  // Acknowledge the message after processing
                 }

@@ -1,13 +1,6 @@
 const auth = require("../helpers/auth");
 const response = require("../helpers/response");
-const {
-  queryGET,
-  queryPOST,
-  queryPUT,
-  queryJOIN,
-  queryJOIN2,
-  queryGETone,
-} = require("../helpers/queryMongo");
+const query = require("../helpers/queryMongo");
 const { database, ObjectId, client } = require("../bin/database");
 // const User = require("../models/Users");
 
@@ -26,7 +19,7 @@ module.exports = {
         return response.notAllowed(res, "Invalid token");
       }
 
-      let user = await queryGETone('users', { _id: new ObjectId(decoded.userId) })
+      let user = await query.queryGETone('users', { _id: new ObjectId(decoded.userId) })
 
       if (!user || !user.isActive) {
         return response.notAllowed(res, "User not found or inactive");
