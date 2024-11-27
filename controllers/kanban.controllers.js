@@ -357,9 +357,11 @@ module.exports = {
       const data = req.body
       const file = req.files
 
-      console.log(req)
+      // console.log(req)
 
       let itemcheck = []
+
+      await database.connect();
 
       for (let index = 0; index < file.length; index++) {
         itemcheck[index] = {
@@ -368,19 +370,20 @@ module.exports = {
           contentType: file[index].mimetype,
         }
 
-        let check_value = await query.queryGET("itemcheck", { _id: new ObjectId(data.itemcheck_id[index]) })
+        let check_value = await client.collection("itemcheck").findOne({ _id: new ObjectId(data.itemcheck_id[index]) })
         let doc_itemcheck = {
-          created_by: data.created_by,
+          created_by: new ObjectId(data.user_id),
           created_dt: new Date(),
-          total_face: data.total_face,
-          total_body: data.total_body,
-          filename: file.filename,
-          contentType: file.mimetype,
+          kanban_id: new ObjectId(data.kanban_id),
+          itemcheck_id: check_value._id,
+          path: './uploads/itemcheck/' + file[index].filename,
+          filename: file[index].filename,
+          contentType: file[index].mimetype,
         };
 
-        await query.queryPOST("profile_pic", doc_itemcheck);
+        await client.collection("itemcheck_image").insertOne(doc_itemcheck);
 
-        if (check_value[0].std == 'value') {
+        if (check_value.std == 'value') {
 
           imagePath = './uploads/itemcheck/' + file[index].filename;
 
@@ -408,7 +411,7 @@ module.exports = {
         itemcheck: itemcheck
       }
 
-      await database.connect()
+      // await database.connect()
 
       const results = await client.collection("kanban_history").insertOne(doc);
 
