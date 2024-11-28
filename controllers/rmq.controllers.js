@@ -1,16 +1,25 @@
 // producer.js
 const amqp = require('amqplib');
+// var amqp_1 = require('amqplib/callback_api');
 const response = require("../helpers/response");
 const query = require("../helpers/queryMongo");
 let timestampDay = 24 * 60 * 60 * 1000;
 
-const { client, ObjectId } = require('../bin/database');
+const { client, ObjectId, database } = require('../bin/database');
+const rmq_credential = {
+    username: 'pm_modue',
+    password: 'hl6GjO5LlRuQT1n',
+    url: 'rmq2.pptik.id:5672',
+    vhost: '/pm_module'
+}
+const rmq_url = `amqp://${rmq_credential.username}:${rmq_credential.password}@${rmq_credential.url}/${rmq_credential.vhost}`
 
+// const rmq_url = `amqp://pm_modue:hl6GjO5LlRuQT1n@rmq2.pptik.id:5672/pm_module`
 
 async function produceMessageOpenCV(msg) {
     try {
         // Connect to RabbitMQ server
-        const connection = await amqp.connect('amqp://localhost:5672');  // Replace with your RabbitMQ URL if different
+        const connection = await amqp.connect(rmq_url);  // Replace with your RabbitMQ URL if different
         const channel = await connection.createChannel();
 
         // Declare a queue (it will be created if it doesn't exist)
@@ -114,7 +123,7 @@ module.exports = {
     consumeMessageOpenCV: async (req, res) => {
         try {
             // Connect to RabbitMQ server
-            const connection = await amqp.connect('amqp://localhost:5672');
+            const connection = await amqp.connect(rmq_url);
             const channel = await connection.createChannel();
 
             let data = {};
@@ -139,7 +148,7 @@ module.exports = {
 
 
         } catch (error) {
-            console.error('Error in consuming message:', error);
+            console.error('Error in consumeMessageOpenCV:', error);
         }
     },
 }

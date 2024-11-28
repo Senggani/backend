@@ -450,29 +450,22 @@ module.exports = {
           filePath[index] = path.join(__dirname, `../uploads/itemcheck/${doc.filename}`);
         })
 
-
-        // Create a zip archive stream
         const archive = archiver('zip', {
           zlib: { level: 9 } // Set compression level
         });
 
-        // Set the response headers to indicate a download
         res.attachment('files.zip');
 
-        // Pipe the archive stream to the response
         archive.pipe(res);
 
-        // Add files to the archive
         filePath.forEach(file => {
           archive.file(file, { name: path.basename(file) });
         });
 
-        // Finalize the archive (finish adding files)
         archive.finalize();
 
-        // Handle any errors
         archive.on('error', (err) => {
-          res.status(500).send({ error: err.message });
+          response.error(res, err.message)
         });
 
         response.success(res, "Success getting kanban history", results);
