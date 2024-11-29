@@ -28,7 +28,7 @@ module.exports = {
                 filter.timestamp = { $lte: new Date(data.oldest_dt) }
             }
             if (data.newest_dt && data.oldest_dt) {
-                filter.timestamp = { $gt: new Date(data.newest_dt), $lte: new Date(data.oldest_dt) }
+                filter.timestamp = { $lte: new Date(data.newest_dt), $gt: new Date(data.oldest_dt) }
             }
 
             let results = await query.queryTS("sensor01_acc_xyz", filter, {}, (data.limit ? parseInt(data.limit) : 100))
