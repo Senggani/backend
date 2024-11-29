@@ -4,7 +4,7 @@ const uri = "mongodb://localhost:27017/";
 const database = new MongoClient(uri, { useNewUrlParser: true});
 const client = database.db("pm_module");
 
-module.exports = { client, database, ObjectId }; */
+module.exports = { client, database, ObjectId };
 
 /* FOR ITB DATABASE */
 const { MongoClient, ObjectId, useNewUrlParser } = require('mongodb');

@@ -24,6 +24,7 @@ module.exports = {
   testConnection: async (req, res) => {
     try {
       response.success(res, `Successfully connected to backend`, req.body)
+
     } catch (error) {
       response.failed(res, `Failed to connect`, error.message)
     }
@@ -286,25 +287,72 @@ module.exports = {
     try {
 
       let filter = { deleted_by: null };
+      let results;
 
-      if (req.body.machine_id) {
+      if (req.query.machine_id) {
         filter.machine_id = new ObjectId(`${req.body.machine_id}`)
+
+        const doc = {
+          'period': 1,
+          'kanban_nm': 1,
+          'machine_nm': `$machine.machine_nm`,
+          'machine_id': `$machine._id`,
+          'itemcheck_id': 1
+        }
+
+        results = await query.queryJOIN("kanban", "machine", "machine_id", "_id", doc, filter)
       }
-      if (req.query.id) {
+      else if (req.query.id) {
         filter._id = new ObjectId(`${req.query.id}`)
+
+        database.connect()
+
+        results = await client
+          .collection('kanban')
+          .aggregate([
+            {
+              $lookup: {
+                from: "machine",
+                localField: "machine_id",
+                foreignField: "_id",
+                as: "machine"
+              }
+            },
+            {
+              $unwind: "$machine"
+            },
+            {
+              $lookup: {
+                from: "itemcheck",
+                localField: "itemcheck_id",
+                foreignField: "_id",
+                as: "itemcheck"
+              }
+            },
+            {
+              $lookup: {
+                from: "tools",
+                localField: "itemcheck.tools_id",
+                foreignField: "_id",
+                as: "tools"
+              }
+            },
+            {
+              $lookup: {
+                from: "spare_part",
+                localField: "itemcheck.spare_part_id",
+                foreignField: "_id",
+                as: "spare_part"
+              }
+            },
+            {
+              $match: filter
+            }
+          ]).toArray()
       }
 
       console.log(filter)
 
-      const doc = {
-        'period': 1,
-        'kanban_nm': 1,
-        'machine_nm': `$machine.machine_nm`,
-        'machine_id': `$machine._id`,
-        'itemcheck_id': 1
-      }
-
-      const results = await query.queryJOIN("kanban", "machine", "machine_id", "_id", doc, filter)
       response.success(res, "Success getting itemcheck", results)
 
     } catch (error) {
