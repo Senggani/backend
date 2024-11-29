@@ -12,7 +12,7 @@ module.exports = {
         try {
             response.success(res, "Successfully connected to backend")
         } catch (error) {
-            response.failed(res, 'Failed to connect')
+            response.failed(res, 'Failed to connect', error.message)
         }
     },
 
@@ -48,7 +48,7 @@ module.exports = {
 
         }
         catch (error) {
-            response.failed(res, ("Failed to get data"), error)
+            response.failed(res, ("Failed to get data"), error.message)
         }
     },
 
@@ -87,7 +87,7 @@ module.exports = {
 
         }
         catch (error) {
-            response.failed(res, ("Failed to add data"), error)
+            response.failed(res, ("Failed to add data"), error.message)
         }
     },
 
@@ -140,7 +140,7 @@ module.exports = {
 
         }
         catch (error) {
-            response.failed(res, 'Failed to update data', error)
+            response.failed(res, 'Failed to update data', error.message)
         }
     },
 
@@ -161,7 +161,7 @@ module.exports = {
 
         }
         catch (error) {
-            response.failed(res, 'Failed to update data', error)
+            response.failed(res, 'Failed to update data', error.message)
         }
     },
 }

@@ -21,7 +21,7 @@ module.exports = {
     try {
       response.success(res, "Successfully connected to backend");
     } catch (error) {
-      response.failed(res, "Failed to connect", error);
+      response.failed(res, "Failed to connect", error.message);
     }
   },
 
@@ -73,7 +73,7 @@ module.exports = {
 
       response.success(res, "Success uploading to backend", results);
     } catch (error) {
-      response.failed(res, "Failed uploading to backend", error);
+      response.failed(res, "Failed uploading to backend", error.message);
     }
   },
 
@@ -83,7 +83,7 @@ module.exports = {
 
       response.success(res, "Success getting image list", results);
     } catch (error) {
-      response.failed(res, "Failed getting image list", error);
+      response.failed(res, "Failed getting image list", error.message);
     }
   },
 
@@ -101,7 +101,7 @@ module.exports = {
 
       res.sendFile(filePath);
     } catch (error) {
-      response.failed(res, "Failed downloading image", error);
+      response.failed(res, "Failed downloading image", error.message);
     }
   },
 

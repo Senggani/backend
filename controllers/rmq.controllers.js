@@ -37,7 +37,7 @@ async function produceMessageOpenCV(msg) {
         }, 500);
 
     } catch (error) {
-        console.error('Error in sending message:', error);
+        console.error('Error in sending message:', error.message);
     }
 }
 
@@ -46,7 +46,7 @@ module.exports = {
         try {
             response.success(res, "Successfully connected to backend")
         } catch (error) {
-            response.failed(res, 'Failed to connect')
+            response.failed(res, 'Failed to connect', error.message)
         }
     },
 
@@ -116,7 +116,7 @@ module.exports = {
 
 
         } catch (error) {
-            console.error('Error in consuming message:', error);
+            console.error('Error in consuming message:', error.message);
         }
     },
 
@@ -148,7 +148,7 @@ module.exports = {
 
 
         } catch (error) {
-            console.error('Error in consumeMessageOpenCV:', error);
+            console.error('Error in consumeMessageOpenCV:', error.message);
         }
     },
 }

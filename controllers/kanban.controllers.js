@@ -40,12 +40,15 @@ module.exports = {
         itemcheck_nm: data.itemcheck_nm,
         std: data.std,
         period: data.period,
-        part_id: new ObjectId(`${data.part_id}`)
+        part_id: new ObjectId(`${data.part_id}`),
+        spare_part_id: new ObjectId(`${data.spare_part_id}`),
+        tools_id: new ObjectId(`${data.tools_id}`)
       }
 
       if (data.min || data.max) {
         doc.min = data.min;
-        doc.max = data.max
+        doc.max = data.max;
+        doc.unit = data.unit;
       }
 
       await database.connect();
@@ -110,11 +113,20 @@ module.exports = {
       if (data.part_id) {
         doc.part_id = new ObjectId(`${data.part_id}`)
       }
+      if (data.spare_part_id) {
+        doc.spare_part_id = new ObjectId(`${data.spare_part_id}`)
+      }
       if (data.min) {
         doc.min = data.min;
       }
       if (data.max) {
         doc.max = data.max;
+      }
+      if (data.unit) {
+        doc.unit = data.unit;
+      }
+      if (data.tools_id) {
+        doc.tools_id = data.tools_id;
       }
 
       const results = await query.queryPUT("itemcheck", filter, doc)
@@ -175,18 +187,6 @@ module.exports = {
           },
           {
             $unwind: "$machine"
-          },
-          {
-            $project: {
-              itemcheck_nm: 1,
-              std: 1,
-              min: 1,
-              max: 1,
-              part_id: 1,
-              part_nm: "$part.part_nm",
-              machine_id: "$part.machine_id",
-              machine_nm: "$machine.machine_nm"
-            }
           }
         ]).toArray()
         response.success(res, "Success getting itemcheck", results)
@@ -429,6 +429,7 @@ module.exports = {
           created_by: new ObjectId(data.user_id),
           created_dt: new Date(),
           kanban_id: new ObjectId(data.kanban_id),
+          work_order_id: new ObjectId(data.work_order_id),
           itemcheck_id: check_value._id,
           path: './uploads/itemcheck/' + file[index].filename,
           filename: file[index].filename,
@@ -460,6 +461,7 @@ module.exports = {
 
       let doc = {
         kanban_id: new ObjectId(data.kanban_id),
+        work_order_id: new ObjectId(data.work_order_id),
         created_by: new ObjectId(data.created_by),
         created_dt: new Date(),
         itemcheck: itemcheck
@@ -484,13 +486,7 @@ module.exports = {
       let results = {};
       let filePath = [];
 
-      if (req.query.kanban_id) {
-
-        filter.kanban_id = new ObjectId(req.query.kanban_id);
-        const results = await query.queryGET("kanban_history", filter);
-        response.success(res, "Success getting kanban history", results);
-
-      } else if (req.query.id) {
+      if (req.query.id) {
 
         filter._id = new ObjectId(req.query.id);
         const itemcheck = await query.queryGET("kanban_history", filter);
@@ -520,6 +516,18 @@ module.exports = {
           response.error(res, err.message)
         });
 
+        response.success(res, "Success getting kanban history", results);
+
+      } else if (req.query.kanban_id) {
+
+        filter.kanban_id = new ObjectId(req.query.kanban_id);
+        const results = await query.queryGET("kanban_history", filter);
+        response.success(res, "Success getting kanban history", results);
+
+      } else if (req.query.work_order_id) {
+
+        filter.work_order_id = new ObjectId(req.query.work_order_id);
+        const results = await query.queryGET("kanban_history", filter);
         response.success(res, "Success getting kanban history", results);
 
       } else {

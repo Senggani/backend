@@ -22,7 +22,7 @@ module.exports = {
     try {
       response.success(res, `Successfully connected to backend`)
     } catch (error) {
-      response.failed(res, `Failed to connect`, error)
+      response.failed(res, `Failed to connect`, error.message)
     }
   },
 
