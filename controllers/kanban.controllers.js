@@ -47,10 +47,11 @@ module.exports = {
         doc.max = data.max
       }
 
-      const result_item = await query.queryPOST("itemcheck", doc);
+      await database.connect();
 
-      const part_data = await query.queryGET("part", { _id: new ObjectId(`${data.part_id}`) })
+      const result_item = await client.collection("itemcheck").insertOne(doc);
 
+      const part_data = await client.collection("part").find({ _id: new ObjectId(`${data.part_id}`) }).toArray();
 
       let filter = { machine_id: part_data[0].machine_id };
 
@@ -78,8 +79,6 @@ module.exports = {
           { period: "D" }
         ]
       }
-
-      await database.connect();
 
       let results = await client.collection('kanban').updateMany(filter, { $push: { 'itemcheck_id': result_item.insertedId } })
 

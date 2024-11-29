@@ -1,18 +1,18 @@
-/* FOR LOCAL DATABASE */
+/* FOR LOCAL DATABASE
 const { MongoClient, ObjectId } = require('mongodb');
 const uri = "mongodb://localhost:27017/";
 const database = new MongoClient(uri, { useNewUrlParser: true});
 const client = database.db("pm_module");
 
-module.exports = { client, database, ObjectId };
+module.exports = { client, database, ObjectId }; */
 
-/* FOR ITB DATABASE
+/* FOR ITB DATABASE */
 const { MongoClient, ObjectId, useNewUrlParser } = require('mongodb');
 const uri = "mongodb://preventive_maintenance:hl6GjO5LlRuQT1n@nosql.smartsystem.id:27017/preventive_maintenance"
-const database = new MongoClient(uri, { useNewUrlParser: true});
+const database = new MongoClient(uri, { useNewUrlParser: true });
 const client = database.db("preventive_maintenance");
 
-module.exports = { client , database , ObjectId }; */
+module.exports = { client, database, ObjectId };
 
 /* FOR CLOUD DATABASE USING ATLAS
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
