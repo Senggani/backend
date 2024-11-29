@@ -93,7 +93,7 @@ module.exports = {
     });
   },
 
-  queryJOIN: async (localCollection, foreignCollection, localCol, foreignCol, doc, filter) => {
+  queryJOIN: async (localCollection, foreignCollection, localCol, foreignCol, doc, filter, id) => {
     return new Promise(async (resolve, reject) => {
       try {
 

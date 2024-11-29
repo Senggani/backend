@@ -290,6 +290,11 @@ module.exports = {
       if (req.body.machine_id) {
         filter.machine_id = new ObjectId(`${req.body.machine_id}`)
       }
+      if (req.query.id) {
+        filter._id = new ObjectId(`${req.query.id}`)
+      }
+
+      console.log(filter)
 
       const doc = {
         'period': 1,
