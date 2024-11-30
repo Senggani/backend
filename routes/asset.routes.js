@@ -1,27 +1,27 @@
 var express = require('express');
 const { testConnection,
-        // listMachine,
-        // newMachine,
-        // editMachine,
-        // deleteMachine,
-        // listStation,
-        // newStation,
-        // editStation,
-        // deleteStation,
-        listAsset,
-        newAsset,
-        editAsset,
-        deleteAsset,
+    // listMachine,
+    // newMachine,
+    // editMachine,
+    // deleteMachine,
+    // listStation,
+    // newStation,
+    // editStation,
+    // deleteStation,
+    listAsset,
+    newAsset,
+    editAsset,
+    deleteAsset,
 } = require('../controllers/asset.controllers');
 var router = express.Router();
-
+var { protect } = require("../middleware/auth.middleware");
 
 router.get('/test-connection', testConnection)
 
 router.get('/list-asset', listAsset)
-router.post('/new-asset', newAsset)
-router.put('/edit-asset', editAsset)
-router.put('/delete-asset', deleteAsset)
+router.post('/new-asset', protect, newAsset)
+router.put('/edit-asset', protect, editAsset)
+router.put('/delete-asset', protect, deleteAsset)
 
 // router.get('/list-machine', listMachine)
 // router.post('/new-machine', newMachine)

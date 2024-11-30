@@ -1,8 +1,4 @@
-// const {
-//     queryCustom,
-// } = require("../helpers/query");
 
-const { machine } = require("os");
 const response = require("../helpers/response");
 const query = require("../helpers/queryMongo");
 const { database, ObjectId, client } = require("../bin/database");
@@ -98,7 +94,7 @@ module.exports = {
             let filter = { '_id': new ObjectId(data._id) };
 
             let doc = {
-                updated_by: data.updated_by,
+                updated_by: new ObjectId(req.user.userId),
                 updated_dt: new Date()
             };
 
@@ -151,7 +147,7 @@ module.exports = {
             let filter = { '_id': new ObjectId(data._id) };
 
             const doc = {
-                deleted_by: data.deleted_by,
+                deleted_by: new ObjectId(req.user.userId),
                 deleted_dt: new Date()
             };
 

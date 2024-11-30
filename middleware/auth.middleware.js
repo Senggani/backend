@@ -31,7 +31,7 @@ module.exports = {
       };
       next();
     } catch (error) {
-      return response.error(res, "Authentication error", 401);
+      return response.error(res, "Authentication error", error.message);
     }
   },
 
