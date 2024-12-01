@@ -14,7 +14,7 @@ module.exports = {
 
     listAsset: async (req, res) => {
         try {
-            const data = req.body
+            const data = req.query
 
             let filter = { deleted_by: null };
 

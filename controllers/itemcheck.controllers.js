@@ -17,7 +17,7 @@ module.exports = {
             const data = req.body
 
             let doc = {
-                created_by: data.created_by,
+                created_by: new ObjectId(req.body.user_id),
                 created_dt: new Date(),
                 itemcheck_nm: data.itemcheck_nm,
                 std: data.std,
@@ -90,7 +90,7 @@ module.exports = {
             const data = req.body
 
             let doc = {
-                updated_by: data.created_by,
+                updated_by: new ObjectId(req.body.user_id),
                 updated_dt: new Date(),
             }
             if (data.itemcheck_nm) {
@@ -218,7 +218,7 @@ module.exports = {
             const result_item = await client.collection("itemcheck").findOne(filter_itemcheck);
 
             let doc = {
-                deleted_by: data.user_id,
+                deleted_by: new ObjectId(req.body.user_id),
                 deleted_dt: new Date(),
             }
 
@@ -261,7 +261,15 @@ module.exports = {
                 ]
             }
 
-            let results = await client.collection('kanban').updateMany(filter, { $pull: { 'itemcheck_id': result_item._id } })
+            let kanban_doc = {
+                $push: { 'itemcheck_id': result_item._id },
+                $set: {
+                    updated_by: new ObjectId(req.body.user_id),
+                    updated_dt: new Date(),
+                }
+            }
+
+            let results = await client.collection('kanban').updateMany(filter, kanban_doc)
             response.success(res, `Success deleting itemcheck`, { delete_item, results })
         } catch (error) {
             response.failed(res, `Failed to delete itemcheck`, error.message)
@@ -307,9 +315,8 @@ module.exports = {
 
     editTools: async (req, res) => {
         try {
-            const filter = { _id: new ObjectId(req.query.id), deleted_by: null }
-
             const data = req.body
+            const filter = { _id: new ObjectId(data.id), deleted_by: null }
 
             let doc = {
                 updated_by: new ObjectId(req.user.userId),
@@ -335,9 +342,8 @@ module.exports = {
 
     deleteTools: async (req, res) => {
         try {
-            const filter = { _id: new ObjectId(req.query.id), deleted_by: null }
-
             const data = req.body
+            const filter = { _id: new ObjectId(data.id), deleted_by: null }
 
             let doc = {
                 deleted_by: new ObjectId(req.user.userId),
@@ -373,7 +379,7 @@ module.exports = {
             const data = req.body
 
             let doc = {
-                created_by: data.created_by,
+                created_by: new ObjectId(req.body.user_id),
                 created_dt: new Date(),
                 station_id: new ObjectId(data.station_id),
                 spare_part_nm: data.spare_part_nm,
@@ -389,9 +395,8 @@ module.exports = {
 
     editSparePart: async (req, res) => {
         try {
-            const filter = { _id: new ObjectId(req.query.id), deleted_by: null }
-
             const data = req.body
+            const filter = { _id: new ObjectId(data.id), deleted_by: null }
 
             let doc = {
                 updated_by: new ObjectId(req.user.userId),
@@ -417,9 +422,8 @@ module.exports = {
 
     deleteSparePart: async (req, res) => {
         try {
-            const filter = { _id: new ObjectId(req.query.id), deleted_by: null }
-
             const data = req.body
+            const filter = { _id: new ObjectId(data.id), deleted_by: null }
 
             let doc = {
                 deleted_by: new ObjectId(req.user.userId),

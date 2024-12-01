@@ -40,7 +40,7 @@ module.exports = {
       let doc;
       if (req.body.itemcheck_id) {
         doc = {
-          created_by: data.created_by,
+          created_by: new ObjectId(`${req.body.user_id}`),
           created_dt: new Date(),
           itemcheck_id: new ObjectId(`${req.body.itemcheck_id}`),
           filename: file.filename,
@@ -61,13 +61,13 @@ module.exports = {
       }
       if (req.body.source == "profile_pic") {
         doc = {
-          created_by: new ObjectId(`${req.body.user_id}`),
+          created_by: new ObjectId(req.body.user_id),
           created_dt: new Date(),
           user_id: new ObjectId(`${req.body.user_id}`),
           filename: req.body.name + "_" + file.filename,
           contentType: req.file.mimetype,
         };
-
+        await query.queryPUT("users", { _id: new ObjectId(`${req.body.user_id}`) }, { $set: { profile_pic: (req.body.name + "_" + file.filename) } })
         results = await query.queryPOST("profile_pic", doc);
       }
 

@@ -1,12 +1,18 @@
 var express = require('express');
 const {
     testConnection,
-    addUser,
-} = require('../controllers/user.controllers');
+    listUsers,
+    newUser,
+    updateUser,
+    deleteUser,
+} = require('../controllers/users.controllers');
 var router = express.Router();
-
+var { protect } = require("../middleware/auth.middleware");
 
 router.get('/test-connection', testConnection)
-router.post('/add-user', addUser)
+router.get('/list-user', listUsers)
+router.post('/new-user', protect, newUser)
+router.put('/edit-user', protect, updateUser)
+router.put('/delete-user', protect, deleteUser)
 
 module.exports = router
