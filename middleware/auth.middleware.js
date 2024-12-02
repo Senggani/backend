@@ -21,7 +21,7 @@ module.exports = {
 
       let user = await query.queryGETone('users', { _id: new ObjectId(decoded.userId) })
 
-      if (!user || !user.isActive) {
+      if (!user || !user.is_active) {
         return response.notAllowed(res, "User not found or inactive");
       }
 

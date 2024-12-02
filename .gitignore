@@ -2,5 +2,6 @@ node_modules/
 scratchpad.txt
 script/
 .vscode/
+vue_test/
 uploads/
 eng.traineddata

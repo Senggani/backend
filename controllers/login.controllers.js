@@ -100,7 +100,7 @@ module.exports = {
       }
 
       // Check if user is active
-      if (!user.isActive) {
+      if (!user.is_active) {
         return response.notAllowed(res, "Account is inactive. Please contact admin.");
       }
 

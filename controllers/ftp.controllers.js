@@ -10,6 +10,7 @@ const storage = multer.diskStorage({
     cb(null, "./uploads/" + req.body.source);
   },
   filename: function (req, file, cb) {
+    // const extname = path.extname(file.originalname).toLowerCase(); // if only want to retain original extention of file
     cb(null, req.body.name + "_" + file.originalname);
   },
 });

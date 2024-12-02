@@ -1,3 +1,8 @@
+const fs = require('fs');
+const path = require('path');
+
+// const filePathToStream ();
+
 const notAllowed = (res, message) => {
     let response = {
         status: 401,
@@ -13,6 +18,78 @@ const success = (res, message = 'Success', data, meta) => {
         meta: meta
     }
     res.status(200).json(response)
+}
+const sendFile = (res, filePath, message = 'Success', data, meta) => {
+    let response = {
+        status: 200,
+        message: message,
+        data: data,
+        meta: meta
+    }
+    res.status(200)
+    const imageStream = fs.createReadStream(filePath);
+
+    // Set the Content-Type to multipart/form-data with boundary
+    res.setHeader('Content-Type', 'multipart/form-data; boundary=--boundary');
+
+    // Start the multipart response
+    res.write('--boundary\r\n');
+    res.write('Content-Disposition: form-data; name="json"\r\n');
+    res.write('Content-Type: application/json\r\n\r\n');
+
+    // Send the JSON data
+    res.write(JSON.stringify(response));
+    res.write('\r\n');
+
+    // Send the image as a separate part in the response
+    res.write('--boundary\r\n');
+    res.write(`Content-Disposition: form-data; name="image"; filename="${filePath}"\r\n`);
+    res.write('Content-Type: image/jpeg\r\n\r\n');
+
+    imageStream.pipe(res, { end: false });  // Pipe the image to the response
+
+    imageStream.on('end', () => {
+        res.write('\r\n');
+        res.write('--boundary--');  // End the multipart response
+        res.end();
+    });
+}
+const sendMultipleFile = async (res, filePath, message = 'Success', data, meta) => {
+    try {
+        let response = {
+            status: 200,
+            message: message,
+            data: data,
+            meta: meta
+        }
+        res.status(200)
+
+        res.setHeader('Content-Type', 'multipart/form-data; boundary=--boundary');
+
+        res.write('--boundary');
+        res.write('Content-Disposition: form-data; Content-Type: application/json; ');
+        res.write('ndata: ');
+
+        res.write(JSON.stringify(response));
+        // res.write('');
+
+        for (let index = 0; index < filePath.length; index++) {
+
+            // res.write('');
+            res.write('--boundary');
+            res.write(`Content-Disposition: form-data; Content-Type: image/jpeg; filename: "${filePath[index]}"; `);
+            res.write('data: ');
+
+            let imageStream = fs.readFileSync(filePath[index]);
+            res.write(imageStream)
+        }
+
+        res.write('--boundary--');
+        res.end();
+    } catch (error) {
+        response.failed(res, `Failed to connect`, error.message)
+        console.log(error.message)
+    }
 }
 const error = (res, message) => {
     let response = {
@@ -41,7 +118,6 @@ const failed = (res, message, error) => {
 }
 const badRequest = (res, message = "Bad Request") => {
     return res.status(400).json({
-        success: false,
         status: 400,
         message,
     });
@@ -49,7 +125,6 @@ const badRequest = (res, message = "Bad Request") => {
 
 const unauthorized = (res, message = "Unauthorized") => {
     return res.status(401).json({
-        success: false,
         status: 401,
         message,
     });
@@ -64,4 +139,6 @@ module.exports = {
     notAllowed,
     badRequest,
     unauthorized,
+    sendFile,
+    sendMultipleFile
 }

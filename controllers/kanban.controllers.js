@@ -233,12 +233,13 @@ module.exports = {
       if (req.query.id) {
 
         filter._id = new ObjectId(req.query.id);
-        const itemcheck = await query.queryGET("kanban_history", filter);
-        itemcheck.forEach(doc => {
-          results = doc;
-        });
+        const itemcheck = await query.queryGETone("kanban_history", filter);
+        console.log(itemcheck.itemcheck)
+        // itemcheck.forEach(doc => {
+        //   results = doc;
+        // });
 
-        results.itemcheck.forEach((doc, index) => {
+        itemcheck.itemcheck.forEach((doc, index) => {
           filePath[index] = path.join(__dirname, `../uploads/itemcheck/${doc.filename}`);
         })
 
@@ -260,7 +261,7 @@ module.exports = {
           response.error(res, err.message)
         });
 
-        response.success(res, "Success getting kanban history", results);
+        response.success(res, "Success getting kanban history", itemcheck);
 
       } else if (req.query.kanban_id) {
 
