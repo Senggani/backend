@@ -30,12 +30,15 @@ module.exports = {
   testSendMultipleFile: async (req, res) => {
     try {
       let filePath = [
+        'uploads/itemcheck/1732709063850_Screenshot 2024-11-19 175616.png',
+        'uploads/itemcheck/1732709063848_0001.jpg',
+        'uploads/itemcheck/1732709063847_Screenshot 2024-11-19 175622.png',
         './uploads/profile_pic/674c9d3d7ffb8ae2bf944983_0001.jpg',
         './uploads/profile_pic/674c9d3d7ffb8ae2bf944983_0001.jpg',
         './uploads/profile_pic/674c9d3d7ffb8ae2bf944983_0001.jpg'
       ];
 
-      await response.sendMultipleFile(res, filePath, 'test send', filePath)
+      response.sendFileAsJSON(res, filePath, 'test send', filePath)
     } catch (error) {
       console.log(error.message)
       response.failed(res, `Failed to connect`, error.message)

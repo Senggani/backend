@@ -54,6 +54,21 @@ const sendFile = (res, filePath, message = 'Success', data, meta) => {
         res.end();
     });
 }
+const sendFileAsJSON = (res, filePath, message = 'Success', data, meta) => {
+    let file = [];
+    for (let index = 0; index < filePath.length; index++) {
+        let imageStream = fs.readFileSync(filePath[index]);
+        file[index] = imageStream.toString('base64');
+    }
+    let response = {
+        status: 200,
+        message: message,
+        data: data,
+        file: file,
+        meta: meta
+    }
+    res.status(200).json(response)
+}
 const sendMultipleFile = async (res, filePath, message = 'Success', data, meta) => {
     try {
         let response = {
@@ -81,7 +96,7 @@ const sendMultipleFile = async (res, filePath, message = 'Success', data, meta) 
             res.write('data: ');
 
             let imageStream = fs.readFileSync(filePath[index]);
-            res.write(imageStream)
+            res.write(imageStream.toString('base64'))
         }
 
         res.write('--boundary--');
@@ -140,5 +155,6 @@ module.exports = {
     badRequest,
     unauthorized,
     sendFile,
-    sendMultipleFile
+    sendMultipleFile,
+    sendFileAsJSON
 }
