@@ -133,7 +133,7 @@ module.exports = {
             let itemcheck = {};
 
             if (req.query.kanban_id) {
-                filter._id = new ObjectId(`${req.body.kanban_id}`);
+                filter._id = new ObjectId(`${req.query.kanban_id}`);
                 itemcheck = await query.queryGET("kanban", filter)
 
                 const itemcheck_id = itemcheck[0].itemcheck_id;
@@ -157,7 +157,7 @@ module.exports = {
                             as: "part",
                             pipeline: [
                                 {
-                                    $match: { machine_id: new ObjectId(`${req.body.machine_id}`) }
+                                    $match: { machine_id: new ObjectId(`${req.query.machine_id}`) }
                                 }]
                         }
                     },
@@ -174,6 +174,25 @@ module.exports = {
                     },
                     {
                         $unwind: "$machine"
+                    }
+                ]).toArray()
+                response.success(res, "Success getting itemcheck", results)
+            } else if (req.query.part_id) {
+                let results = await client.collection('itemcheck').aggregate([
+                    {
+                        $lookup: {
+                            from: "part",
+                            localField: "part_id",
+                            foreignField: "_id",
+                            as: "part",
+                            pipeline: [
+                                {
+                                    $match: { _id: new ObjectId(`${req.query.part_id}`) }
+                                }]
+                        }
+                    },
+                    {
+                        $unwind: "$part"
                     }
                 ]).toArray()
                 response.success(res, "Success getting itemcheck", results)
