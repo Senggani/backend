@@ -132,7 +132,7 @@ module.exports = {
             let filter = { deleted_by: null };
             let itemcheck = {};
 
-            if (req.body.kanban_id) {
+            if (req.query.kanban_id) {
                 filter._id = new ObjectId(`${req.body.kanban_id}`);
                 itemcheck = await query.queryGET("kanban", filter)
 
@@ -147,7 +147,7 @@ module.exports = {
                     response.success(res, "Success getting itemcheck", results)
                 }
 
-            } else if (req.body.machine_id) {
+            } else if (req.query.machine_id) {
                 let results = await client.collection('itemcheck').aggregate([
                     {
                         $lookup: {
