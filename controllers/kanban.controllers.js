@@ -5,10 +5,22 @@ const multer = require("multer")
 const path = require('path');
 const Tesseract = require('tesseract.js');
 const archiver = require('archiver');
+const fs = require('fs');
+
+// const uploadDir = path.join(__dirname, 'uploads', 'itemcheck');
+const uploadDir = './upload/itemcheck/';
+
+const checkAndCreateDir = (req, res, next) => {
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+    console.log('Upload directory created');
+  }
+  next();
+};
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads/itemcheck');
+    cb(null, uploadDir);
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '_' + file.originalname);
@@ -34,7 +46,7 @@ module.exports = {
       let results;
 
       if (req.query.machine_id) {
-        filter.machine_id = new ObjectId(`${req.body.machine_id}`)
+        filter.machine_id = new ObjectId(`${req.query.machine_id}`)
 
         const doc = {
           'period': 1,
@@ -175,7 +187,7 @@ module.exports = {
           kanban_id: new ObjectId(data.kanban_id),
           work_order_id: new ObjectId(data.work_order_id),
           itemcheck_id: check_value._id,
-          path: './uploads/itemcheck/' + file[index].filename,
+          path: uploadDir + file[index].filename,
           filename: file[index].filename,
           contentType: file[index].mimetype,
         };
@@ -184,7 +196,7 @@ module.exports = {
 
         if (check_value.std == 'value') {
 
-          imagePath = './uploads/itemcheck/' + file[index].filename;
+          imagePath = uploadDir + file[index].filename;
 
           await Tesseract.recognize(
             imagePath,
@@ -240,7 +252,7 @@ module.exports = {
         // });
 
         itemcheck.itemcheck.forEach((doc, index) => {
-          filePath[index] = path.join(__dirname, `../uploads/itemcheck/${doc.filename}`);
+          filePath[index] = path.join(__dirname, `.${uploadDir}${doc.filename}`);
         })
 
         const archive = archiver('zip', {
@@ -373,6 +385,7 @@ module.exports = {
   },
 
   upload,
+  checkAndCreateDir,
 }
 
 /*

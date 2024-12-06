@@ -1,11 +1,33 @@
-// producer.js
 const amqp = require('amqplib');
-// var amqp_1 = require('amqplib/callback_api');
 const response = require("../helpers/response");
 const query = require("../helpers/queryMongo");
 let timestampDay = 24 * 60 * 60 * 1000;
-
+const path = require("path");
+const multer = require("multer");
+const fs = require("fs");
 const { client, ObjectId, database } = require('../bin/database');
+
+const uploadDir = './upload/opencv/';
+
+const checkAndCreateDir = (req, res, next) => {
+    if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir, { recursive: true });
+        console.log('Upload directory created');
+    }
+    next();
+};
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, uploadDir);
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + "_" + file.originalname);
+    },
+});
+
+const upload = multer({ storage });
+
 const rmq_credential = {
     username: 'pm_modue',
     password: 'hl6GjO5LlRuQT1n',
@@ -13,8 +35,6 @@ const rmq_credential = {
     vhost: '/pm_module'
 }
 const rmq_url = `amqp://${rmq_credential.username}:${rmq_credential.password}@${rmq_credential.url}/${rmq_credential.vhost}`
-
-// const rmq_url = `amqp://pm_modue:hl6GjO5LlRuQT1n@rmq2.pptik.id:5672/pm_module`
 
 async function produceMessageOpenCV(msg) {
     try {
@@ -40,8 +60,6 @@ async function produceMessageOpenCV(msg) {
         console.error('Error in sending message:', error.message);
     }
 }
-
-
 
 async function consumeMessageOpenCV(req, res) {
     try {
@@ -162,5 +180,69 @@ module.exports = {
         }
     },
 
+    uploadOpencvImage: async (req, res) => {
+        try {
+            const data = req.body;
+
+            const file = req.file;
+
+            let results = {};
+
+            let doc = {
+                created_by: data.location,
+                created_dt: new Date(),
+                total_face: data.total_face,
+                total_body: data.total_body,
+                filename: file.filename,
+                filepath: uploadDir,
+                contentType: req.file.mimetype,
+            };
+
+            results = await query.queryPOST("opencv_image", doc);
+
+            response.success(res, "Success uploading to backend", results);
+        } catch (error) {
+            response.failed(res, "Failed uploading to backend", error.message);
+        }
+    },
+
+    downloadOpencvImage: async (req, res) => {
+        try {
+            const data = req.query;
+            let filter = {}
+            if (data.id) {
+                filter = { _id: new ObjectId(`${data.id}`) }
+            }
+            if (data.newest_dt) {
+                filter.timestamp = { $gt: new Date(data.newest_dt) }
+            }
+            if (data.oldest_dt) {
+                filter.timestamp = { $lte: new Date(data.oldest_dt) }
+            }
+            if (data.newest_dt && data.oldest_dt) {
+                filter.timestamp = { $lte: new Date(data.newest_dt), $gt: new Date(data.oldest_dt) }
+            }
+
+            let results = await query.queryTS("opencv_image", filter, {}, (data.limit ? parseInt(data.limit) : 100))
+
+            const filePath = path.join(__dirname, `.${uploadDir}${results[0].filename}`);
+
+            if (!fs.existsSync(filePath)) {
+                return res.status(404).send("File not found");
+            }
+
+            if (data.id) {
+                response.sendFileAsJSON(res, [filePath], "Succes to get image", results)
+            }
+            else {
+                response.success(res, `Success to list opencv image`, results)
+            }
+        } catch (error) {
+            response.failed(res, "Failed downloading image", error.message);
+        }
+    },
+
     consumeMessageOpenCV,
+    checkAndCreateDir,
+    upload
 }

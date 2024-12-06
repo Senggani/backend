@@ -4,4 +4,5 @@ script/
 .vscode/
 vue_test/
 uploads/
+upload/
 eng.traineddata

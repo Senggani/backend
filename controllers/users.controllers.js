@@ -5,11 +5,22 @@ const { database, ObjectId, client } = require("../bin/database");
 const { hashPassword } = require("../helpers/security");
 const multer = require("multer")
 const path = require('path');
+const fs = require("fs");
 const auth = require("../helpers/auth");
+
+const uploadDir = './upload/profile_pic/';
+
+const checkAndCreateDir = (req, res, next) => {
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+    console.log('Upload directory created');
+  }
+  next();
+};
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads/profile_pic');
+    cb(null, uploadDir);
   },
   filename: function (req, file, cb) {
     cb(null, req.user.userId + '_' + file.originalname);
@@ -54,15 +65,19 @@ module.exports = {
         result = await query.queryGETone("users", { _id: new ObjectId(data.id) })
 
         if (`${result._id}` == `${new ObjectId(req.user.userId)}`) {
-          // res.attachment(result.path)
-          // console.log(true)
-          response.sendFile(res, result.path, "Users retrieved successfully", result);
+          const filePath = path.join(__dirname, `.${uploadDir}${result.path}`);
+
+          if (!fs.existsSync(filePath)) {
+            response.success(res, "Users retrieved successfully", result); // Apabila tidak ada proile pic tidak mengirimkan gambar
+          } else {
+            response.sendFileAsJSON(res, [result.path], "Users retrieved successfully", result);
+          }
         } else {
           response.success(res, "Users retrieved successfully", result);
         }
       }
       else if (data.station_id) {
-        result = await query.queryGETone("users", { "assignments.station": new ObjectId(data.station_id) })
+        result = await query.queryGET("users", { "assignments.station": new ObjectId(data.station_id) })
         response.success(res, "Users retrieved successfully", result);
       }
       else {
@@ -175,6 +190,7 @@ module.exports = {
   },
 
   upload,
+  checkAndCreateDir,
 
   uploadProfilePic: async (req, res) => {
     try {
