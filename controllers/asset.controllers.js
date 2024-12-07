@@ -79,7 +79,7 @@ module.exports = {
 
             const result = await query.queryPOST(data.collection, doc);
 
-            response.success(res, (`Success adding ${data.collection} data`), result);
+            response.success(res, (`Success adding ${data.collection} data`), { doc, result });
 
         }
         catch (error) {

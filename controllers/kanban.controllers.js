@@ -227,7 +227,7 @@ module.exports = {
 
       const results = await client.collection("kanban_history").insertOne(doc);
 
-      response.success(res, "Success to submit kanban backend", results)
+      response.success(res, "Success to submit kanban backend", { doc, results })
 
       await database.close()
 

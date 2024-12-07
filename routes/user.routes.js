@@ -9,7 +9,7 @@ const {
     uploadProfilePic,
     testSendMultipleFile,
     checkAndCreateDir,
-} = require('../controllers/users.controllers');
+} = require('../controllers/user.controllers');
 var router = express.Router();
 var { protect } = require("../middleware/auth.middleware");
 

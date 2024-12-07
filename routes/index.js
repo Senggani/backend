@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 
 const asset = require('./asset.routes.js')
-const ftp = require('./ftp.routes.js')
 const ts = require('./timeseries.routes.js')
 const python = require('./pythonHandler.routes.js')
 const kanban = require('./kanban.routes.js')
@@ -12,7 +11,6 @@ const login = require('./login.routes.js')
 const itemcheck = require('./itemcheck.routes.js')
 
 router.use('/asset', asset)
-router.use('/ftp', ftp)
 router.use('/ts', ts)
 router.use('/py', python)
 router.use('/kanban', kanban)

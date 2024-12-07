@@ -26,63 +26,6 @@ module.exports = {
     }
   },
 
-  // register: async (req, res) => {
-  //   try {
-  //     const { username, email, password, confirmPassword } = req.body;
-
-  //     // Check if passwords match
-  //     if (password !== confirmPassword) {
-  //       return response.notAllowed(res, "Passwords do not match");
-  //     }
-
-  //     // Check if user already exists
-  //     const existingUser = await User.findOne({
-  //       $or: [{ email }, { username }],
-  //     });
-
-  //     if (existingUser) {
-  //       return response.notAllowed(res, "Username or email already exists");
-  //     }
-
-  //     // Create new user (default role is team_member)
-  //     const user = new User({
-  //       username,
-  //       email,
-  //       password,
-  //       role: "team_member",
-  //       assignments: {
-  //         plant: null,
-  //         shop: null,
-  //         line: null,
-  //         station: null,
-  //       },
-  //       isActive: true,
-  //     });
-
-  //     await user.save();
-
-  //     // Generate token
-  //     const token = await auth.generateToken({
-  //       userId: user._id,
-  //       username: user.username,
-  //       role: user.role,
-  //     });
-
-  //     response.success(res, "Account created successfully", {
-  //       token,
-  //       user: {
-  //         username: user.username,
-  //         email: user.email,
-  //         role: user.role,
-  //         assignments: user.assignments,
-  //       },
-  //     });
-  //   } catch (error) {
-  //     console.error("Registration error:", error);
-  //     response.error(res, error.message);
-  //   }
-  // },
-
   login: async (req, res) => {
     try {
       const { username, password } = req.body;
@@ -141,43 +84,6 @@ module.exports = {
       response.error(res, ("An error occured during login", error.message));
     }
   },
-
-  // Change password
-  // changePassword: async (req, res) => {
-  //   try {
-  //     const { currentPassword, newPassword, confirmPassword } = req.body;
-  //     const userId = req.user.userId; // Get user ID from token
-
-  //     // Check if new password match
-  //     if (newPassword !== confirmPassword) {
-  //       return response.notAllowed(
-  //         res,
-  //         "New password and confirm password do not match"
-  //       );
-  //     }
-
-  //     // Find user
-  //     const user = await User.findById(userId);
-  //     if (!user) {
-  //       return response.notAllowed(res, "User not found");
-  //     }
-
-  //     // Verify current password
-  //     const isValidPassword = await security.comparePassword(currentPassword);
-  //     if (!isValidPassword) {
-  //       return response.notAllowed(res, "Current password is incorrect");
-  //     }
-
-  //     // Update password
-  //     user.password = newPassword;
-  //     await user.save();
-
-  //     response.success(res, "Password changed successfully");
-  //   } catch (error) {
-  //     console.error("Change password error:", error);
-  //     response.error(res, error.message);
-  //   }
-  // },
 
   // Verify token
   verifyToken: async (req, res) => {

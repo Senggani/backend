@@ -75,7 +75,7 @@ module.exports = {
 
             let results = await client.collection('kanban').updateMany(filter, { $push: { 'itemcheck_id': result_item.insertedId } })
 
-            response.success(res, "Success adding itemcheck", { results, result_item })
+            response.success(res, "Success adding itemcheck", { doc, results, result_item })
 
         } catch (error) {
             response.failed(res, 'Failed to add itemcheck', error.message)
