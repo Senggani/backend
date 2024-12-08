@@ -4,7 +4,6 @@ const { database, ObjectId, client } = require("../bin/database");
 const multer = require("multer")
 const path = require('path');
 const Tesseract = require('tesseract.js');
-const archiver = require('archiver');
 const fs = require('fs');
 
 // const uploadDir = path.join(__dirname, 'uploads', 'itemcheck');
@@ -239,51 +238,33 @@ module.exports = {
   historyKanban: async (req, res) => {
     try {
       let filter = {};
-      let results = {};
       let filePath = [];
 
       if (req.query.id) {
 
         filter._id = new ObjectId(req.query.id);
         const itemcheck = await query.queryGETone("kanban_history", filter);
-        console.log(itemcheck.itemcheck)
-        // itemcheck.forEach(doc => {
-        //   results = doc;
-        // });
 
         itemcheck.itemcheck.forEach((doc, index) => {
           filePath[index] = path.join(__dirname, `.${uploadDir}${doc.filename}`);
         })
 
-        const archive = archiver('zip', {
-          zlib: { level: 9 } // Set compression level
-        });
-
-        res.attachment('files.zip');
-
-        archive.pipe(res);
-
-        filePath.forEach(file => {
-          archive.file(file, { name: path.basename(file) });
-        });
-
-        archive.finalize();
-
-        archive.on('error', (err) => {
-          response.error(res, err.message)
-        });
-
-        response.success(res, "Success getting kanban history", itemcheck);
-
-      } else if (req.query.kanban_id) {
-
-        filter.kanban_id = new ObjectId(req.query.kanban_id);
-        const results = await query.queryGET("kanban_history", filter);
-        response.success(res, "Success getting kanban history", results);
+        response.sendFileAsJSON(res, filePath, "Success getting kanban history", itemcheck);
 
       } else if (req.query.work_order_id) {
 
         filter.work_order_id = new ObjectId(req.query.work_order_id);
+        const itemcheck = await query.queryGETone("kanban_history", filter);
+
+        itemcheck.itemcheck.forEach((doc, index) => {
+          filePath[index] = path.join(__dirname, `.${uploadDir}${doc.filename}`);
+        })
+
+        response.sendFileAsJSON(res, filePath, "Success getting kanban history", itemcheck);
+
+      } else if (req.query.kanban_id) {
+
+        filter.kanban_id = new ObjectId(req.query.kanban_id);
         const results = await query.queryGET("kanban_history", filter);
         response.success(res, "Success getting kanban history", results);
 
