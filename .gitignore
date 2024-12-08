@@ -7,5 +7,6 @@ uploads/
 upload/
 eng.traineddata
 best.onnx
+best_local.onnx
 best.pt
 yolov8m.onnx

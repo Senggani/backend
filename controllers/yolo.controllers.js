@@ -32,8 +32,6 @@ async function prepare_input(buf) {
     // console.log('prepare_input')
     const img = sharp(buf);
     const md = await img.metadata();
-    // const img = sharp(buf.exif);
-    // const md = buf;
     const [img_width, img_height] = [md.width, md.height];
     const pixels = await img.removeAlpha()
         .resize({ width: pixelSize, height: pixelSize, fit: 'fill' })
@@ -51,7 +49,7 @@ async function prepare_input(buf) {
 
 async function run_model(input) {
     // console.log('run_model')
-    const model = await ort.InferenceSession.create("yolov8m.onnx");
+    const model = await ort.InferenceSession.create("best_local.onnx");
     // console.log('2')
     input = new ort.Tensor(Float32Array.from(input), [1, 3, pixelSize, pixelSize]);
     // console.log('3')
@@ -115,15 +113,15 @@ function intersection(box1, box2) {
 }
 
 const yolo_classes = [
-    'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat',
-    'traffic light', 'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse',
-    'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase',
-    'frisbee', 'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard',
-    'surfboard', 'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple',
-    'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch', 'potted plant',
-    'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone', 'microwave', 'oven',
-    'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush'
-    // 'Gani'
+    // 'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat',
+    // 'traffic light', 'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse',
+    // 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase',
+    // 'frisbee', 'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard',
+    // 'surfboard', 'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple',
+    // 'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch', 'potted plant',
+    // 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone', 'microwave', 'oven',
+    // 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush'
+    'Gani'
 ];
 
 
@@ -145,7 +143,7 @@ module.exports = {
             fs.writeFileSync(uploadDir + rawFileName, req.file.buffer);
 
             const boxes = await detect_objects_on_image(req.file.buffer);
-            console.log('ok')
+            // console.log('ok')
             const svgContent = boxes.map(box => `
             <rect x="${parseInt(box[0])}" y="${parseInt(box[1])}" width="${parseInt(box[2] - box[0])}" height="${parseInt(box[3] - box[1])}" fill="none" stroke="red" stroke-width="20" stroke-opacity="0.7"/>
             <rect x="${parseInt(box[0])}" y="${parseInt(box[3]) - 60}" width="${parseInt(box[2] - box[0])}" height="50" fill="white" fill-opacity="0.7" />
