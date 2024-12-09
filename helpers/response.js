@@ -83,7 +83,7 @@ const sendMultipleFile = async (res, filePath, message = 'Success', data, meta) 
 
         res.write('--boundary');
         res.write('Content-Disposition: form-data; Content-Type: application/json; ');
-        res.write('ndata: ');
+        res.write('data: ');
 
         res.write(JSON.stringify(response));
         // res.write('');

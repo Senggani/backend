@@ -8,6 +8,7 @@ const fs = require("fs");
 const { client, ObjectId, database } = require('../bin/database');
 
 const uploadDir = './upload/opencv/';
+const uploadDirEsp32 = './upload/esp32';
 
 const checkAndCreateDir = (req, res, next) => {
     if (!fs.existsSync(uploadDir)) {
@@ -15,6 +16,12 @@ const checkAndCreateDir = (req, res, next) => {
         console.log('Upload directory created');
     }
     next();
+};
+const dirEsp32 = () => {
+    if (!fs.existsSync(uploadDirEsp32)) {
+        fs.mkdirSync(uploadDirEsp32, { recursive: true });
+        console.log('Upload directory created');
+    }
 };
 
 const storage = multer.diskStorage({
@@ -241,6 +248,34 @@ module.exports = {
             response.failed(res, "Failed downloading image", error.message);
         }
     },
+
+    uploadESP32Image: async (req, res) => {
+        try {
+            // console.log('ok');
+            const data = req.body;
+            // console.log(data);
+            const buffer = Buffer.from(data.image, 'base64');
+            // console.log(buffer);
+            dirEsp32();
+            // console.log('ok');
+            const filePath = uploadDirEsp32 + data.filename;
+            console.log(filePath);
+            fs.writeFile(filePath, buffer, (err) => {
+                if (err) {
+                    console.log('Error saving image:', err);
+                }
+            });
+            // console.log('ok');
+
+            // console.log(data)
+
+            response.success(res, "Success getting data to backend", data.filename);
+        } catch (error) {
+            response.failed(res, "Failed uploading to backend", error.message);
+        }
+    },
+
+
 
     consumeMessageOpenCV,
     checkAndCreateDir,

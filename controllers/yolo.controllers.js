@@ -138,12 +138,12 @@ module.exports = {
     detectObject: async (req, res) => {
         try {
 
+            console.log(req.file)
             const filename = Date.now() + '_' + req.file.originalname;
             const rawFileName = 'raw_' + filename;
             fs.writeFileSync(uploadDir + rawFileName, req.file.buffer);
 
             const boxes = await detect_objects_on_image(req.file.buffer);
-            // console.log('ok')
             const svgContent = boxes.map(box => `
             <rect x="${parseInt(box[0])}" y="${parseInt(box[1])}" width="${parseInt(box[2] - box[0])}" height="${parseInt(box[3] - box[1])}" fill="none" stroke="red" stroke-width="20" stroke-opacity="0.7"/>
             <rect x="${parseInt(box[0])}" y="${parseInt(box[3]) - 60}" width="${parseInt(box[2] - box[0])}" height="50" fill="white" fill-opacity="0.7" />
