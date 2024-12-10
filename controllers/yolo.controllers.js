@@ -171,4 +171,5 @@ module.exports = {
 
     upload,
     checkAndCreateDir,
+    detect_objects_on_image,
 }

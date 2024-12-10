@@ -6,6 +6,8 @@ const path = require("path");
 const multer = require("multer");
 const fs = require("fs");
 const { client, ObjectId, database } = require('../bin/database');
+const { detect_objects_on_image } = require('./yolo.controllers');
+const sharp = require('sharp');
 
 const uploadDir = './upload/opencv/';
 const uploadDirEsp32 = './upload/esp32';
@@ -253,9 +255,10 @@ module.exports = {
         try {
             // console.log('ok');
             const data = req.body;
-            // console.log(data);
+            // console.log(data.body);
             const buffer = Buffer.from(data.image, 'base64');
-            // console.log(buffer);
+            // const buffer = Buffer.from(data.image);
+            console.log(buffer);
             dirEsp32();
             // console.log('ok');
             const filePath = uploadDirEsp32 + data.filename;
@@ -275,7 +278,37 @@ module.exports = {
         }
     },
 
+    uploadESP32ImageYolo: async (req, res) => {
+        try {
+            const data = req.body;
 
+            const filename = '/' + Date.now() + '_' + data.filename.replace(/\//g, '');
+
+            const buffer = Buffer.from(data.image, 'base64');
+
+            const boxes = await detect_objects_on_image(buffer);
+            const svgContent = boxes.map(box => `
+            <rect x="${parseInt(box[0])}" y="${parseInt(box[1])}" width="${parseInt(box[2] - box[0])}" height="${parseInt(box[3] - box[1])}" fill="none" stroke="red" stroke-width="20" stroke-opacity="0.7"/>
+            <rect x="${parseInt(box[0])}" y="${parseInt(box[3]) - 60}" width="${parseInt(box[2] - box[0])}" height="50" fill="white" fill-opacity="0.7" />
+            <text x="${parseInt(box[0]) + 20}" y="${parseInt(box[3]) - 20}" font-size="50" fill="green" font-family="Arial">${box[4]}: 0.${parseInt(box[5] * 1000)}%</text>`).join('');
+
+            dirEsp32();
+
+            await sharp(buffer)
+                .composite([{
+                    input: Buffer.from(`
+            <svg width="${data.width}" height="${data.height}">${svgContent}
+            </svg>`),
+                    blend: 'over'
+                }])
+                .toFile(uploadDirEsp32 + filename)
+
+            response.success(res, "Success getting data to backend", data.filename);
+        } catch (error) {
+            response.failed(res, "Failed uploading to backend", error.message);
+            console.log(error)
+        }
+    },
 
     consumeMessageOpenCV,
     checkAndCreateDir,
