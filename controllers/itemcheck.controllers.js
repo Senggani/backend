@@ -431,6 +431,9 @@ module.exports = {
             if (data.quantity) {
                 doc.quantity = data.quantity
             }
+            if (data.unit) {
+                doc.unit = data.unit
+            }
 
             const result_item = await query.queryPUT("spare_part", filter, doc);
             response.success(res, `Success editting spare part`, result_item)

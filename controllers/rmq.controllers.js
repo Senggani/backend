@@ -9,8 +9,8 @@ const { client, ObjectId, database } = require('../bin/database');
 const { detect_objects_on_image } = require('./yolo.controllers');
 const sharp = require('sharp');
 
-const uploadDir = './upload/opencv/';
-const uploadDirEsp32 = './upload/esp32';
+const uploadDir = './uploads/opencv/';
+const uploadDirEsp32 = './uploads/esp32';
 
 const checkAndCreateDir = (req, res, next) => {
     if (!fs.existsSync(uploadDir)) {

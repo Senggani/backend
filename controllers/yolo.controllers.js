@@ -7,7 +7,7 @@ const fs = require('fs');
 const sharp = require('sharp');
 const ort = require("onnxruntime-node");
 
-const uploadDir = './upload/yolo/';
+const uploadDir = './uploads/yolo/';
 
 const pixelSize = 640;
 

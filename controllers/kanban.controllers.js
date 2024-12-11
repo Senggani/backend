@@ -7,7 +7,7 @@ const Tesseract = require('tesseract.js');
 const fs = require('fs');
 
 // const uploadDir = path.join(__dirname, 'uploads', 'itemcheck');
-const uploadDir = './upload/itemcheck/';
+const uploadDir = './uploads/itemcheck/';
 
 const checkAndCreateDir = (req, res, next) => {
   if (!fs.existsSync(uploadDir)) {

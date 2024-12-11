@@ -8,7 +8,7 @@ const path = require('path');
 const fs = require("fs");
 const auth = require("../helpers/auth");
 
-const uploadDir = './upload/profile_pic/';
+const uploadDir = './uploads/profile_pic/';
 
 const checkAndCreateDir = (req, res, next) => {
   if (!fs.existsSync(uploadDir)) {
