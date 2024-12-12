@@ -6,7 +6,7 @@ const path = require("path");
 const multer = require("multer");
 const fs = require("fs");
 const { client, ObjectId, database } = require('../bin/database');
-const { detect_objects_on_image } = require('./yolo.controllers');
+const { detect_objects_on_image, detect_faces_on_image } = require('./yolo.controllers');
 const sharp = require('sharp');
 
 const uploadDir = './uploads/opencv/';
@@ -287,7 +287,12 @@ module.exports = {
             const buffer = Buffer.from(data.image, 'base64');
 
             const boxes = await detect_objects_on_image(buffer);
+            const boxes2 = await detect_faces_on_image(buffer);
             const svgContent = boxes.map(box => `
+            <rect x="${parseInt(box[0])}" y="${parseInt(box[1])}" width="${parseInt(box[2] - box[0])}" height="${parseInt(box[3] - box[1])}" fill="none" stroke="red" stroke-width="20" stroke-opacity="0.7"/>
+            <rect x="${parseInt(box[0])}" y="${parseInt(box[3]) - 60}" width="${parseInt(box[2] - box[0])}" height="50" fill="white" fill-opacity="0.7" />
+            <text x="${parseInt(box[0]) + 20}" y="${parseInt(box[3]) - 20}" font-size="50" fill="green" font-family="Arial">${box[4]}: 0.${parseInt(box[5] * 1000)}%</text>`).join('');
+            const svgContent_2 = boxes2.map(box => `
             <rect x="${parseInt(box[0])}" y="${parseInt(box[1])}" width="${parseInt(box[2] - box[0])}" height="${parseInt(box[3] - box[1])}" fill="none" stroke="red" stroke-width="20" stroke-opacity="0.7"/>
             <rect x="${parseInt(box[0])}" y="${parseInt(box[3]) - 60}" width="${parseInt(box[2] - box[0])}" height="50" fill="white" fill-opacity="0.7" />
             <text x="${parseInt(box[0]) + 20}" y="${parseInt(box[3]) - 20}" font-size="50" fill="green" font-family="Arial">${box[4]}: 0.${parseInt(box[5] * 1000)}%</text>`).join('');
@@ -297,7 +302,7 @@ module.exports = {
             await sharp(buffer)
                 .composite([{
                     input: Buffer.from(`
-            <svg width="${data.width}" height="${data.height}">${svgContent}
+            <svg width="${data.width}" height="${data.height}">${svgContent}${svgContent_2}
             </svg>`),
                     blend: 'over'
                 }])

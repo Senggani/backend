@@ -24,6 +24,13 @@ const upload = multer();
 async function detect_objects_on_image(buf) {
     // console.log('detect_objects_on_image')
     const [input, img_width, img_height] = await prepare_input(buf);
+    const output = await run_model_2(input);
+    return process_output_2(output, img_width, img_height);
+}
+
+async function detect_faces_on_image(buf) {
+    // console.log('detect_objects_on_image')
+    const [input, img_width, img_height] = await prepare_input(buf);
     const output = await run_model(input);
     return process_output(output, img_width, img_height);
 }
@@ -47,6 +54,17 @@ async function prepare_input(buf) {
     return [input, img_width, img_height];
 }
 
+async function run_model_2(input) {
+    // console.log('run_model')
+    const model = await ort.InferenceSession.create("yolov8m.onnx");
+    // console.log('2')
+    input = new ort.Tensor(Float32Array.from(input), [1, 3, pixelSize, pixelSize]);
+    // console.log('3')
+    const outputs = await model.run({ images: input });
+    // console.log('4')
+    return outputs["output0"].data;
+}
+
 async function run_model(input) {
     // console.log('run_model')
     const model = await ort.InferenceSession.create("best_local.onnx");
@@ -59,6 +77,37 @@ async function run_model(input) {
 }
 
 function process_output(output, img_width, img_height) {
+    // console.log('process_output')
+    let boxes = [];
+    for (let index = 0; index < 8400; index++) {
+        const [class_id, prob] = [...Array(80).keys()]
+            .map(col => [col, output[8400 * (col + 4) + index]])
+            .reduce((accum, item) => item[1] > accum[1] ? item : accum, [0, 0]);
+        if (prob < 0.5) {
+            continue;
+        }
+        const label = face_classes[class_id];
+        const xc = output[index];
+        const yc = output[8400 + index];
+        const w = output[2 * 8400 + index];
+        const h = output[3 * 8400 + index];
+        const x1 = (xc - w / 2) / pixelSize * img_width;
+        const y1 = (yc - h / 2) / pixelSize * img_height;
+        const x2 = (xc + w / 2) / pixelSize * img_width;
+        const y2 = (yc + h / 2) / pixelSize * img_height;
+        boxes.push([x1, y1, x2, y2, label, prob]);
+    }
+
+    boxes = boxes.sort((box1, box2) => box2[5] - box1[5])
+    const result = [];
+    while (boxes.length > 0) {
+        result.push(boxes[0]);
+        boxes = boxes.filter(box => iou(boxes[0], box) < 0.7);
+    }
+    return result;
+}
+
+function process_output_2(output, img_width, img_height) {
     // console.log('process_output')
     let boxes = [];
     for (let index = 0; index < 8400; index++) {
@@ -113,14 +162,18 @@ function intersection(box1, box2) {
 }
 
 const yolo_classes = [
-    // 'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat',
-    // 'traffic light', 'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse',
-    // 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase',
-    // 'frisbee', 'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard',
-    // 'surfboard', 'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple',
-    // 'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch', 'potted plant',
-    // 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone', 'microwave', 'oven',
-    // 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush'
+    'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat',
+    'traffic light', 'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse',
+    'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase',
+    'frisbee', 'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard',
+    'surfboard', 'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple',
+    'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch', 'potted plant',
+    'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone', 'microwave', 'oven',
+    'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush'
+];
+
+
+const face_classes = [
     'Gani'
 ];
 
@@ -172,4 +225,5 @@ module.exports = {
     upload,
     checkAndCreateDir,
     detect_objects_on_image,
+    detect_faces_on_image,
 }
