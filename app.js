@@ -5,6 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const cors = require("cors");
 const fs = require("fs");
+const { connectToDatabase } = require("./bin/database")
 
 const dir = "./resources"
 
@@ -20,6 +21,8 @@ const { consumeMessageOpenCV } = require("./controllers/rmq.controllers");
 
 var app = express();
 app.use(cors());
+
+connectToDatabase();
 
 app.use(logger("dev"));
 app.use(express.json());

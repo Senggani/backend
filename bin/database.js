@@ -26,4 +26,18 @@ const database = new MongoClient(uri, {
 });
 const client = database.db("pm_module"); */
 
-module.exports = { client, database, ObjectId };
+module.exports = {
+  client,
+  database,
+  ObjectId,
+
+  connectToDatabase: async () => {
+    try {
+      await database.connect();
+      console.log("Success connecting to MongoDB");
+    } catch (error) {
+      response.failed(res, 'Failed to connect', error.message)
+    }
+  },
+
+};

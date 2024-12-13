@@ -170,7 +170,7 @@ module.exports = {
 
       let itemcheck = []
 
-      await database.connect();
+      // await database.connect();
 
       for (let index = 0; index < file.length; index++) {
         itemcheck[index] = {
@@ -214,6 +214,8 @@ module.exports = {
 
       }
 
+      await query.queryPUT("work_order", { _id: data.work_order_id }, { status: data.status })
+
       let doc = {
         kanban_id: new ObjectId(data.kanban_id),
         work_order_id: new ObjectId(data.work_order_id),
@@ -222,13 +224,13 @@ module.exports = {
         itemcheck: itemcheck
       }
 
-      // await database.connect()
+      // // await database.connect()
 
       const results = await client.collection("kanban_history").insertOne(doc);
 
       response.success(res, "Success to submit kanban backend", { doc, results })
 
-      await database.close()
+      // await database.close()
 
     } catch (error) {
       response.failed(res, 'Failed to connect', error.message)

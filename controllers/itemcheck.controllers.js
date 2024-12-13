@@ -40,7 +40,7 @@ module.exports = {
                 doc.unit = data.unit;
             }
 
-            await database.connect();
+            // await database.connect();
 
             const result_item = await client.collection("itemcheck").insertOne(doc);
 
@@ -80,7 +80,7 @@ module.exports = {
         } catch (error) {
             response.failed(res, 'Failed to add itemcheck', error.message)
         } finally {
-            await database.close();
+            // await database.close();
         }
     },
 
@@ -211,7 +211,7 @@ module.exports = {
                 'itemcheck.$': 1
             };
 
-            await database.connect();
+            // await database.connect();
 
             let results = [];
 
@@ -222,7 +222,7 @@ module.exports = {
 
             response.success(res, "Success getting itemcheck history", (results));
 
-            await database.close()
+            // await database.close()
         } catch (error) {
             response.failed(res, 'Failed to get itemcheck history', error.message)
         }
@@ -230,7 +230,7 @@ module.exports = {
 
     deleteItemcheck: async (req, res) => {
         try {
-            await database.connect();
+            // await database.connect();
             const data = req.body
 
             let filter_itemcheck = { deleted_by: null, _id: new ObjectId(req.query.id) };
@@ -293,7 +293,7 @@ module.exports = {
         } catch (error) {
             response.failed(res, `Failed to delete itemcheck`, error.message)
         } finally {
-            await database.close();
+            // await database.close();
         }
     },
 

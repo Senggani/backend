@@ -4,34 +4,12 @@ module.exports = {
   queryGET: async (collection, filter) => {
     return new Promise(async (resolve, reject) => {
       try {
-        await database.connect();
+        // await database.connect();
 
         await client
           .collection(collection)
           .find(filter, {})
           .toArray()
-          .then(results => {
-            resolve(results)
-          })
-          .catch((err) => {
-            reject(err);
-          });
-      } finally {
-        // Ensures that the client will close when you finish/error
-        await database.close();
-      }
-
-    });
-  },
-
-  queryGETone: async (collection, filter) => {
-    return new Promise(async (resolve, reject) => {
-      try {
-        await database.connect();
-
-        await client
-          .collection(collection)
-          .findOne(filter, {})
           .then(results => {
             resolve(results)
           })
@@ -46,10 +24,32 @@ module.exports = {
     });
   },
 
+  queryGETone: async (collection, filter) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        // await database.connect();
+
+        await client
+          .collection(collection)
+          .findOne(filter, {})
+          .then(results => {
+            resolve(results)
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      } finally {
+        // Ensures that the client will close when you finish/error
+        // // await database.close();
+      }
+
+    });
+  },
+
   queryPOST: async (collection, doc) => {
     return new Promise(async (resolve, reject) => {
       try {
-        await database.connect();
+        // await database.connect();
 
         await client
           .collection(collection)
@@ -62,7 +62,7 @@ module.exports = {
           });
       } finally {
         // Ensures that the client will close when you finish/error
-        await database.close();
+        // await database.close();
       }
 
     });
@@ -71,7 +71,7 @@ module.exports = {
   queryPUT: async (collection, filter, doc) => {
     return new Promise(async (resolve, reject) => {
       try {
-        await database.connect();
+        // await database.connect();
 
         const updatedDocument = {
           $set: doc
@@ -87,7 +87,7 @@ module.exports = {
             reject(err);
           });
       } finally {
-        await database.close();
+        // await database.close();
       }
 
     });
@@ -98,7 +98,7 @@ module.exports = {
       try {
 
         // Connect the client to the server	(optional starting in v4.7)
-        await database.connect();
+        // await database.connect();
         // Send a ping to confirm a successful connection
         await client
           .collection(localCollection)
@@ -130,7 +130,7 @@ module.exports = {
           });
       } finally {
         // Ensures that the client will close when you finish/error
-        await database.close();
+        // await database.close();
       }
 
     });
@@ -141,7 +141,7 @@ module.exports = {
       try {
 
         // Connect the client to the server	(optional starting in v4.7)
-        await database.connect();
+        // await database.connect();
         // Send a ping to confirm a successful connection
         await client
           .collection(localCollection)
@@ -184,7 +184,7 @@ module.exports = {
           });
       } finally {
         // Ensures that the client will close when you finish/error
-        await database.close();
+        // await database.close();
       }
 
     });
@@ -193,7 +193,7 @@ module.exports = {
   queryTS: async (collection, filter, projection, limit) => {
     return new Promise(async (resolve, reject) => {
       try {
-        await database.connect();
+        // await database.connect();
 
         await client
           .collection(collection)
@@ -208,7 +208,7 @@ module.exports = {
           });
       } finally {
         // Ensures that the client will close when you finish/error
-        await database.close();
+        // await database.close();
       }
 
     });
