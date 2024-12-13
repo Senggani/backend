@@ -21,7 +21,7 @@ var router = express.Router();
 router.get('/test-connection', testConnection)
 
 router.get('/list-kanban', listKanban)
-router.get('/history-kanban', historyKanban)
+router.get('/history-kanban', protect, historyKanban)
 router.put('/edit-kanban', protect, editKanban)
 router.put('/delete-kanban', protect, deleteKanban)
 router.post('/submit-kanban', protect, checkAndCreateDir, upload.array('file', 30), submitKanban)

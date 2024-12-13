@@ -240,9 +240,7 @@ module.exports = {
 
   historyKanban: async (req, res) => {
     try {
-      let filter = {};
-      let filePath = [];
-
+      let filter = { created_by: new ObjectId(req.user.user_id) };
       let results = {};
 
       if (req.query.id) {
@@ -261,6 +259,7 @@ module.exports = {
         results = await query.queryGET("kanban_history", filter);
 
       } else {
+
         results = await query.queryGET("kanban_history", filter);
       }
 
