@@ -7,7 +7,7 @@ const cors = require("cors");
 const fs = require("fs");
 const { connectToDatabase } = require("./bin/database")
 
-const dir = "./resources"
+const dir = "./uploads"
 
 const checkAndCreateDir = () => {
     if (!fs.existsSync(dir)) {
@@ -29,7 +29,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 checkAndCreateDir();
-app.use(express.static(dir));
+app.use("/uploads", (req, res, next) => {
+    express.static(dir)(req, res, next);
+});
 
 app.use("/", routerV1);
 

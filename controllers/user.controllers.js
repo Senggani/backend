@@ -68,7 +68,8 @@ module.exports = {
           const filePath = path.join(__dirname, `.${uploadDir}${result.path}`);
 
           if (!fs.existsSync(filePath)) {
-            response.success(res, "Users retrieved successfully", result); // Apabila tidak ada proile pic tidak mengirimkan gambar
+            response.success(res, "Users retrieved successfully", result); // Apabila tidak ada proile 
+            // pic tidak mengirimkan gambar
           } else {
             response.sendFileAsJSON(res, [result.path], "Users retrieved successfully", result);
           }
