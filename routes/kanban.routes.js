@@ -24,7 +24,7 @@ router.get('/list-kanban', listKanban)
 router.get('/history-kanban', historyKanban)
 router.put('/edit-kanban', protect, editKanban)
 router.put('/delete-kanban', protect, deleteKanban)
-router.post('/submit-kanban', checkAndCreateDir, upload.array('file', 30), submitKanban)
+router.post('/submit-kanban', protect, checkAndCreateDir, upload.array('file', 30), submitKanban)
 
 router.get('/list-work-order', listWorkOrder)
 router.post('/add-work-order', protect, addWorkOrder)

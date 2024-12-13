@@ -181,7 +181,7 @@ module.exports = {
 
         let check_value = await client.collection("itemcheck").findOne({ _id: new ObjectId(data.itemcheck_id[index]) })
         let doc_itemcheck = {
-          created_by: new ObjectId(data.user_id),
+          created_by: new ObjectId(req.user.user_id),
           created_dt: new Date(),
           kanban_id: new ObjectId(data.kanban_id),
           work_order_id: new ObjectId(data.work_order_id),
@@ -191,7 +191,8 @@ module.exports = {
           contentType: file[index].mimetype,
         };
 
-        await client.collection("itemcheck_image").insertOne(doc_itemcheck);
+        let uploadResult = await client.collection("itemcheck_image").insertOne(doc_itemcheck);
+        console.log("Result", uploadResult)
 
         if (check_value.std == 'value') {
 
@@ -340,6 +341,9 @@ module.exports = {
       }
       if (data.date) {
         doc.work_dt = data.date
+      }
+      if (data.status) {
+        doc.status = data.status
       }
 
       const result_item = await query.queryPUT("work_order", filter, doc);
