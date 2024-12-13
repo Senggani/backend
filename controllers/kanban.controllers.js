@@ -337,7 +337,7 @@ module.exports = {
         doc.kanban_id = data.kanban_id
       }
       if (data.user_id) {
-        doc.user_id = data.user_id
+        doc.user_id = new ObjectId(data.user_id)
       }
       if (data.date) {
         doc.work_dt = data.date
