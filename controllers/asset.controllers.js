@@ -94,7 +94,7 @@ module.exports = {
             let filter = { '_id': new ObjectId(data._id) };
 
             let doc = {
-                updated_by: new ObjectId(req.user.userId),
+                updated_by: new ObjectId(req.user._id),
                 updated_dt: new Date()
             };
 
@@ -147,7 +147,7 @@ module.exports = {
             let filter = { '_id': new ObjectId(data._id) };
 
             const doc = {
-                deleted_by: new ObjectId(req.user.userId),
+                deleted_by: new ObjectId(req.user._id),
                 deleted_dt: new Date()
             };
 

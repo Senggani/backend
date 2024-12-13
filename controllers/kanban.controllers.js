@@ -123,7 +123,7 @@ module.exports = {
       let filter = { deleted_by: null, _id: new ObjectId(req.query.id) };
 
       let doc = {
-        updated_by: new ObjectId(req.user.userId),
+        updated_by: new ObjectId(req.user._id),
         updated_dt: new Date()
       }
       if (data.kanban_nm) {
@@ -149,7 +149,7 @@ module.exports = {
       let filter = { deleted_by: null, _id: new ObjectId(req.query.id) };
 
       let doc = {
-        deleted_by: new ObjectId(req.user.userId),
+        deleted_by: new ObjectId(req.user._id),
         deleted_dt: new Date()
       }
 
@@ -240,7 +240,7 @@ module.exports = {
 
   historyKanban: async (req, res) => {
     try {
-      let filter = { "work_order.created_by": new ObjectId(req.user.user_id) };
+      let filter = { "work_order.created_by": new ObjectId(req.user._id) };
 
       if (req.query.id) {
         filter._id = new ObjectId(req.query.id);
@@ -267,7 +267,10 @@ module.exports = {
             $match: filter
           }
         ]
-      ).toArray;
+      ).toArray();
+
+      console.log("filter: ", filter)
+      console.log("req.user: ", req.user)
 
       response.success(res, "Success getting kanban history", results);
 
@@ -304,7 +307,7 @@ module.exports = {
       const data = req.body
 
       let doc = {
-        created_by: new ObjectId(req.user.userId),
+        created_by: new ObjectId(req.user._id),
         created_dt: new Date(),
         kanban_id: new ObjectId(data.kanban_id),
         user_id: new ObjectId(data.user_id),
@@ -324,7 +327,7 @@ module.exports = {
       const data = req.body
 
       let doc = {
-        updated_by: new ObjectId(req.user.userId),
+        updated_by: new ObjectId(req.user._id),
         updated_dt: new Date(),
       }
 
@@ -355,7 +358,7 @@ module.exports = {
       const data = req.body
 
       let doc = {
-        deleted_by: new ObjectId(req.user.userId),
+        deleted_by: new ObjectId(req.user._id),
         deleted_dt: new Date(),
       }
 

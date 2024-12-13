@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
     cb(null, uploadDir);
   },
   filename: function (req, file, cb) {
-    cb(null, req.user.userId + '_' + file.originalname);
+    cb(null, req.user._id + '_' + file.originalname);
   }
 });
 
@@ -64,7 +64,7 @@ module.exports = {
       if (data.id) {
         result = await query.queryGETone("users", { _id: new ObjectId(data.id) })
 
-        if (`${result._id}` == `${new ObjectId(req.user.userId)}`) {
+        if (`${result._id}` == `${new ObjectId(req.user._id)}`) {
           const filePath = path.join(__dirname, `.${uploadDir}${result.path}`);
 
           if (!fs.existsSync(filePath)) {
@@ -101,7 +101,7 @@ module.exports = {
         response.failed(res, `Failed to add user: Username is already exist`)
       } else {
         let doc = {
-          created_by: new ObjectId(req.user.userId),
+          created_by: new ObjectId(req.user._id),
           created_dt: new Date(),
           username: data.username,
           password: await hashPassword(data.password),
@@ -137,7 +137,7 @@ module.exports = {
       let user = await query.queryGETone("users", { _id: new ObjectId(data.id) })
 
       let doc = {
-        updated_by: new ObjectId(req.user.userId),
+        updated_by: new ObjectId(req.user._id),
         updated_dt: new Date(),
         assignments: user.assignments
       }
@@ -177,7 +177,7 @@ module.exports = {
       const data = req.body;
 
       let doc = {
-        deleted_by: new ObjectId(req.user.userId),
+        deleted_by: new ObjectId(req.user._id),
         deleted_dt: new Date(),
         is_active: false
       }

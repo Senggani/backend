@@ -27,8 +27,13 @@ module.exports = {
 
       req.user = {
         ...decoded,
+        _id: user._id,
         assignments: user.assignments,
       };
+
+      console.log("Decoded: ", decoded);
+      console.log("User: ", req.user);
+
       next();
     } catch (error) {
       return response.error(res, "Authentication error", error.message);

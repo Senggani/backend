@@ -88,7 +88,7 @@ module.exports = {
   // Verify token
   verifyToken: async (req, res) => {
     try {
-      let user = await query.queryGETone('users', { _id: new ObjectId(req.user.userId) })
+      let user = await query.queryGETone('users', { _id: new ObjectId(req.user._id) })
 
       if (!user) {
         return response.notAllowed(res, "User not found");
@@ -112,7 +112,7 @@ module.exports = {
         });
       }
 
-      await query.queryPUT('users', { _id: new ObjectId(req.user.userId) }, { sessionId: Date.now() })
+      await query.queryPUT('users', { _id: new ObjectId(req.user._id) }, { sessionId: Date.now() })
 
       response.success(res, "Logged out successfully");
     } catch (error) {

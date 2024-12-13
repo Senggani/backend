@@ -319,7 +319,7 @@ module.exports = {
             const data = req.body
 
             let doc = {
-                created_by: new ObjectId(req.user.userId),
+                created_by: new ObjectId(req.user._id),
                 created_dt: new Date(),
                 station_id: new ObjectId(data.station_id),
                 tool_nm: data.tool_name,
@@ -338,7 +338,7 @@ module.exports = {
             const filter = { _id: new ObjectId(data.id), deleted_by: null }
 
             let doc = {
-                updated_by: new ObjectId(req.user.userId),
+                updated_by: new ObjectId(req.user._id),
                 updated_dt: new Date(),
             }
 
@@ -365,7 +365,7 @@ module.exports = {
             const filter = { _id: new ObjectId(data.id), deleted_by: null }
 
             let doc = {
-                deleted_by: new ObjectId(req.user.userId),
+                deleted_by: new ObjectId(req.user._id),
                 deleted_dt: new Date(),
             }
 
@@ -418,7 +418,7 @@ module.exports = {
             const filter = { _id: new ObjectId(data.id), deleted_by: null }
 
             let doc = {
-                updated_by: new ObjectId(req.user.userId),
+                updated_by: new ObjectId(req.user._id),
                 updated_dt: new Date(),
             }
 
@@ -448,7 +448,7 @@ module.exports = {
             const filter = { _id: new ObjectId(data.id), deleted_by: null }
 
             let doc = {
-                deleted_by: new ObjectId(req.user.userId),
+                deleted_by: new ObjectId(req.user._id),
                 deleted_dt: new Date(),
             }
 
