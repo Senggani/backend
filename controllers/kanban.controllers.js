@@ -241,27 +241,16 @@ module.exports = {
   historyKanban: async (req, res) => {
     try {
       let filter = { created_by: new ObjectId(req.user.user_id) };
-      let results = {};
 
       if (req.query.id) {
-
         filter._id = new ObjectId(req.query.id);
-        results = await query.queryGETone("kanban_history", filter);
-
       } else if (req.query.work_order_id) {
-
         filter.work_order_id = new ObjectId(req.query.work_order_id);
-        results = await query.queryGETone("kanban_history", filter);
-
       } else if (req.query.kanban_id) {
-
         filter.kanban_id = new ObjectId(req.query.kanban_id);
-        results = await query.queryGET("kanban_history", filter);
-
-      } else {
-
-        results = await query.queryGET("kanban_history", filter);
       }
+
+      const results = await query.queryGET("kanban_history", filter);
 
       response.success(res, "Success getting kanban history", results);
 
@@ -283,7 +272,7 @@ module.exports = {
         filter.kanban_id = new ObjectId(req.query.kanban_id)
       }
       if (req.query.created_by) {
-        filter.created_by = req.query.created_by
+        filter.created_by = new ObjectId(req.user.user_id)
       }
       const result_item = await query.queryGET("work_order", filter);
       response.success(res, `Success getting work order`, result_item)
