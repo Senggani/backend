@@ -239,13 +239,7 @@ module.exports = {
             if (!fs.existsSync(filePath)) {
                 return res.status(404).send("File not found");
             }
-
-            if (data.id) {
-                response.sendFileAsJSON(res, [filePath], "Succes to get image", results)
-            }
-            else {
-                response.success(res, `Success to list opencv image`, results)
-            }
+            response.success(res, `Success to list opencv image`, results)
         } catch (error) {
             response.failed(res, "Failed downloading image", error.message);
         }

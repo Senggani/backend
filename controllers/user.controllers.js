@@ -38,23 +38,23 @@ module.exports = {
     }
   },
 
-  testSendMultipleFile: async (req, res) => {
-    try {
-      let filePath = [
-        'uploads/itemcheck/1732709063850_Screenshot 2024-11-19 175616.png',
-        'uploads/itemcheck/1732709063848_0001.jpg',
-        'uploads/itemcheck/1732709063847_Screenshot 2024-11-19 175622.png',
-        './uploads/profile_pic/674c9d3d7ffb8ae2bf944983_0001.jpg',
-        './uploads/profile_pic/674c9d3d7ffb8ae2bf944983_0001.jpg',
-        './uploads/profile_pic/674c9d3d7ffb8ae2bf944983_0001.jpg'
-      ];
+  // testSendMultipleFile: async (req, res) => {
+  //   try {
+  //     let filePath = [
+  //       'uploads/itemcheck/1732709063850_Screenshot 2024-11-19 175616.png',
+  //       'uploads/itemcheck/1732709063848_0001.jpg',
+  //       'uploads/itemcheck/1732709063847_Screenshot 2024-11-19 175622.png',
+  //       './uploads/profile_pic/674c9d3d7ffb8ae2bf944983_0001.jpg',
+  //       './uploads/profile_pic/674c9d3d7ffb8ae2bf944983_0001.jpg',
+  //       './uploads/profile_pic/674c9d3d7ffb8ae2bf944983_0001.jpg'
+  //     ];
 
-      response.sendFileAsJSON(res, filePath, 'test send', filePath)
-    } catch (error) {
-      console.log(error.message)
-      response.failed(res, `Failed to connect`, error.message)
-    }
-  },
+  //     response.sendFileAsJSON(res, filePath, 'test send', filePath)
+  //   } catch (error) {
+  //     console.log(error.message)
+  //     response.failed(res, `Failed to connect`, error.message)
+  //   }
+  // },
 
   listUsers: async (req, res) => {
     try {
@@ -63,29 +63,15 @@ module.exports = {
 
       if (data.id) {
         result = await query.queryGETone("users", { _id: new ObjectId(data.id) })
-
-        if (`${result._id}` == `${new ObjectId(req.user._id)}`) {
-          const filePath = path.join(__dirname, `.${uploadDir}${result.path}`);
-
-          if (!fs.existsSync(filePath)) {
-            response.success(res, "Users retrieved successfully", result); // Apabila tidak ada proile 
-            // pic tidak mengirimkan gambar
-          } else {
-            response.sendFileAsJSON(res, [result.path], "Users retrieved successfully", result);
-          }
-        } else {
-          response.success(res, "Users retrieved successfully", result);
-        }
       }
       else if (data.station_id) {
         result = await query.queryGET("users", { "assignments.station": new ObjectId(data.station_id) })
-        response.success(res, "Users retrieved successfully", result);
       }
       else {
         result = await query.queryGET("users", { deleted_by: null });
-        response.success(res, "Users retrieved successfully", result);
       }
-      // response.success(res, "Users retrieved successfully", result);
+
+      response.success(res, "Users retrieved successfully", result);
     } catch (error) {
       response.failed(res, "Failed to get user", error.message);
     }

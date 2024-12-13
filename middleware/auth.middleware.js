@@ -2,7 +2,6 @@ const auth = require("../helpers/auth");
 const response = require("../helpers/response");
 const query = require("../helpers/queryMongo");
 const { database, ObjectId, client } = require("../bin/database");
-// const User = require("../models/Users");
 
 module.exports = {
   protect: async (req, res, next) => {
