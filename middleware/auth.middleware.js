@@ -27,7 +27,7 @@ module.exports = {
 
       req.user = {
         ...decoded,
-        _id: user._id,
+        _id: decoded.userId,
         assignments: user.assignments,
       };
 
