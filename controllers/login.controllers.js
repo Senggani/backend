@@ -22,7 +22,7 @@ module.exports = {
     try {
       response.success(res, `Successfully connected to backend`)
     } catch (error) {
-      response.failed(res, `Failed to connect`, error.message)
+      response.failed(res, `Failed to connect`, error)
     }
   },
 
@@ -51,7 +51,7 @@ module.exports = {
       try {
         checkAuthorization(user);
       } catch (error) {
-        return response.notAllowed(res, error.message);
+        return response.notAllowed(res, error);
       }
 
       // Update sessionId
@@ -81,7 +81,7 @@ module.exports = {
 
       response.success(res, "Success to Login", { token, user });
     } catch (error) {
-      response.error(res, ("An error occured during login", error.message));
+      response.error(res, ("An error occured during login", error));
     }
   },
 
@@ -96,7 +96,7 @@ module.exports = {
 
       response.success(res, "Token verified successfully", { user });
     } catch (error) {
-      response.error(res, ("Token verification failed ", error.message));
+      response.error(res, ("Token verification failed ", error));
     }
   },
 
@@ -116,7 +116,7 @@ module.exports = {
 
       response.success(res, "Logged out successfully");
     } catch (error) {
-      response.error(res, ("An error occured during logout", error.message));
+      response.error(res, ("An error occured during logout", error));
     }
   },
 };

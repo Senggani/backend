@@ -35,7 +35,7 @@ module.exports = {
 
       next();
     } catch (error) {
-      return response.error(res, "Authentication error", error.message);
+      return response.error(res, "Authentication error", error);
     }
   },
 

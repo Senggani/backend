@@ -8,7 +8,7 @@ module.exports = {
         try {
             response.success(res, "Successfully connected to backend")
         } catch (error) {
-            response.failed(res, 'Failed to connect', error.message)
+            response.failed(res, 'Failed to connect', error)
         }
     },
     readData: async (req, res) => {
@@ -34,7 +34,7 @@ module.exports = {
             let results = await query.queryTS("sensor01_acc_xyz", filter, {}, (data.limit ? parseInt(data.limit) : 100))
             response.success(res, `Success reading data`, results)
         } catch (error) {
-            response.failed(res, `Failed to connect`, error.message)
+            response.failed(res, `Failed to connect`, error)
         }
     },
 }

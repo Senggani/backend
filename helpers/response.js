@@ -102,8 +102,8 @@ const success = (res, message = 'Success', data, meta) => {
 //         res.write('--boundary--');
 //         res.end();
 //     } catch (error) {
-//         response.failed(res, `Failed to connect`, error.message)
-//         console.log(error.message)
+//         response.failed(res, `Failed to connect`, error)
+//         console.log(error)
 //     }
 // }
 const error = (res, message) => {

@@ -8,7 +8,7 @@ module.exports = {
             response.success(res, `Successfully connected to backend`, req.body)
 
         } catch (error) {
-            response.failed(res, `Failed to connect`, error.message)
+            response.failed(res, `Failed to connect`, error)
         }
     },
 
@@ -78,7 +78,7 @@ module.exports = {
             response.success(res, "Success adding itemcheck", { doc, results, result_item })
 
         } catch (error) {
-            response.failed(res, 'Failed to add itemcheck', error.message)
+            response.failed(res, 'Failed to add itemcheck', error)
         } finally {
             // await database.close();
         }
@@ -123,7 +123,7 @@ module.exports = {
             response.success(res, `Success editting itemcheck`, results)
 
         } catch (error) {
-            response.failed(res, `Failed to edit itemcheck`, error.message)
+            response.failed(res, `Failed to edit itemcheck`, error)
         }
     },
 
@@ -199,7 +199,7 @@ module.exports = {
             }
 
         } catch (error) {
-            response.failed(res, 'Failed to get itemcheck', error.message)
+            response.failed(res, 'Failed to get itemcheck', error)
         }
     },
 
@@ -224,7 +224,7 @@ module.exports = {
 
             // await database.close()
         } catch (error) {
-            response.failed(res, 'Failed to get itemcheck history', error.message)
+            response.failed(res, 'Failed to get itemcheck history', error)
         }
     },
 
@@ -291,7 +291,7 @@ module.exports = {
             let results = await client.collection('kanban').updateMany(filter, kanban_doc)
             response.success(res, `Success deleting itemcheck`, { delete_item, results })
         } catch (error) {
-            response.failed(res, `Failed to delete itemcheck`, error.message)
+            response.failed(res, `Failed to delete itemcheck`, error)
         } finally {
             // await database.close();
         }
@@ -309,7 +309,7 @@ module.exports = {
             const result_item = await query.queryGET("tools", filter);
             response.success(res, `Success getting tools`, result_item)
         } catch (error) {
-            response.failed(res, `Failed to get tools`, error.message)
+            response.failed(res, `Failed to get tools`, error)
         }
     },
 
@@ -328,7 +328,7 @@ module.exports = {
             const result_item = await query.queryPOST("tools", doc);
             response.success(res, `Success adding tools`, result_item)
         } catch (error) {
-            response.failed(res, `Failed to add tools`, error.message)
+            response.failed(res, `Failed to add tools`, error)
         }
     },
 
@@ -355,7 +355,7 @@ module.exports = {
             const result_item = await query.queryPUT("tools", filter, doc);
             response.success(res, `Success editting tools`, result_item)
         } catch (error) {
-            response.failed(res, `Failed to edit tools`, error.message)
+            response.failed(res, `Failed to edit tools`, error)
         }
     },
 
@@ -372,7 +372,7 @@ module.exports = {
             const result_item = await query.queryPUT("tools", filter, doc);
             response.success(res, `Success deleting tools`, result_item)
         } catch (error) {
-            response.failed(res, `Failed to delete tools`, error.message)
+            response.failed(res, `Failed to delete tools`, error)
         }
     },
 
@@ -388,7 +388,7 @@ module.exports = {
             const result_item = await query.queryGET("spare_part", filter);
             response.success(res, `Success getting spare part`, result_item)
         } catch (error) {
-            response.failed(res, `Failed to get spare part`, error.message)
+            response.failed(res, `Failed to get spare part`, error)
         }
     },
 
@@ -408,7 +408,7 @@ module.exports = {
             const result_item = await query.queryPOST("spare_part", doc);
             response.success(res, `Success adding spare part`, result_item)
         } catch (error) {
-            response.failed(res, `Failed to add spare part`, error.message)
+            response.failed(res, `Failed to add spare part`, error)
         }
     },
 
@@ -438,7 +438,7 @@ module.exports = {
             const result_item = await query.queryPUT("spare_part", filter, doc);
             response.success(res, `Success editting spare part`, result_item)
         } catch (error) {
-            response.failed(res, `Failed to edit spare part`, error.message)
+            response.failed(res, `Failed to edit spare part`, error)
         }
     },
 
@@ -455,7 +455,7 @@ module.exports = {
             const result_item = await query.queryPUT("spare_part", filter, doc);
             response.success(res, `Success deleting spare part`, result_item)
         } catch (error) {
-            response.failed(res, `Failed to delete spare part`, error.message)
+            response.failed(res, `Failed to delete spare part`, error)
         }
     },
 }

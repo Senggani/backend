@@ -184,7 +184,7 @@ module.exports = {
             response.success(res, `Successfully connected to backend`, req.body)
 
         } catch (error) {
-            response.failed(res, `Failed to connect`, error.message)
+            response.failed(res, `Failed to connect`, error)
         }
     },
 

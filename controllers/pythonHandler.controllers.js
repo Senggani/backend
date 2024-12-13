@@ -18,7 +18,7 @@ module.exports = {
 
             // exec(command, (error, stdout, stderr) => {
             //     if (error) {
-            //         console.error(`Error executing script: ${error.message}`);
+            //         console.error(`Error executing script: ${error}`);
             //         return;
             //     }
 

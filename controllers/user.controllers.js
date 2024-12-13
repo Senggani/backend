@@ -34,7 +34,7 @@ module.exports = {
     try {
       response.success(res, `Successfully connected to backend`, req.body)
     } catch (error) {
-      response.failed(res, `Failed to connect`, error.message)
+      response.failed(res, `Failed to connect`, error)
     }
   },
 
@@ -51,8 +51,8 @@ module.exports = {
 
   //     response.sendFileAsJSON(res, filePath, 'test send', filePath)
   //   } catch (error) {
-  //     console.log(error.message)
-  //     response.failed(res, `Failed to connect`, error.message)
+  //     console.log(error)
+  //     response.failed(res, `Failed to connect`, error)
   //   }
   // },
 
@@ -73,7 +73,7 @@ module.exports = {
 
       response.success(res, "Users retrieved successfully", result);
     } catch (error) {
-      response.failed(res, "Failed to get user", error.message);
+      response.failed(res, "Failed to get user", error);
     }
   },
 
@@ -113,7 +113,7 @@ module.exports = {
         response.success(res, `Success to add user`, { doc, result })
       }
     } catch (error) {
-      response.failed(res, `Failed to add user`, error.message)
+      response.failed(res, `Failed to add user`, error)
     }
   },
 
@@ -154,7 +154,7 @@ module.exports = {
 
       response.success(res, "User updated successfully", result);
     } catch (error) {
-      response.failed(res, "Error to update user", error.message);
+      response.failed(res, "Error to update user", error);
     }
   },
 
@@ -172,7 +172,7 @@ module.exports = {
 
       response.success(res, `Success to delete user`, result)
     } catch (error) {
-      response.failed(res, `Failed to delete user`, error.message)
+      response.failed(res, `Failed to delete user`, error)
     }
   },
 
@@ -199,7 +199,7 @@ module.exports = {
 
       response.success(res, `Success to upload profile pic`, result)
     } catch (error) {
-      response.failed(res, `Failed to upload profile pic`, error.message)
+      response.failed(res, `Failed to upload profile pic`, error)
     }
   },
 
@@ -210,7 +210,7 @@ module.exports = {
 
   //     response.success(res, "Profile retrieved successfully", user);
   //   } catch (error) {
-  //     response.error(res, "Error to get user", error.message);
+  //     response.error(res, "Error to get user", error);
   //   }
   // },
 
@@ -243,7 +243,7 @@ module.exports = {
   //     response.success(res, "User status updated successfully", user);
   //   } catch (error) {
   //     console.error("Toggle user status error:", error);
-  //     response.error(res, error.message);
+  //     response.error(res, error);
   //   }
   // },
 };

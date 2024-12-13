@@ -36,7 +36,7 @@ module.exports = {
       await database.connect();
       console.log("Success connecting to MongoDB");
     } catch (error) {
-      response.failed(res, 'Failed to connect', error.message)
+      response.failed(res, 'Failed to connect', error)
     }
   },
 

@@ -66,7 +66,7 @@ async function produceMessageOpenCV(msg) {
         }, 500);
 
     } catch (error) {
-        console.error('Error in sending message:', error.message);
+        console.error('Error in sending message:', error);
     }
 }
 
@@ -106,7 +106,7 @@ async function consumeMessageOpenCV(req, res) {
 
 
     } catch (error) {
-        console.error('Error in consumeMessageOpenCV:', error.message);
+        console.error('Error in consumeMessageOpenCV:', error);
     }
 }
 
@@ -115,7 +115,7 @@ module.exports = {
         try {
             response.success(res, "Successfully connected to backend")
         } catch (error) {
-            response.failed(res, 'Failed to connect', error.message)
+            response.failed(res, 'Failed to connect', error)
         }
     },
 
@@ -185,7 +185,7 @@ module.exports = {
 
 
         } catch (error) {
-            console.error('Error in consuming message:', error.message);
+            console.error('Error in consuming message:', error);
         }
     },
 
@@ -211,7 +211,7 @@ module.exports = {
 
             response.success(res, "Success uploading to backend", results);
         } catch (error) {
-            response.failed(res, "Failed uploading to backend", error.message);
+            response.failed(res, "Failed uploading to backend", error);
         }
     },
 
@@ -241,7 +241,7 @@ module.exports = {
             }
             response.success(res, `Success to list opencv image`, results)
         } catch (error) {
-            response.failed(res, "Failed downloading image", error.message);
+            response.failed(res, "Failed downloading image", error);
         }
     },
 
@@ -268,7 +268,7 @@ module.exports = {
 
             response.success(res, "Success getting data to backend", data.filename);
         } catch (error) {
-            response.failed(res, "Failed uploading to backend", error.message);
+            response.failed(res, "Failed uploading to backend", error);
         }
     },
 
@@ -304,7 +304,7 @@ module.exports = {
 
             response.success(res, "Success getting data to backend", data.filename);
         } catch (error) {
-            response.failed(res, "Failed uploading to backend", error.message);
+            response.failed(res, "Failed uploading to backend", error);
             console.log(error)
         }
     },

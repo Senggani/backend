@@ -34,7 +34,7 @@ module.exports = {
       response.success(res, `Successfully connected to backend`, req.body)
 
     } catch (error) {
-      response.failed(res, `Failed to connect`, error.message)
+      response.failed(res, `Failed to connect`, error)
     }
   },
 
@@ -111,7 +111,7 @@ module.exports = {
       response.success(res, "Success getting itemcheck", results)
 
     } catch (error) {
-      response.failed(res, 'Failed to get itemcheck', error.message)
+      response.failed(res, 'Failed to get itemcheck', error)
     }
   },
 
@@ -137,7 +137,7 @@ module.exports = {
       response.success(res, "Success editting itemcheck", results)
 
     } catch (error) {
-      response.failed(res, 'Failed to edit itemcheck', error.message)
+      response.failed(res, 'Failed to edit itemcheck', error)
     }
   },
 
@@ -157,7 +157,7 @@ module.exports = {
       response.success(res, "Success editting itemcheck", results)
 
     } catch (error) {
-      response.failed(res, 'Failed to edit itemcheck', error.message)
+      response.failed(res, 'Failed to edit itemcheck', error)
     }
   },
 
@@ -234,7 +234,25 @@ module.exports = {
       // await database.close()
 
     } catch (error) {
-      response.failed(res, 'Failed to connect', error.message)
+      response.failed(res, 'Failed to connect', error)
+    }
+  },
+
+  reviewKanban: async (req, res) => {
+    try {
+
+      let filter = { _id: new ObjectId(data.id) }
+
+      let doc = {
+        status: data.status,
+      }
+
+      const result = await query.queryPUT("work_order", filter, doc)
+
+      response.success(res, `Success to review kanban`, { result, doc })
+
+    } catch (error) {
+      response.failed(res, 'Failed to connect', error)
     }
   },
 
@@ -275,7 +293,7 @@ module.exports = {
       response.success(res, "Success getting kanban history", results);
 
     } catch (error) {
-      response.failed(res, 'Failed to get kanban history', error.message)
+      response.failed(res, 'Failed to get kanban history', error)
     }
   },
 
@@ -297,7 +315,7 @@ module.exports = {
       const result_item = await query.queryGET("work_order", filter);
       response.success(res, `Success getting work order`, result_item)
     } catch (error) {
-      response.failed(res, `Failed to get work order`, error.message)
+      response.failed(res, `Failed to get work order`, error)
     }
   },
 
@@ -311,12 +329,13 @@ module.exports = {
         created_dt: new Date(),
         kanban_id: new ObjectId(data.kanban_id),
         user_id: new ObjectId(data.user_id),
+        status: data.status,
         work_dt: data.date
       }
       const result_item = await query.queryPOST("work_order", doc);
       response.success(res, `Success adding work order`, result_item)
     } catch (error) {
-      response.failed(res, `Failed to add work order`, error.message)
+      response.failed(res, `Failed to add work order`, error)
     }
   },
 
@@ -347,7 +366,7 @@ module.exports = {
       const result_item = await query.queryPUT("work_order", filter, doc);
       response.success(res, `Success editting work order`, result_item)
     } catch (error) {
-      response.failed(res, `Failed to edit work order`, error.message)
+      response.failed(res, `Failed to edit work order`, error)
     }
   },
 
@@ -365,7 +384,7 @@ module.exports = {
       const result_item = await query.queryPUT("work_order", filter, doc);
       response.success(res, `Success deletin work order`, result_item)
     } catch (error) {
-      response.failed(res, `Failed to delete work order`, error.message)
+      response.failed(res, `Failed to delete work order`, error)
     }
   },
 
