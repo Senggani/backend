@@ -220,8 +220,8 @@ module.exports = {
       let doc = {
         kanban_id: new ObjectId(data.kanban_id),
         work_order_id: new ObjectId(data.work_order_id),
-        created_by: new ObjectId(data.created_by),
-        created_dt: new Date(),
+        submitted_by: new ObjectId(data.created_by),
+        submitted_dt: new Date(),
         itemcheck: itemcheck
       }
 
@@ -240,7 +240,7 @@ module.exports = {
 
   historyKanban: async (req, res) => {
     try {
-      let filter = { created_by: new ObjectId(req.user.user_id) };
+      let filter = { "work_order.created_by": new ObjectId(req.user.user_id) };
 
       if (req.query.id) {
         filter._id = new ObjectId(req.query.id);
@@ -250,7 +250,24 @@ module.exports = {
         filter.kanban_id = new ObjectId(req.query.kanban_id);
       }
 
-      const results = await query.queryGET("kanban_history", filter);
+      const results = await client.collection("kanban_history").aggregate(
+        [
+          {
+            $lookup: {
+              from: "work_order",
+              localField: "work_order_id",
+              foreignField: "_id",
+              as: "work_order"
+            }
+          },
+          {
+            $unwind: "$work_order"
+          },
+          {
+            $match: filter
+          }
+        ]
+      ).toArray;
 
       response.success(res, "Success getting kanban history", results);
 
