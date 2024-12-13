@@ -215,7 +215,7 @@ module.exports = {
 
       }
 
-      await query.queryPUT("work_order", { _id: data.work_order_id }, { status: data.status })
+      await query.queryPUT("work_order", { _id: new ObjectId(data.work_order_id) }, { status: data.status })
 
       let doc = {
         kanban_id: new ObjectId(data.kanban_id),
