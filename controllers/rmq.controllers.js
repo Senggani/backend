@@ -11,6 +11,8 @@ const sharp = require('sharp');
 
 const uploadDir = './uploads/opencv/';
 const uploadDirEsp32 = './uploads/esp32';
+const status_queue = 'status_queue';
+const upload_queue = 'upload_queue';
 
 const checkAndCreateDir = (req, res, next) => {
     if (!fs.existsSync(uploadDir)) {
@@ -52,10 +54,9 @@ async function produceMessageOpenCV(msg) {
         const channel = await connection.createChannel();
 
         // Declare a queue (it will be created if it doesn't exist)
-        const queue = 'opencv_retrieve';
-        await channel.assertQueue(queue, { durable: false });
+        await channel.assertQueue(upload_queue, { durable: false });
 
-        channel.sendToQueue(queue, Buffer.from(msg));
+        channel.sendToQueue(upload_queue, Buffer.from(msg));
 
         console.log(`Sent: ${msg}`);
 
@@ -87,13 +88,12 @@ async function consumeMessageOpenCV(req, res) {
         let data = {};
 
         // Declare the same queue that the producer is sending to
-        const queue = 'opencv_status';
-        await channel.assertQueue(queue, { durable: false });
+        await channel.assertQueue(status_queue, { durable: false });
 
-        console.log(`Waiting for messages in ${queue} queue`);
+        console.log(`Waiting for messages in ${status_queue} queue`);
 
         // Consume messages from the queue
-        channel.consume(queue, (msg) => {
+        channel.consume(status_queue, (msg) => {
             if (msg) {
                 data = msg.content.toString();
                 console.log(data);
@@ -198,14 +198,15 @@ module.exports = {
             let results = {};
 
             let doc = {
-                created_by: data.location,
+                created_by: data.source,
                 created_dt: new Date(),
-                total_face: data.total_face,
-                total_body: data.total_body,
+                total_person: data.total_person,
                 filename: file.filename,
                 filepath: uploadDir,
                 contentType: req.file.mimetype,
             };
+
+            console.log(data)
 
             results = await query.queryPOST("opencv_image", doc);
 

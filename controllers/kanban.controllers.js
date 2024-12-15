@@ -2,7 +2,6 @@ const response = require("../helpers/response");
 const query = require("../helpers/queryMongo");
 const { database, ObjectId, client } = require("../bin/database");
 const multer = require("multer")
-const path = require('path');
 const Tesseract = require('tesseract.js');
 const fs = require('fs');
 
