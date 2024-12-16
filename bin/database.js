@@ -6,9 +6,9 @@ const database = new MongoClient(uri, { useNewUrlParser: true});
 const client = database.db("pm_module");
 
 /* FOR ITB DATABASE */
-const uri = "mongodb://preventive_maintenance:hl6GjO5LlRuQT1n@nosql.smartsystem.id:27017/preventive_maintenance"
+const uri = process.env.MONGODB_URI
 const database = new MongoClient(uri, { useNewUrlParser: true });
-const client = database.db("preventive_maintenance");
+const client = database.db(process.env.MONGODB_DATABASE);
 
 /* FOR CLOUD DATABASE USING ATLAS
 const uri = "mongodb+srv://13220035:3QrGL6zkth7Gmm6k@pm-module.g5lfu.mongodb.net/?retryWrites=true&w=majority&appName=pm-module";

@@ -7,11 +7,13 @@ const multer = require("multer");
 const fs = require("fs");
 const { client, ObjectId, database } = require('../bin/database');
 const { detect_objects_on_image, detect_faces_on_image } = require('./yolo.controllers');
+const { processImages } = require('./ftp.controllers')
 const sharp = require('sharp');
+require("dotenv").config();
 
 const uploadDir = './uploads/opencv/';
 const uploadDirEsp32 = './uploads/esp32';
-const status_queue = 'status_queue';
+const status_queue = 'test_ESP32';
 const upload_queue = 'upload_queue';
 
 const checkAndCreateDir = (req, res, next) => {
@@ -40,10 +42,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 const rmq_credential = {
-    username: 'pm_modue',
-    password: 'hl6GjO5LlRuQT1n',
-    url: 'rmq2.pptik.id:5672',
-    vhost: '/pm_module'
+    username: process.env.RMQ_USERNAME,
+    password: process.env.RMQ_PASSWORD,
+    url: process.env.RMQ_URL,
+    vhost: process.env.RMQ_VHOST
 }
 const rmq_url = `amqp://${rmq_credential.username}:${rmq_credential.password}@${rmq_credential.url}/${rmq_credential.vhost}`
 
@@ -71,6 +73,45 @@ async function produceMessageOpenCV(msg) {
     }
 }
 
+// async function consumeMessageOpenCV(req, res) {
+//     try {
+//         // Connect to RabbitMQ server
+//         const connection = await amqp.connect(rmq_url);
+//         connection.on('close', () => {
+//             console.log('Connection closed. Attempting to reconnect...');
+//             setTimeout(consumeMessageOpenCV, 5000); // Retry after a delay
+//         });
+
+//         connection.on('error', (err) => {
+//             console.error('Connection error:', err);
+//         });
+//         const channel = await connection.createChannel();
+
+//         let data = {};
+
+//         // Declare the same queue that the producer is sending to
+//         await channel.assertQueue(status_queue, { durable: false });
+
+//         console.log(`Waiting for messages in ${status_queue} queue`);
+
+//         // Consume messages from the queue
+//         channel.consume(status_queue, (msg) => {
+//             if (msg) {
+//                 data = msg.content.toString();
+//                 console.log(data);
+//                 // produceMessageOpenCV(data);
+//                 // response.success(res, "Success consume to rmq", data);
+//                 console.log("Success consume to rmq");
+//                 channel.ack(msg);  // Acknowledge the message after processing
+//             }
+//         });
+
+
+//     } catch (error) {
+//         console.error('Error in consumeMessageOpenCV:', error);
+//     }
+// }
+
 async function consumeMessageOpenCV(req, res) {
     try {
         // Connect to RabbitMQ server
@@ -85,7 +126,7 @@ async function consumeMessageOpenCV(req, res) {
         });
         const channel = await connection.createChannel();
 
-        let data = {};
+        let data;
 
         // Declare the same queue that the producer is sending to
         await channel.assertQueue(status_queue, { durable: false });
@@ -93,17 +134,27 @@ async function consumeMessageOpenCV(req, res) {
         console.log(`Waiting for messages in ${status_queue} queue`);
 
         // Consume messages from the queue
-        channel.consume(status_queue, (msg) => {
+        channel.consume(status_queue, async (msg) => {
             if (msg) {
                 data = msg.content.toString();
-                console.log(data);
-                produceMessageOpenCV(data);
-                // response.success(res, "Success consume to rmq", data);
+                console.log('data in if: ', data);
                 console.log("Success consume to rmq");
-                channel.ack(msg);  // Acknowledge the message after processing
+                // channel.ack(msg);  // Acknowledge the message after processing
+
+                try {
+                    // Process the image after receiving the message
+                    await processImages(data);
+                    console.log('Success to processImages', data);
+
+                    // Acknowledge the message after processing
+                    channel.ack(msg);
+                } catch (err) {
+                    console.error('Error processing image:', err);
+                    // Optionally, nack (negatively acknowledge) the message if processing fails
+                    channel.nack(msg);
+                }
             }
         });
-
 
     } catch (error) {
         console.error('Error in consumeMessageOpenCV:', error);
@@ -201,6 +252,7 @@ module.exports = {
                 created_by: data.source,
                 created_dt: new Date(),
                 total_person: data.total_person,
+                location: data.location,
                 filename: file.filename,
                 filepath: uploadDir,
                 contentType: req.file.mimetype,
