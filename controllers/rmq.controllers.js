@@ -428,6 +428,17 @@ module.exports = {
         }
     },
 
+    clearESPimg: async (req, res) => {
+        try {
+            fs.rmdirSync(uploadDirEsp32)
+
+            response.success(res, "Success to clearESPimg", data.filename);
+        } catch (error) {
+            response.failed(res, "Failed to clearESPimg", error);
+            console.log(error)
+        }
+    },
+
     consumeMessageOpenCV,
     checkAndCreateDir,
     login_ftp,

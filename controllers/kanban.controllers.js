@@ -387,6 +387,17 @@ module.exports = {
     }
   },
 
+  clearItemCheckImg: async (req, res) => {
+    try {
+      fs.rmdirSync(uploadDir)
+
+      response.success(res, "Success to clearItemCheckImg", data.filename);
+    } catch (error) {
+      response.failed(res, "Failed to clearItemCheckImg", error);
+      console.log(error)
+    }
+  },
+
   upload,
   checkAndCreateDir,
 }
