@@ -6,6 +6,7 @@ var logger = require("morgan");
 const cors = require("cors");
 const fs = require("fs");
 const { connectToDatabase } = require("./bin/database")
+const { consumeMessageOpenCV, login_ftp } = require("./controllers/rmq.controllers");
 
 const dir = "./uploads"
 
@@ -17,12 +18,12 @@ const checkAndCreateDir = () => {
 };
 
 var routerV1 = require("./routes/index");
-const { consumeMessageOpenCV } = require("./controllers/rmq.controllers");
 
 var app = express();
 app.use(cors());
 
 connectToDatabase();
+// login_ftp();
 
 app.use(logger("dev"));
 app.use(express.json());

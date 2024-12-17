@@ -1,13 +1,13 @@
 const amqp = require('amqplib');
 const response = require("../helpers/response");
 const query = require("../helpers/queryMongo");
-let timestampDay = 24 * 60 * 60 * 1000;
 const path = require("path");
 const multer = require("multer");
 const fs = require("fs");
+const ftp = require("basic-ftp");
 const { client, ObjectId, database } = require('../bin/database');
 const { detect_objects_on_image, detect_faces_on_image } = require('./yolo.controllers');
-const { processImages } = require('./ftp.controllers')
+const { processImages, processImages2, login_ftp } = require('./ftp.controllers')
 const sharp = require('sharp');
 require("dotenv").config();
 
@@ -15,6 +15,9 @@ const uploadDir = './uploads/opencv/';
 const uploadDirEsp32 = './uploads/esp32';
 const status_queue = 'test_ESP32';
 const upload_queue = 'upload_queue';
+
+const ftp_client = new ftp.Client();
+const ftp_dir = "/ftpparking/pm/raw/";
 
 const checkAndCreateDir = (req, res, next) => {
     if (!fs.existsSync(uploadDir)) {
@@ -70,6 +73,68 @@ async function produceMessageOpenCV(msg) {
 
     } catch (error) {
         console.error('Error in sending message:', error);
+    }
+}
+
+async function process_images(msg) {
+    try {
+
+        // doc ={
+        //     filename: msg,
+        //     crated_by: msg.slice(0, 6),
+        //     crated_dt: Date.now(),
+        //     person_detected: 0
+        // }
+
+        await ftp_client.access({
+            host: process.env.FTP_SERVER,           // Replace with your FTP host (use the one from FileZilla)
+            user: process.env.FTP_USERNAME,         // Replace with your FTP username (from FileZilla)
+            password: process.env.FTP_PASSWORD,     // Replace with your FTP password (from FileZilla)
+            port: process.env.FTP_PORT,
+            secure: false                           // Set to `true` if using FTPS (secure FTP)
+        })
+
+        await ftp_client.downloadTo(('./uploads/raw/' + msg), (ftp_dir + msg))
+
+        let imageBuffer = fs.readFileSync('./uploads/raw/' + msg);
+
+        console.log()
+
+        const boxes = await detect_objects_on_image(imageBuffer);
+        const boxes2 = await detect_faces_on_image(imageBuffer);
+        const svgContent = boxes.map(box => `
+            <rect x="${parseInt(box[0])}" y="${parseInt(box[1])}" width="${parseInt(box[2] - box[0])}" height="${parseInt(box[3] - box[1])}" fill="none" stroke="red" stroke-width="20" stroke-opacity="0.7"/>
+            <rect x="${parseInt(box[0])}" y="${parseInt(box[3]) - 60}" width="${parseInt(box[2] - box[0])}" height="50" fill="white" fill-opacity="0.7" />
+            <text x="${parseInt(box[0]) + 20}" y="${parseInt(box[3]) - 20}" font-size="50" fill="green" font-family="Arial">${box[4]}: 0.${parseInt(box[5] * 1000)}%</text>`).join('');
+        const svgContent_2 = boxes2.map(box => `
+            <rect x="${parseInt(box[0])}" y="${parseInt(box[1])}" width="${parseInt(box[2] - box[0])}" height="${parseInt(box[3] - box[1])}" fill="none" stroke="red" stroke-width="20" stroke-opacity="0.7"/>
+            <rect x="${parseInt(box[0])}" y="${parseInt(box[3]) - 60}" width="${parseInt(box[2] - box[0])}" height="50" fill="white" fill-opacity="0.7" />
+            <text x="${parseInt(box[0]) + 20}" y="${parseInt(box[3]) - 20}" font-size="50" fill="green" font-family="Arial">${box[4]}: 0.${parseInt(box[5] * 1000)}%</text>`).join('');
+
+        await sharp(imageBuffer)
+            .composite([{
+                input: Buffer.from(`
+                                    <svg width="800" height="600">${svgContent}${svgContent_2}
+                                    </svg>`),
+                blend: 'over'
+            }])
+            .toFile('./uploads/yolo/' + msg)
+        fs.unlinkSync('./uploads/raw/' + msg, (err) => { if (err) throw (err); })
+
+        await ftp_client.cd("/ftpparking/pm/result/");
+        await ftp_client.uploadFrom('./uploads/yolo/' + msg, msg)
+
+        fs.unlinkSync('./uploads/yolo/' + msg, (err) => { if (err) throw (err); })
+
+        // await query.queryPOST('cam_images', )
+
+        console.log(boxes)
+        console.log(boxes2)
+
+        console.log(`Success processing image`);
+    } catch (error) {
+        // response.failed(res, `Failed to connect`, error)
+        console.log(`Error processing image\n`, error);
     }
 }
 
@@ -134,20 +199,21 @@ async function consumeMessageOpenCV(req, res) {
         console.log(`Waiting for messages in ${status_queue} queue`);
 
         // Consume messages from the queue
-        channel.consume(status_queue, async (msg) => {
+        await channel.consume(status_queue, async (msg) => {
             if (msg) {
                 data = msg.content.toString();
-                console.log('data in if: ', data);
-                console.log("Success consume to rmq");
                 // channel.ack(msg);  // Acknowledge the message after processing
 
                 try {
                     // Process the image after receiving the message
-                    await processImages(data);
+                    await processImages(data)
+                    channel.ack(msg);
+                    // await process_images(data).then(channel.ack(msg));
+                    console.log("Success consume to rmq");
                     console.log('Success to processImages', data);
 
                     // Acknowledge the message after processing
-                    channel.ack(msg);
+
                 } catch (err) {
                     console.error('Error processing image:', err);
                     // Optionally, nack (negatively acknowledge) the message if processing fails
@@ -364,5 +430,6 @@ module.exports = {
 
     consumeMessageOpenCV,
     checkAndCreateDir,
+    login_ftp,
     upload
 }
