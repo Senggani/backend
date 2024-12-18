@@ -11,7 +11,8 @@ const {
     deleteWorkOrder,
     editKanban,
     deleteKanban,
-    checkAndCreateDir
+    checkAndCreateDir,
+    clearItemCheckImg,
     // submitItemcheck,
 } = require('../controllers/kanban.controllers');
 var { protect } = require("../middleware/auth.middleware");
@@ -19,6 +20,7 @@ var { protect } = require("../middleware/auth.middleware");
 var router = express.Router();
 
 router.get('/test-connection', testConnection)
+router.get('/delete-all-itemcheck-images', clearItemCheckImg)
 
 router.get('/list-kanban', listKanban)
 router.get('/history-kanban', protect, historyKanban)

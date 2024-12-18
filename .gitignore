@@ -6,7 +6,7 @@ vue_test/
 uploads/
 upload/
 eng.traineddata
-best.onnx
+# best.onnx
 best_local.onnx
 best.pt
-yolov8m.onnx
+# yolov8m.onnx

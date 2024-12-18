@@ -8,6 +8,7 @@ const { testConnection,
     downloadOpencvImage,
     uploadESP32Image,
     uploadESP32ImageYolo,
+    clearESPimg,
 } = require('../controllers/rmq.controllers');
 var router = express.Router();
 
@@ -18,5 +19,6 @@ router.get('/cons-msg', consumeMessage)
 router.post('/opencv', checkAndCreateDir, upload.single('file'), uploadOpencvImage)
 router.post('/esp32', uploadESP32ImageYolo)
 router.get('/get-image', downloadOpencvImage)
+router.get('/delete-all-images', clearESPimg)
 
 module.exports = router

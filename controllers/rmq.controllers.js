@@ -204,21 +204,23 @@ async function consumeMessageOpenCV(req, res) {
                 data = msg.content.toString();
                 // channel.ack(msg);  // Acknowledge the message after processing
 
-                try {
-                    // Process the image after receiving the message
-                    await processImages(data)
-                    channel.ack(msg);
-                    // await process_images(data).then(channel.ack(msg));
-                    console.log("Success consume to rmq");
-                    console.log('Success to processImages', data);
+                processImages(data).then(channel.ack(msg))
 
-                    // Acknowledge the message after processing
+                // try {
+                //     // Process the image after receiving the message
+                //     await processImages(data)
+                //     channel.ack(msg);
+                //     // await process_images(data).then(channel.ack(msg));
+                //     console.log("Success consume to rmq");
+                //     console.log('Success to processImages', data);
 
-                } catch (err) {
-                    console.error('Error processing image:', err);
-                    // Optionally, nack (negatively acknowledge) the message if processing fails
-                    channel.nack(msg);
-                }
+                //     // Acknowledge the message after processing
+
+                // } catch (err) {
+                //     console.error('Error processing image:', err);
+                //     // Optionally, nack (negatively acknowledge) the message if processing fails
+                //     channel.nack(msg);
+                // }
             }
         });
 

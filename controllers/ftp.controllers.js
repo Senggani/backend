@@ -33,13 +33,6 @@ module.exports = {
             const ftp_client = new ftp.Client();
             const filename = msg;
 
-            // doc ={
-            //     filename: msg,
-            //     crated_by: msg.slice(0, 6),
-            //     crated_dt: Date.now(),
-            //     person_detected: 0
-            // }
-
             await ftp_client.access({
                 host: process.env.FTP_SERVER,           // Replace with your FTP host (use the one from FileZilla)
                 user: process.env.FTP_USERNAME,         // Replace with your FTP username (from FileZilla)
@@ -47,9 +40,6 @@ module.exports = {
                 port: process.env.FTP_PORT,
                 secure: false                           // Set to `true` if using FTPS (secure FTP)
             })
-            // ftp_client.prepareTransfer('I')
-            // ftp_client.timeout(30000);
-            // ftp_client.ftp.
 
             await ftp_client.downloadTo(('./uploads/raw/' + filename), (ftp_dir + filename))
 
@@ -68,6 +58,18 @@ module.exports = {
             <rect x="${parseInt(box[0])}" y="${parseInt(box[3]) - 60}" width="${parseInt(box[2] - box[0])}" height="50" fill="white" fill-opacity="0.7" />
             <text x="${parseInt(box[0]) + 20}" y="${parseInt(box[3]) - 20}" font-size="50" fill="green" font-family="Arial">${box[4]}: 0.${parseInt(box[5] * 1000)}%</text>`).join('');
 
+            let flattenedArray = boxes.flat();
+            let total_person = flattenedArray.filter(item => item === 'person').length;
+
+            // console.log('count of person: ', total_person)
+
+            let doc = {
+                filename: filename,
+                crated_by: filename.slice(0, 6),
+                crated_dt: Date.now(),
+                total_person: total_person,
+            }
+
             await sharp(imageBuffer)
                 .composite([{
                     input: Buffer.from(`
@@ -83,12 +85,12 @@ module.exports = {
 
             fs.unlinkSync('./uploads/yolo/' + filename, (err) => { if (err) throw (err); })
 
-            // await query.queryPOST('cam_images', )
+            await query.queryPOST('cam_images', doc);
 
             console.log(boxes)
             console.log(boxes2)
 
-            console.log(`Success processing image`);
+            console.log(`Success processing image: `, filename);
             ftp_client.close();
         } catch (error) {
             // response.failed(res, `Failed to connect`, error)
